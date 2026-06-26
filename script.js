@@ -31,3 +31,68 @@ function weatherText(code) {
     if (code <= 77) return "Snow ❄️";
     return "Mixed";
 }
+
+const SHEET_URL = "https://script.googleusercontent.com/macros/echo?...";
+
+async function loadEventData() {
+
+    const res = await fetch(SHEET_URL);
+    const data = await res.json();
+
+    // 👥 attendees (small + dashboard)
+    document.getElementById("attendees").textContent = data.totalPeople;
+    document.getElementById("attendanceNumber").textContent = data.totalPeople;
+
+    // 🍔 food chart
+    renderFoodChart(data.foodCategories);
+}
+
+let foodChartInstance = null;
+
+function renderFoodChart(foodData) {
+
+    const labels = Object.keys(foodData);
+    const values = Object.values(foodData);
+
+    const ctx = document.getElementById("foodChart");
+
+    if (foodChartInstance) {
+        foodChartInstance.destroy();
+    }
+
+    foodChartInstance = new Chart(ctx, {
+        type: "pie",
+        data: {
+            labels: labels,
+            datasets: [{
+                data: values
+            }]
+        }
+    });
+}
+
+
+function updateCountdown() {
+    const eventDate = new Date("2026-07-01T11:30:00");
+
+    const now = new Date();
+    const diff = eventDate - now;
+
+    if (diff <= 0) {
+        document.getElementById("countdown").textContent = "LIVE";
+        document.getElementById("countdownLarge").textContent = "LIVE";
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    document.getElementById("countdown").textContent = `${days}d`;
+    document.getElementById("countdownLarge").textContent = `${days} days`;
+}
+
+
+loadWeather();
+loadEventData();
+updateCountdown();
+
+setInterval(updateCountdown, 60000);
