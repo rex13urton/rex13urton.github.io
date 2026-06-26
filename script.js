@@ -37,7 +37,7 @@ function weatherText(code) {
 }
 
 // ---------------- SHEET DATA ----------------
-const SHEET_URL = "https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnRY0D2uxkAobpiM9R-1upOziSuAfqtRn8hqcqUmXJJrNPyfi0ozTGV-Z_-1YLNwbYnZwOBYl6D6rolLXaFYrqMKHD7sEcAXvqw8wJSpqLLIVw-maL_f-iEd0mcw__EO5GgSv1iVjo-c98hOdZO7eSyDgkM9uz3Xq2_A1h4guXXBxv9DU0_2hKhxErGEOfQu3pGUeSTl6zk79-ZIxAfBHxKZG9jZuqr0kjnk2GUS8Rk1-C8pJ4tUy8Lg60BIF-bgfEmrKLWp_fJWzGj_shA4jV1_5Ljsog&lib=MhBR2Q_zMXNN2jGQMqYpNvkjSQG5xV6OM";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbyroBwB9b7G6UDzxv4_WB3meRRmPuiL8VSJHTNIuDdk07UL5vsPKEnaeoiGY3ZXvTwdHA/exec";
 
 async function loadEventData() {
     try {
