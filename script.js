@@ -111,8 +111,21 @@ function updateCountdown() {
 }
 
 // ---------------- DASHBOARD TOGGLE ----------------
-document.getElementById("dashboardButton").addEventListener("click", () => {
-    document.getElementById("dashboard").classList.toggle("hidden");
+window.addEventListener("DOMContentLoaded", () => {
+
+    loadWeather();
+    loadEventData();
+    updateCountdown();
+
+    const btn = document.getElementById("dashboardButton");
+
+    if (btn) {
+        btn.addEventListener("click", () => {
+            document.getElementById("dashboard").classList.toggle("hidden");
+        });
+    }
+
+    setInterval(updateCountdown, 60000);
 });
 
 // ---------------- INIT ----------------
