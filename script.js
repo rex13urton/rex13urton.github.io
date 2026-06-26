@@ -129,11 +129,18 @@ function updateCountdown() {
         return;
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const totalHours = Math.floor(diff / (1000 * 60 * 60));
 
-    document.getElementById("countdown").textContent = `${days}d ${hours}h`;
-    document.getElementById("countdownLarge").textContent = `${days} days ${hours} hrs`;
+    const days = Math.floor(totalHours / 24);
+    const hours = totalHours % 24;
+
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+    document.getElementById("countdown").textContent =
+        `${days}d ${hours}h`;
+
+    document.getElementById("countdownLarge").textContent =
+        `${days} days ${hours} hrs ${minutes} min`;
 }
 
 // ---------------- DASHBOARD TOGGLE ----------------
