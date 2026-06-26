@@ -66,6 +66,14 @@ function renderFoodChart(foodData) {
     const labels = Object.keys(foodData);
     const values = Object.values(foodData);
 
+    const colors = [
+        "#C65D25", // Ember Orange
+        "#B87333", // Copper
+        "#F4E8D1", // Cream
+        "#2B2B2B", // Ash
+        "#ffffff"  // fallback highlight
+    ];
+
     if (foodChartInstance) {
         foodChartInstance.destroy();
     }
@@ -75,14 +83,33 @@ function renderFoodChart(foodData) {
         data: {
             labels,
             datasets: [{
-                data: values
+                data: values,
+                backgroundColor: labels.map((_, i) =>
+                    colors[i % colors.length]
+                ),
+                borderColor: "#171717",
+                borderWidth: 2
             }]
         },
         options: {
             responsive: true,
             plugins: {
                 legend: {
-                    position: "bottom"
+                    position: "bottom",
+                    labels: {
+                        color: "#F4E8D1",   // 🔥 fixes grey text
+                        font: {
+                            family: "Inter",
+                            size: 12
+                        }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: "#2B2B2B",
+                    titleColor: "#F4E8D1",
+                    bodyColor: "#F4E8D1",
+                    borderColor: "#C65D25",
+                    borderWidth: 1
                 }
             }
         }
