@@ -12,11 +12,10 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #111;
-    color: white;
-    line-height: 1.6;
+body{
+    background:#171717;
+    color:#F4EBD8;
+    font-family:Inter,sans-serif;
 }
 
 /* -------------------- */
@@ -112,27 +111,24 @@ nav {
     gap: 20px;
 }
 
-.btn {
+.btn{
 
-    padding: 15px 35px;
+    background:#C96C2D;
 
-    background: #d19b2d;
+    color:white;
 
-    color: black;
+    transition:.3s;
 
-    text-decoration: none;
-
-    border-radius: 999px;
-
-    font-weight: bold;
-
-    transition: .25s;
+    box-shadow:0 10px 30px rgba(201,108,45,.25);
 }
 
-.btn:hover {
+.btn:hover{
 
-    transform: translateY(-4px);
+    background:#E8883A;
 
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 40px rgba(201,108,45,.45);
 }
 
 .secondary {
@@ -188,21 +184,22 @@ nav {
     margin-bottom: 50px;
 }
 
-.event-card {
+.event-card{
 
-    display: grid;
+    background:#202020;
 
-    grid-template-columns: 300px 1fr;
+    border:1px solid rgba(255,255,255,.06);
 
-    gap: 35px;
+    transition:.3s;
 
-    margin-bottom: 40px;
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+}
 
-    background: #1c1c1c;
+.event-card:hover{
 
-    border-radius: 18px;
+    transform:translateY(-8px);
 
-    overflow: hidden;
+    border-color:#C96C2D;
 }
 
 .event-card img {
