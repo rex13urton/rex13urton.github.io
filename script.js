@@ -20,8 +20,7 @@ async function loadWeather() {
         document.getElementById("weatherDetails").textContent =
             text;
 
-        document.getElementById("weatherTemp").textContent =
-            `${temp}°C`;
+
 
     } catch (err) {
         console.error("Weather error:", err);
