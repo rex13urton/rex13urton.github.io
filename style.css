@@ -16,8 +16,10 @@ body {
     background: #171717;
     color: #F4EBD8;
     font-family: Inter, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+
+    /* 🔥 KEY FIX: reduces “everything is huge” feeling */
+    font-size: 15px;
+    line-height: 1.55;
 }
 
 /* -------------------- */
@@ -35,8 +37,8 @@ header {
 }
 
 nav {
-    width: min(1200px, 92%);
-    height: 70px;
+    width: min(1100px, 92%);
+    height: 64px;
 
     margin: auto;
 
@@ -46,19 +48,19 @@ nav {
 }
 
 .logo img {
-    height: 45px;
+    height: 42px;
 }
 
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.2rem;
     list-style: none;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: 0.25s;
 }
 
@@ -71,44 +73,46 @@ nav {
 /* -------------------- */
 
 .hero {
-    min-height: 90vh;
+    min-height: 75vh; /* 🔥 reduced from 90vh */
 
     display: grid;
     grid-template-columns: 1fr 1fr;
 
     align-items: center;
 
-    width: min(1200px, 92%);
+    width: min(1100px, 92%);
     margin: auto;
 
-    gap: 40px;
+    gap: 30px;
 
     position: relative;
     overflow: hidden;
+
+    padding-top: 70px;
 }
 
 .hero-text h2 {
     color: #d19b2d;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
 .hero-text h1 {
-    font-size: clamp(2.4rem, 5vw, 4.2rem);
-    margin: 15px 0;
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    margin: 12px 0;
 }
 
 .hero-text p {
     color: #cccccc;
-    font-size: 1.05rem;
-    margin-bottom: 30px;
-    max-width: 500px;
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+    max-width: 480px;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 15px;
+    gap: 12px;
 }
 
 /* -------------------- */
@@ -119,7 +123,7 @@ nav {
     background: #C96C2D;
     color: white;
 
-    padding: 12px 26px;
+    padding: 10px 22px;
     border-radius: 999px;
 
     text-decoration: none;
@@ -129,7 +133,7 @@ nav {
 
     box-shadow: 0 10px 25px rgba(201, 108, 45, 0.25);
     transition: 0.25s;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .btn:hover {
@@ -155,9 +159,9 @@ nav {
 
 .hero-image img {
     width: 100%;
-    max-width: 360px;
+    max-width: 320px;
 
-    border-radius: 16px;
+    border-radius: 14px;
 
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
 
@@ -173,57 +177,57 @@ nav {
 /* -------------------- */
 
 .events {
-    width: min(1200px, 92%);
-    margin: 100px auto;
+    width: min(1100px, 92%);
+    margin: 80px auto;
 }
 
 .events h2 {
-    font-size: 2.2rem;
-    margin-bottom: 35px;
+    font-size: 1.9rem;
+    margin-bottom: 25px;
 }
 
-/* event grid fix (important) */
+/* grid FIX */
 .event-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
 }
 
 .event-card {
     background: #202020;
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 14px;
+    border-radius: 12px;
 
     overflow: hidden;
 
     transition: 0.25s;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
 }
 
 .event-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
     border-color: #C96C2D;
 }
 
 .event-card img {
     width: 100%;
-    height: 180px;
+    height: 150px;
     object-fit: cover;
 }
 
 .card-content {
-    padding: 18px;
+    padding: 14px;
 }
 
 .card-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
 }
 
 .card-content p {
     color: #cccccc;
-    margin-bottom: 15px;
-    font-size: 0.95rem;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
 }
 
 .card-content button {
@@ -231,14 +235,14 @@ nav {
     color: black;
 
     border: none;
-    padding: 10px 18px;
+    padding: 9px 16px;
 
     border-radius: 999px;
 
     cursor: pointer;
     font-weight: 600;
 
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* -------------------- */
@@ -246,8 +250,8 @@ nav {
 /* -------------------- */
 
 .gallery {
-    width: min(1200px, 92%);
-    margin: 100px auto;
+    width: min(1100px, 92%);
+    margin: 80px auto;
     text-align: center;
 }
 
@@ -256,29 +260,29 @@ nav {
 /* -------------------- */
 
 .about {
-    width: min(750px, 92%);
-    margin: 100px auto;
+    width: min(700px, 92%);
+    margin: 80px auto;
 
     text-align: center;
 
-    padding: 40px 25px;
+    padding: 30px 20px;
 
     background: #202020;
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
+    border-radius: 14px;
 
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .about h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
 }
 
 .about p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #cccccc;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 /* -------------------- */
@@ -291,8 +295,8 @@ nav {
 
     background:
         radial-gradient(circle at center,
-            rgba(0, 0, 0, 0.15) 0%,
-            rgba(0, 0, 0, 0.6) 70%,
+            rgba(0, 0, 0, 0.12) 0%,
+            rgba(0, 0, 0, 0.55) 70%,
             rgba(0, 0, 0, 0.9) 100%
         );
 
@@ -305,8 +309,8 @@ nav {
 /* -------------------- */
 
 footer {
-    margin-top: 80px;
-    padding: 40px;
+    margin-top: 70px;
+    padding: 35px;
 
     text-align: center;
 
@@ -323,7 +327,7 @@ footer {
         grid-template-columns: 1fr;
         text-align: center;
         min-height: auto;
-        padding-top: 100px;
+        padding-top: 90px;
     }
 
     .hero-buttons {
@@ -335,6 +339,6 @@ footer {
     }
 
     .event-card img {
-        height: 160px;
+        height: 140px;
     }
 }
