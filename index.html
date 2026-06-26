@@ -63,28 +63,115 @@
 
     <h2>Featured Event</h2>
 
+    <!-- MAIN CARD -->
     <div class="event-card large">
 
-        <a href="images/BBQ_Brunch2.png" target="_blank">
-            <img src="images/BBQ_Brunch2.png" alt="Smoke & Social Poster">
+        <!-- LEFT: POSTER -->
+        <a class="event-poster" href="images/BBQ_Brunch2.png" target="_blank">
+            <img src="images/BBQ_Brunch2.png"
+                 alt="Canada Day BBQ Brunch Poster">
         </a>
 
+        <!-- RIGHT: INFO -->
         <div class="card-content">
 
-            <h3>SMOKE & SOCIAL #04 - Canada Day BBQ Brunch/Lunch</h3>
+            <h3>Canada Day BBQ Brunch</h3>
 
             <p class="event-meta">
                 Wednesday • July 1 • 11:30–3:30
             </p>
 
             <p class="event-tags">
-                BBQ • MUSIC • DRINKS • RAIN
+                BBQ • MUSIC • DRINKS • RAIN OR SHINE
             </p>
 
-            <button>Reserve Your Spot</button>
+            <!-- QUICK LIVE SUMMARY -->
+            <div class="event-summary">
+
+                <div class="summary-item">
+                    👥 <span id="attendees">Loading...</span> attending
+                </div>
+
+                <div class="summary-item">
+                    🌤 <span id="weather">Loading...</span>
+                </div>
+
+                <div class="summary-item">
+                    ⏳ <span id="countdown">Loading...</span>
+                </div>
+
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="hero-buttons">
+
+                <a class="btn"
+                   href="https://forms.gle/wJssvjFGsHmYEtwE6"
+                   target="_blank">
+                    RSVP
+                </a>
+
+                <button class="btn secondary"
+                        id="dashboardButton">
+                    View Dashboard
+                </button>
+
+            </div>
 
         </div>
+    </div>
 
+
+    <!-- ===================== DASHBOARD ===================== -->
+    <div id="dashboard" class="dashboard hidden">
+    
+        <h3>Live Event Dashboard</h3>
+    
+        <!-- TOP STATS GRID -->
+        <div class="dashboard-grid">
+    
+            <div class="dashboard-card">
+                <h4>👥 Attending</h4>
+                <p class="big-number" id="attendanceNumber">--</p>
+            </div>
+    
+            <div class="dashboard-card">
+                <h4>🌤 Weather</h4>
+                <p id="weatherDetails">Loading...</p>
+                <p id="weatherTemp" class="sub-text"></p>
+            </div>
+    
+            <div class="dashboard-card">
+                <h4>⏳ Countdown</h4>
+                <p class="big-number" id="countdownLarge">--</p>
+                <p class="sub-text">until event starts</p>
+            </div>
+    
+            <div class="dashboard-card">
+                <h4>📅 Event</h4>
+                <p class="event-date">
+                    July 1<br>
+                    11:30 AM
+                </p>
+            </div>
+    
+        </div>
+    
+        <!-- CHART SECTION -->
+        <div class="dashboard-chart">
+    
+            <h4>🍔 Food Contributions</h4>
+    
+            <div class="chart-container">
+                <canvas id="foodChart"></canvas>
+            </div>
+    
+            <p class="sub-text">
+                Live submissions from RSVP form
+            </p>
+    
+        </div>
+    
     </div>
 
 </section>
@@ -166,6 +253,7 @@
     <p>Follow us on Instagram</p>
 
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script src="script.js"></script>
 
