@@ -115,6 +115,16 @@ nav {
     gap: 12px;
 }
 
+.hero-logo {
+    margin-bottom: 10px;
+}
+
+.hero-logo img {
+    height: 60px;
+    width: auto;
+    opacity: 0.9;
+}
+
 /* -------------------- */
 /* BUTTONS */
 /* -------------------- */
