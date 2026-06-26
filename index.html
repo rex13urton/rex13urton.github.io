@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Rex's Grill House Events</title>
+    <title>The Yard at Rex's</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- optional fonts if you want to upgrade later -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+<!-- ===================== HEADER ===================== -->
 <header>
-
     <nav>
 
         <div class="logo">
@@ -20,101 +24,138 @@
 
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
+            <li><a href="#featured">Featured</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
     </nav>
-
 </header>
 
+<!-- ===================== HERO ===================== -->
 <section class="hero">
-
-    <div class="overlay"></div>
-
-    <section class="hero">
 
     <div class="hero-text">
 
-        <h2>The Grill House Presents</h2>
+        <h2>Backyard BBQ • Music • Friends</h2>
 
-        <h1>BBQ Brunch</h1>
+        <h1>THE YARD AT REX'S</h1>
 
-        <p>Wednesday • July 1 • 11:30–3:30</p>
+        <p>
+            A seasonal outdoor gathering space built around fire,
+            food, and good company.
+        </p>
 
         <div class="hero-buttons">
-            <a href="#" class="btn">Reserve Table</a>
-            <a href="#events" class="btn secondary">View Events</a>
+            <a href="#events" class="btn">View Summer Lineup</a>
+            <a href="#featured" class="btn secondary">Featured Event</a>
         </div>
 
     </div>
 
-    <div class="hero-image">
-        <img src="images/event1.jpg" alt="BBQ Brunch Poster">
+</section>
+
+<!-- ===================== FEATURED EVENT ===================== -->
+<section id="featured" class="featured-event">
+
+    <h2>Featured Event</h2>
+
+    <div class="event-card large">
+
+        <img src="images/event1.jpg" alt="Smoke & Social Poster">
+
+        <div class="card-content">
+
+            <h3>SMOKE & SOCIAL #04</h3>
+
+            <p class="event-meta">
+                Wednesday • July 1 • 11:30–3:30
+            </p>
+
+            <p class="event-tags">
+                BBQ • MUSIC • DRINKS • FIRE PIT
+            </p>
+
+            <button>Reserve Your Spot</button>
+
+        </div>
+
     </div>
 
 </section>
 
-</section>
-
+<!-- ===================== EVENTS ===================== -->
 <section id="events" class="events">
 
-    <h2>Upcoming Events</h2>
+    <h2>Summer Lineup</h2>
 
     <div class="event-grid">
 
         <div class="event-card">
-
-            <img src="images/event1.jpg" alt="Event">
-
+            <img src="images/event1.jpg" alt="Smoke & Social">
             <div class="card-content">
-
-                <h3>BBQ Brunch</h3>
-
-                <p>July 1 • 1130-1530</p>
-
+                <h3>Smoke & Social #04</h3>
+                <p>July 1 • 11:30–3:30</p>
                 <button>Details</button>
-
             </div>
-
         </div>
 
         <div class="event-card">
-
-            <img src="images/event2.jpg" alt="Event">
-
+            <img src="images/event2.jpg" alt="Ember Nights">
             <div class="card-content">
-
-                <h3>Wine Pairing Dinner</h3>
-
+                <h3>Ember Nights</h3>
                 <p>August 22 • 6 PM</p>
-
                 <button>Details</button>
-
             </div>
+        </div>
 
+        <div class="event-card">
+            <img src="images/event3.jpg" alt="Open Fire Fridays">
+            <div class="card-content">
+                <h3>Open Fire Fridays</h3>
+                <p>Every Friday • 5 PM</p>
+                <button>Details</button>
+            </div>
         </div>
 
     </div>
 
 </section>
 
+<!-- ===================== ABOUT ===================== -->
+<section class="about">
+
+    <h2>The Yard</h2>
+
+    <p>
+        Not a restaurant. Not a bar.
+        Just a backyard built for gathering.
+    </p>
+
+    <p>
+        Fire, food, music, and people — that’s it.
+    </p>
+
+</section>
+
+<!-- ===================== GALLERY ===================== -->
 <section id="gallery" class="gallery">
 
     <h2>Gallery</h2>
-
     <p>Photos coming soon...</p>
 
 </section>
 
+<!-- ===================== FOOTER ===================== -->
 <footer id="contact">
 
-    <h2>Visit Us</h2>
+    <h2>The Yard at Rex's</h2>
 
-    <p>Your Address</p>
+    <p>Smithers, BC</p>
+    <p>Seasonal Outdoor Events</p>
 
-    <p>Open Daily</p>
+    <p>Follow us on Instagram</p>
 
 </footer>
 
