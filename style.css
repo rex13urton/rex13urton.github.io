@@ -125,6 +125,35 @@ nav {
     opacity: 0.9;
 }
 
+.hero {
+    min-height: 75vh;
+    width: min(1100px, 92%);
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+/* logo block */
+.hero-logo-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo-block img {
+    width: 120px;
+    height: auto;
+    opacity: 0.95;
+}
+
+/* keep text clean */
+.hero-text {
+    max-width: 600px;
+}
+
 /* -------------------- */
 /* BUTTONS */
 /* -------------------- */
