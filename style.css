@@ -379,3 +379,61 @@ footer {
     height: 100%;
     object-fit: cover;
 }
+
+.featured-event {
+    width: min(1100px, 92%);
+    margin: 80px auto;
+}
+
+.featured-event h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* 🔥 MAIN FEATURE CARD FIX */
+.event-card.large {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+
+    border-radius: 16px;
+    overflow: hidden;
+
+    background: #202020;
+    border: 1px solid rgba(255,255,255,0.06);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+
+    transition: 0.25s;
+}
+
+/* IMAGE SIDE */
+.event-card.large img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    min-height: 260px;
+}
+
+/* CONTENT SIDE */
+.event-card.large .card-content {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* nicer spacing */
+.event-meta {
+    color: #cccccc;
+    font-size: 0.95rem;
+}
+
+.event-tags {
+    color: #d19b2d;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
