@@ -635,3 +635,22 @@ footer {
     border-radius: 10px;
 }
 
+.event-summary {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.summary-item {
+    background: #171717;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.9rem;
+}
+
+.lightbox {
+    opacity: 1;
+    transition: 0.2s ease;
+}
