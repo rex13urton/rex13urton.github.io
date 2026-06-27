@@ -654,3 +654,7 @@ footer {
     opacity: 1;
     transition: 0.2s ease;
 }
+
+.hidden {
+    display: none;
+}
