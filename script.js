@@ -14,13 +14,8 @@ async function loadWeather() {
         const code = data.current.weather_code;
         const text = weatherText(code);
 
-        document.getElementById("weather").textContent =
-            `${text}`;
-
-        document.getElementById("weatherDetails").textContent =
-            text;
-
-
+        document.getElementById("weather").textContent = text;
+        document.getElementById("weatherDetails").textContent = text;
 
     } catch (err) {
         console.error("Weather error:", err);
@@ -60,23 +55,20 @@ let foodChartInstance = null;
 
 function renderFoodChart(foodData) {
     const ctx = document.getElementById("foodChart");
-
     if (!ctx) return;
 
     const labels = Object.keys(foodData);
     const values = Object.values(foodData);
 
     const colors = [
-        "#C65D25", // Ember Orange
-        "#B87333", // Copper
-        "#F4E8D1", // Cream
-        "#2B2B2B", // Ash
-        "#ffffff"  // fallback highlight
+        "#C65D25",
+        "#B87333",
+        "#F4E8D1",
+        "#2B2B2B",
+        "#ffffff"
     ];
 
-    if (foodChartInstance) {
-        foodChartInstance.destroy();
-    }
+    if (foodChartInstance) foodChartInstance.destroy();
 
     foodChartInstance = new Chart(ctx, {
         type: "pie",
@@ -84,32 +76,24 @@ function renderFoodChart(foodData) {
             labels,
             datasets: [{
                 data: values,
-                backgroundColor: labels.map((_, i) =>
-                    colors[i % colors.length]
-                ),
+                backgroundColor: labels.map((_, i) => colors[i % colors.length]),
                 borderColor: "#171717",
                 borderWidth: 2
             }]
         },
         options: {
-            responsive: true,
             plugins: {
                 legend: {
                     position: "bottom",
                     labels: {
-                        color: "#F4E8D1",   // 🔥 fixes grey text
-                        font: {
-                            family: "Inter",
-                            size: 12
-                        }
+                        color: "#F4E8D1",
+                        font: { family: "Inter", size: 12 }
                     }
                 },
                 tooltip: {
                     backgroundColor: "#2B2B2B",
                     titleColor: "#F4E8D1",
-                    bodyColor: "#F4E8D1",
-                    borderColor: "#C65D25",
-                    borderWidth: 1
+                    bodyColor: "#F4E8D1"
                 }
             }
         }
@@ -130,55 +114,52 @@ function updateCountdown() {
     }
 
     const totalHours = Math.floor(diff / (1000 * 60 * 60));
-
     const days = Math.floor(totalHours / 24);
     const hours = totalHours % 24;
-
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
 
-    document.getElementById("countdown").textContent =
-        `${days}d ${hours}h`;
-
+    document.getElementById("countdown").textContent = `${days}d ${hours}h`;
     document.getElementById("countdownLarge").textContent =
         `${days} days ${hours} hrs ${minutes} min`;
 }
 
-// ---------------- DASHBOARD TOGGLE ----------------
+// ---------------- INIT (ONLY ONCE) ----------------
 window.addEventListener("DOMContentLoaded", () => {
 
     loadWeather();
     loadEventData();
     updateCountdown();
 
+    setInterval(updateCountdown, 60000);
+
     const btn = document.getElementById("dashboardButton");
 
     if (btn) {
         btn.addEventListener("click", () => {
             document.getElementById("dashboard").classList.toggle("hidden");
+
+            // optional: refresh chart when opened
+            if (!document.getElementById("dashboard").classList.contains("hidden")) {
+                loadEventData();
+            }
         });
     }
 
-    setInterval(updateCountdown, 60000);
-});
+    // ---------------- LIGHTBOX (NOW SAFE) ----------------
+    const galleryImages = document.querySelectorAll(".gallery-img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
 
-const galleryImages = document.querySelectorAll(".gallery-img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
-
-galleryImages.forEach(img => {
-    img.addEventListener("click", () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.remove("hidden");
+    galleryImages.forEach(img => {
+        img.addEventListener("click", () => {
+            lightboxImg.src = img.src;
+            lightbox.classList.remove("hidden");
+        });
     });
+
+    if (lightbox) {
+        lightbox.addEventListener("click", () => {
+            lightbox.classList.add("hidden");
+        });
+    }
 });
-
-lightbox.addEventListener("click", () => {
-    lightbox.classList.add("hidden");
-});
-
-// ---------------- INIT ----------------
-loadWeather();
-loadEventData();
-updateCountdown();
-
-setInterval(updateCountdown, 60000);
