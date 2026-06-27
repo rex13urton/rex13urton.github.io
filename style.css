@@ -525,6 +525,8 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 12px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 /* cards */
@@ -633,6 +635,3 @@ footer {
     border-radius: 10px;
 }
 
-.hidden {
-    display: none;
-}
