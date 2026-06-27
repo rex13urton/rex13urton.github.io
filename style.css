@@ -617,23 +617,7 @@ footer {
     border-color: #C65D25;
 }
 
-.lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.9);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    z-index: 9999;
-}
-
-.lightbox img {
-    max-width: 90%;
-    max-height: 85%;
-    border-radius: 10px;
-}
 
 .event-summary {
     display: flex;
@@ -650,11 +634,3 @@ footer {
     font-size: 0.9rem;
 }
 
-.lightbox {
-    opacity: 1;
-    transition: 0.2s ease;
-}
-
-.hidden {
-    display: none;
-}
