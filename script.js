@@ -61,11 +61,14 @@ function renderFoodChart(foodData) {
     const values = Object.values(foodData);
 
     const colors = [
-        "#C65D25",
-        "#B87333",
-        "#F4E8D1",
-        "#2B2B2B",
-        "#ffffff"
+        "#C65D25", // Ember Orange
+        "#B87333", // Copper
+        "#F4E8D1", // Cream
+        "#2B2B2B", // Ash
+        "#D07A3A", // warm variation (soft orange)
+        "#A66A3A", // darker copper variant
+        "#E6D6B8", // muted cream variant
+        "#8C4A22"  // deep ember accent
     ];
 
     if (foodChartInstance) foodChartInstance.destroy();
