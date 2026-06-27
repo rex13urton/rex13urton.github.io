@@ -161,6 +161,21 @@ window.addEventListener("DOMContentLoaded", () => {
     setInterval(updateCountdown, 60000);
 });
 
+const galleryImages = document.querySelectorAll(".gallery-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+galleryImages.forEach(img => {
+    img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.remove("hidden");
+    });
+});
+
+lightbox.addEventListener("click", () => {
+    lightbox.classList.add("hidden");
+});
+
 // ---------------- INIT ----------------
 loadWeather();
 loadEventData();
