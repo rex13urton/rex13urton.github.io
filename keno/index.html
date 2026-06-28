@@ -19,10 +19,12 @@
 
 <div class="wrapper">
 
+    <!-- HEADER -->
     <header class="hero">
         <img src="images/RexsKenoDashboard1.png" alt="Rex's Keno Dashboard">
     </header>
 
+    <!-- NAV -->
     <nav class="navbar">
         <a href="#">Dashboard</a>
         <a href="#">History</a>
@@ -34,34 +36,46 @@
 
     <main>
 
-        <!-- LAST DRAW -->
+        <!-- TOP SECTION (STACK FRIENDLY ON MOBILE) -->
         <section class="grid-two">
 
+            <!-- LAST DRAW -->
             <div class="card" id="currentDraw">
                 <h2>Last Draw</h2>
 
-                <p id="drawMeta">Loading...</p>
+                <p id="drawMeta">Loading latest draw...</p>
 
                 <div class="numbers" id="drawNumbers"></div>
             </div>
 
+            <!-- SUMMARY (SIMPLIFIED NOW, NO USELESS STATS) -->
             <div class="card" id="summary">
-                <h2>Dashboard Summary</h2>
+                <h2>Quick Stats</h2>
 
                 <ul>
-                    <li>Games Tracked <strong>—</strong></li>
-                    <li>Latest Draw <strong>—</strong></li>
-                    <li>Database Status <strong>Live</strong></li>
-                    <li>Last Update <strong>Auto</strong></li>
+                    <li>Top Hot Number <strong id="topHot">—</strong></li>
+                    <li>Top Cold Number <strong id="topCold">—</strong></li>
+                    <li>Active Dataset <strong>Live</strong></li>
+                    <li>Last Sync <strong>Auto</strong></li>
                 </ul>
             </div>
 
         </section>
 
-        <!-- HEATMAP -->
+        <!-- HEATMAP CONTROLS (FOR FUTURE FILTERS) -->
         <section class="card">
+
             <h2>Number Heatmap</h2>
+
+            <!-- future filter hook -->
+            <div style="margin-bottom:12px;">
+                <small style="opacity:0.7;">
+                    Click a number to inspect • Year filters coming soon
+                </small>
+            </div>
+
             <div class="heatmap" id="heatmap"></div>
+
         </section>
 
         <!-- HOT / COLD -->
@@ -82,7 +96,7 @@
             <h2>Frequency Chart</h2>
         </section>
 
-        <!-- RECENT DRAW TABLE (REAL DATA OR PLACEHOLDER) -->
+        <!-- RECENT DRAW TABLE (NO FAKE DATA) -->
         <section class="card">
             <h2>Recent Draws</h2>
 
@@ -95,7 +109,7 @@
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody id="recentDrawsTable">
                     <tr>
                         <td>Loading…</td>
                         <td>—</td>
@@ -103,12 +117,14 @@
                     </tr>
                 </tbody>
             </table>
+
         </section>
 
     </main>
 
 </div>
 
+<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="keno.js"></script>
 
