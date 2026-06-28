@@ -61,14 +61,11 @@ function renderDashboard() {
 // ========================
 function buildHeatmap(data) {
 
-    console.log("HEATMAP SAMPLE:", data?.[0]);
-
     const container = document.getElementById("heatmap");
     if (!container) return;
 
     container.innerHTML = "";
 
-    // normalize safely
     const cleaned = data.map(d => ({
         number: Number(d.number ?? d.num ?? d.n),
         count: Number(d.count ?? d.frequency ?? d.freq ?? 0)
@@ -76,34 +73,35 @@ function buildHeatmap(data) {
 
     const max = Math.max(...cleaned.map(d => d.count), 1);
 
-    console.log("CLEANED SAMPLE:", cleaned.slice(0, 10));
-    console.log("MAX:", max);
-
     cleaned.forEach(item => {
 
         const intensity = item.count / max;
 
         const el = document.createElement("div");
 
-        // stronger contrast gradient
         const lightness = 92 - intensity * 70;
 
         el.style.backgroundColor = `hsl(185, 60%, ${lightness}%)`;
-
         el.style.borderRadius = "6px";
+
         el.style.display = "flex";
         el.style.alignItems = "center";
         el.style.justifyContent = "center";
 
         el.style.cursor = "pointer";
-
         el.style.fontWeight = "600";
-
-        el.style.color = lightness < 55 ? "#fff" : "#173D46";
 
         el.textContent = String(item.number).padStart(2, "0");
 
         el.title = `#${item.number} → ${item.count}`;
+
+        // 🔥 THIS IS THE MISSING PIECE
+        el.addEventListener("click", () => {
+            console.log("CLICKED NUMBER:", item);
+            showNumberModal(
+                STATE.heatmap.find(x => Number(x.number) === Number(item.number)) || item
+            );
+        });
 
         container.appendChild(el);
     });
