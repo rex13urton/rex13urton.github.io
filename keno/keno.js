@@ -28,28 +28,30 @@ loadData();
 // ========================
 function buildHeatmap(data) {
 
-    const container = document.querySelector(".heatmap");
+    const container = document.getElementById("heatmap");
     container.innerHTML = "";
 
     const max = Math.max(...data.map(d => d.count));
 
     data.forEach(item => {
 
-        const cell = document.createElement("div");
+        const el = document.createElement("div");
 
         const intensity = item.count / max;
 
-        cell.textContent = String(item.number).padStart(2, "0");
+        // BLUE-GREEN GRADIENT (your theme)
+        const r = 23;
+        const g = Math.floor(61 + intensity * 80);
+        const b = Math.floor(70 + intensity * 90);
 
-        cell.style.background = `rgba(23, 61, 70, ${0.12 + intensity * 0.7})`;
-        cell.style.color = intensity > 0.55 ? "#fff" : "#173D46";
+        el.style.background = `rgb(${r},${g},${b})`;
+        el.style.color = intensity > 0.6 ? "#fff" : "#173D46";
 
-        cell.title = `Number ${item.number} → ${item.count.toLocaleString()}`;
+        el.textContent = String(item.number).padStart(2, "0");
 
-        container.appendChild(cell);
+        container.appendChild(el);
     });
 }
-
 
 // ========================
 // HOT / COLD NUMBERS
