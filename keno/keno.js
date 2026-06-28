@@ -208,9 +208,11 @@ function renderLatestDraw(draw) {
 
     if (!draw) return;
 
+    const [date, time] = draw.datetime.split(" ");
+
     meta.innerHTML = `
-        <strong>Draw #${draw.draw}</strong><br>
-        ${draw.date} • ${draw.time}
+        <strong>Draw #${draw.drawNumber}</strong><br>
+        ${date} • ${time} • x${draw.multiplier}
     `;
 
     numbers.innerHTML = draw.numbers
