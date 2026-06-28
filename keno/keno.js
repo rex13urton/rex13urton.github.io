@@ -11,17 +11,19 @@ const STATE = {
     yearly: [],
     latestDraw: null,
 
-    // future filter hook (year slider etc.)
     filters: {
-        yearMin: null,
-        yearMax: null
+        yearMin: 2010,
+        yearMax: 2026
     }
 };
 
 // ========================
 // INIT
 // ========================
-document.addEventListener("DOMContentLoaded", loadData);
+document.addEventListener("DOMContentLoaded", () => {
+    loadData();
+    initYearSlider();
+});
 
 async function loadData() {
 
@@ -48,6 +50,34 @@ async function loadData() {
     } catch (err) {
         console.error("❌ Failed to load dashboard data:", err);
     }
+}
+
+// ========================
+// YEAR SLIDER
+// ========================
+function initYearSlider() {
+
+    const min = document.getElementById("yearMin");
+    const max = document.getElementById("yearMax");
+    const label = document.getElementById("yearLabel");
+
+    if (!min || !max) return;
+
+    function update() {
+
+        STATE.filters.yearMin = Number(min.value);
+        STATE.filters.yearMax = Number(max.value);
+
+        if (label) {
+            label.textContent =
+                `${STATE.filters.yearMin} – ${STATE.filters.yearMax}`;
+        }
+
+        renderDashboard();
+    }
+
+    min.addEventListener("input", update);
+    max.addEventListener("input", update);
 }
 
 // ========================
@@ -84,7 +114,7 @@ function getTextColorFromHSL(h, s, l) {
 }
 
 // ========================
-// HEATMAP
+// HEATMAP (FILTERED)
 // ========================
 function buildHeatmap(data) {
 
@@ -93,7 +123,20 @@ function buildHeatmap(data) {
 
     container.innerHTML = "";
 
-    const cleaned = data.map(d => ({
+    // ---------- FILTER BY YEAR ----------
+    const filtered = data.filter(d => {
+
+        const year =
+            d.year ??
+            (d.date ? Number(String(d.date).slice(0, 4)) : null);
+
+        if (!year) return true;
+
+        return year >= STATE.filters.yearMin &&
+               year <= STATE.filters.yearMax;
+    });
+
+    const cleaned = filtered.map(d => ({
         number: Number(d.number ?? d.num ?? d.n),
         count: Number(d.count ?? d.frequency ?? d.freq ?? 0)
     }));
@@ -125,7 +168,6 @@ function buildHeatmap(data) {
         el.style.cursor = "pointer";
         el.style.fontWeight = "600";
 
-        // ✅ FIX: apply proper contrast color
         el.style.color = getTextColorFromHSL(hue, 70, lightness);
 
         el.textContent = String(item.number).padStart(2, "0");
@@ -212,7 +254,7 @@ function buildSummary(heatmap) {
 }
 
 // ========================
-// YEARLY CHART
+// YEARLY CHART (FILTERED)
 // ========================
 function buildYearlyChart(data) {
 
@@ -221,12 +263,21 @@ function buildYearlyChart(data) {
 
     container.innerHTML = "";
 
+    const filtered = data.filter(d => {
+
+        const year = d.year ?? null;
+        if (!year) return true;
+
+        return year >= STATE.filters.yearMin &&
+               year <= STATE.filters.yearMax;
+    });
+
     const canvas = document.createElement("canvas");
     container.appendChild(canvas);
 
     const grouped = {};
 
-    data.forEach(d => {
+    filtered.forEach(d => {
         const year = d.year ?? "Unknown";
         grouped[year] = (grouped[year] || 0) + (d.count || 0);
     });
