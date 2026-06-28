@@ -1,272 +1,289 @@
-:root{
-
-    --bg:#F5EEE2;
-    --primary:#173D46;
-    --accent:#295863;
-    --orange:#C97548;
-    --card:#FFFDF8;
-    --border:#DCCFBE;
-
+:root {
+    --bg: #F5EEE2;
+    --primary: #173D46;
+    --accent: #295863;
+    --orange: #C97548;
+    --card: #FFFDF8;
+    --border: #DCCFBE;
 }
 
-*{
+/* =========================
+   RESET
+   ========================= */
 
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-
-    background:var(--bg);
-    color:var(--primary);
-
-    font-family:Inter,sans-serif;
-
+body {
+    background: var(--bg);
+    color: var(--primary);
+    font-family: Inter, sans-serif;
 }
 
-.wrapper{
+/* =========================
+   LAYOUT
+   ========================= */
 
-    width:min(1400px,95%);
-    margin:auto;
-
+.wrapper {
+    width: min(1400px, 95%);
+    margin: auto;
 }
 
-.hero{
-
-    padding:30px 0 15px;
-    text-align:center;
-
+main {
+    padding: 40px 60px;
 }
 
-.hero img{
+/* =========================
+   HERO
+   ========================= */
 
-    width:50%;
-    max-height:50%;      /* Adjust this value */
-    object-fit:contain;    /* or "cover" */
-    display:block;
-    margin:auto;
-
+.hero {
+    padding: 30px 0 15px;
+    text-align: center;
 }
 
-.navbar{
-
-    display:flex;
-    justify-content:center;
-    gap:35px;
-    padding:20px 0 35px;
-    border-bottom:1px solid var(--border);
-    margin-bottom:40px;
-
+.hero img {
+    width: 50%;
+    max-height: 50%;
+    object-fit: contain;
+    display: block;
+    margin: auto;
 }
 
-.grid-two{
+/* =========================
+   NAVBAR
+   ========================= */
 
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-    margin-bottom:25px;
-
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 20px 0 35px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
 }
 
-.card{
-
-    background:var(--card);
-    border-radius:16px;
-    padding:30px;
-    border:1px solid var(--border);
-    box-shadow:0 8px 24px rgba(23,61,70,.08);
-    margin-bottom:25px;
-
+nav a {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+    color: var(--accent);
+    text-decoration: none;
+    transition: 0.25s;
 }
 
-.numbers{
-
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin:20px 0;
-
+nav a:hover {
+    color: var(--orange);
 }
 
-.numbers span{
+/* =========================
+   GRID
+   ========================= */
 
-    width:48px;
-    height:48px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:var(--accent);
-    color:white;
-
-    border-radius:50%;
-
-    font-weight:600;
-
+.grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
 }
 
-.heatmap{
+/* =========================
+   CARDS
+   ========================= */
 
-    display:grid;
-    grid-template-columns:repeat(10,1fr);
-    gap:8px;
-
+.card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(23, 61, 70, 0.08);
+    margin-bottom: 25px;
 }
 
-.heatmap div{
-
-    background:#d9e8e5;
-
-    aspect-ratio:1;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    border-radius:8px;
-
-    font-size:.9rem;
-
+.card h2 {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 12px;
 }
 
-.chart-placeholder{
+/* =========================
+   NUMBER PILLs
+   ========================= */
 
-    height:300px;
-
-    border:3px dashed var(--border);
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:var(--accent);
-
-    font-family:"Bebas Neue",sans-serif;
-
-    font-size:2rem;
-
-    letter-spacing:2px;
-
+.numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
 }
 
-table{
-
-    width:100%;
-    border-collapse:collapse;
-
+.numbers span {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    font-weight: 600;
 }
 
-th{
+/* =========================
+   HEATMAP
+   ========================= */
 
-    text-align:left;
-    border-bottom:2px solid var(--border);
-    padding:15px 10px;
-
-    font-family:"Bebas Neue",sans-serif;
-    font-size:1.2rem;
-    letter-spacing:1px;
-
+.heatmap {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
 }
 
-td{
-
-    padding:15px 10px;
-    border-bottom:1px solid var(--border);
-
+.heatmap div {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: transform 0.15s ease;
+    cursor: pointer;
 }
 
-ul{
-
-    list-style:none;
-
+.heatmap div:hover {
+    transform: scale(1.05);
 }
 
-li{
+/* =========================
+   TABLE
+   ========================= */
 
-    display:flex;
-    justify-content:space-between;
-    padding:12px 0;
-    border-bottom:1px solid var(--border);
-
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-h1{
-
-    font-family:Pacifico,cursive;
-
-    font-size:3rem;
-
-    color:var(--primary);
-
-    font-weight:400;
-
+th {
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+    padding: 15px 10px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
 }
 
-nav{
-
-    margin-top:20px;
-
-    display:flex;
-
-    gap:24px;
-
+td {
+    padding: 15px 10px;
+    border-bottom: 1px solid var(--border);
 }
 
-nav a{
-
-    font-family:"Bebas Neue",sans-serif;
-
-    letter-spacing:2px;
-
-    font-size:1.3rem;
-
-    color:var(--accent);
-
-    text-decoration:none;
-
-    transition:.25s;
-
+ul {
+    list-style: none;
 }
 
-nav a:hover{
-
-    color:var(--orange);
-
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
 }
 
-main{
+/* =========================
+   CHART PLACEHOLDER
+   ========================= */
 
-    padding:40px 60px;
-
+.chart-placeholder {
+    height: 300px;
+    border: 3px dashed var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
 }
 
-.card{
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
 
-    background:var(--card);
+/* TABLET */
+@media (max-width: 900px) {
 
-    border-radius:16px;
+    main {
+        padding: 25px 20px;
+    }
 
-    padding:30px;
+    .grid-two {
+        grid-template-columns: 1fr;
+    }
 
-    border:1px solid var(--border);
+    .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
 
-    box-shadow:0 8px 24px rgba(23,61,70,.08);
+    .hero img {
+        width: 80%;
+    }
 
+    .heatmap {
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    .card {
+        padding: 20px;
+    }
 }
 
-.card h2{
+/* MOBILE */
+@media (max-width: 600px) {
 
-    font-family:"Bebas Neue",sans-serif;
+    main {
+        padding: 15px 12px;
+    }
 
-    letter-spacing:2px;
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
 
-    color:var(--accent);
+    nav a {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
 
-    margin-bottom:12px;
+    .hero img {
+        width: 95%;
+    }
 
+    .numbers span {
+        width: 38px;
+        height: 38px;
+        font-size: 0.85rem;
+    }
+
+    .heatmap {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+    }
+
+    .heatmap div {
+        font-size: 0.75rem;
+    }
+
+    th, td {
+        padding: 10px 6px;
+        font-size: 0.85rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
 }
-
-<div class="heatmap" id="heatmap"></div>
