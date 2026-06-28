@@ -3,6 +3,16 @@ console.log("Keno JS loaded ✅");
 let chartInstance = null;
 
 // ========================
+// PALETTE (YOUR BRAND)
+// ========================
+const PALETTE = {
+    bg: "#F5EEE2",
+    text: "#173D46",
+    accent: "#295863",
+    highlight: "#C97548"
+};
+
+// ========================
 // GLOBAL STATE
 // ========================
 const STATE = {
@@ -25,6 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initYearSlider();
 });
 
+// ========================
+// DATA LOAD
+// ========================
 async function loadData() {
 
     try {
@@ -53,7 +66,7 @@ async function loadData() {
 }
 
 // ========================
-// YEAR SLIDER
+// YEAR SLIDER (FIXED RANGE)
 // ========================
 function initYearSlider() {
 
@@ -65,12 +78,21 @@ function initYearSlider() {
 
     function update() {
 
-        STATE.filters.yearMin = Number(min.value);
-        STATE.filters.yearMax = Number(max.value);
+        let minVal = Number(min.value);
+        let maxVal = Number(max.value);
+
+        // prevent crossover
+        if (minVal > maxVal) {
+            [min.value, max.value] = [max.value, min.value];
+            minVal = Number(min.value);
+            maxVal = Number(max.value);
+        }
+
+        STATE.filters.yearMin = minVal;
+        STATE.filters.yearMax = maxVal;
 
         if (label) {
-            label.textContent =
-                `${STATE.filters.yearMin} – ${STATE.filters.yearMax}`;
+            label.textContent = `${minVal} – ${maxVal}`;
         }
 
         renderDashboard();
@@ -92,7 +114,7 @@ function renderDashboard() {
 }
 
 // ========================
-// TEXT COLOR (FIXED + GLOBAL)
+// TEXT COLOR CONTRAST
 // ========================
 function getTextColorFromHSL(h, s, l) {
 
@@ -110,7 +132,7 @@ function getTextColorFromHSL(h, s, l) {
 
     const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b);
 
-    return luminance > 140 ? "#173D46" : "#ffffff";
+    return luminance > 140 ? PALETTE.text : "#ffffff";
 }
 
 // ========================
@@ -123,7 +145,6 @@ function buildHeatmap(data) {
 
     container.innerHTML = "";
 
-    // ---------- FILTER BY YEAR ----------
     const filtered = data.filter(d => {
 
         const year =
@@ -142,7 +163,6 @@ function buildHeatmap(data) {
     }));
 
     const logValues = cleaned.map(d => Math.log1p(d.count));
-
     const maxLog = Math.max(...logValues, 1);
     const minLog = Math.min(...logValues);
 
@@ -172,11 +192,7 @@ function buildHeatmap(data) {
 
         el.textContent = String(item.number).padStart(2, "0");
 
-        el.dataset.number = item.number;
-        el.dataset.count = item.count;
-        el.dataset.intensity = intensity.toFixed(3);
-
-        el.addEventListener("click", () => {
+        el.onclick = () => {
 
             const z = STATE.zscores.find(z => z.number == item.number)?.z;
 
@@ -186,7 +202,7 @@ function buildHeatmap(data) {
                 `Intensity: ${intensity.toFixed(3)}\n` +
                 `Z-score: ${z ?? "N/A"}`
             );
-        });
+        };
 
         container.appendChild(el);
     });
@@ -291,8 +307,8 @@ function buildYearlyChart(data) {
             datasets: [{
                 label: "Frequency",
                 data: Object.values(grouped),
-                borderColor: "#295863",
-                backgroundColor: "rgba(41,88,99,0.15)",
+                borderColor: PALETTE.accent,
+                backgroundColor: "rgba(41,88,99,0.12)",
                 tension: 0.3,
                 fill: true
             }]
