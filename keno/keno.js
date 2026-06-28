@@ -5,30 +5,29 @@ let chartInstance = null;
 // ========================
 // INIT
 // ========================
-loadData();
+document.addEventListener("DOMContentLoaded", loadData);
 
-// ========================
-// LOAD DATA
-// ========================
 async function loadData() {
 
     try {
-
-        const [heatmap, zscores, yearly] = await Promise.all([
-            fetch("stats/heatmap.json").then(r => r.json()),
-            fetch("stats/zscores.json").then(r => r.json()),
-            fetch("stats/yearly.json").then(r => r.json())
+        const [heatmapRes, zscoresRes, yearlyRes] = await Promise.all([
+            fetch("stats/heatmap.json"),
+            fetch("stats/zscores.json"),
+            fetch("stats/yearly.json")
         ]);
+
+        const heatmap = await heatmapRes.json();
+        const zscores = await zscoresRes.json();
+        const yearly = await yearlyRes.json();
+
+        console.log("DATA LOADED", { heatmap, zscores, yearly });
 
         renderDashboard(heatmap, zscores, yearly);
 
-        // optional (won’t break dashboard if missing)
-        loadLatestDraw().catch(() => {
-            console.warn("Latest draw skipped");
-        });
+        await loadLatestDraw();
 
     } catch (err) {
-        console.error("Failed to load main data:", err);
+        console.error("❌ Failed to load dashboard data:", err);
     }
 }
 
@@ -44,7 +43,7 @@ function renderDashboard(heatmap, zscores, yearly) {
 }
 
 // ========================
-// HEATMAP (FIXED GRADIENT)
+// HEATMAP (ROBUST + FIXED GRADIENT)
 // ========================
 function buildHeatmap(data) {
 
@@ -53,27 +52,29 @@ function buildHeatmap(data) {
 
     container.innerHTML = "";
 
-    const max = Math.max(...data.map(d => d.count || 0));
+    const max = Math.max(...data.map(d => Number(d.count) || 0), 1);
 
     data.forEach(item => {
 
+        const count = Number(item.count) || 0;
+        const intensity = count / max;
+
         const el = document.createElement("div");
 
-        const intensity = max ? item.count / max : 0;
+        // smooth teal heat scale
+        const lightness = 90 - intensity * 55;
 
-        // CLEAN TEAL GRADIENT (your theme)
-        const lightness = 92 - intensity * 55; // 92% → 37%
-
-        el.style.background = `hsl(192, 40%, ${lightness}%)`;
-
-        el.style.border = "1px solid rgba(0,0,0,0.05)";
+        el.style.background = `hsl(190, 45%, ${lightness}%)`;
         el.style.borderRadius = "6px";
+        el.style.display = "flex";
+        el.style.alignItems = "center";
+        el.style.justifyContent = "center";
 
-        el.style.color = lightness < 55 ? "#F5EEE2" : "#173D46";
+        el.style.color = lightness < 55 ? "#fff" : "#173D46";
 
         el.textContent = String(item.number).padStart(2, "0");
 
-        el.title = `#${item.number}: ${item.count.toLocaleString()}`;
+        el.title = `Number ${item.number} → ${count.toLocaleString()}`;
 
         container.appendChild(el);
     });
@@ -114,12 +115,12 @@ function buildHotCold(zscores) {
 // ========================
 function buildSummary(heatmap, zscores) {
 
-    const totalNumbers = heatmap.length;
-    const totalObserved = heatmap.reduce((s, n) => s + n.count, 0);
-    const avgZ = (zscores.reduce((s, n) => s + n.z, 0) / zscores.length).toFixed(2);
-
     const summary = document.querySelector("#summary ul");
     if (!summary) return;
+
+    const totalNumbers = heatmap.length;
+    const totalObserved = heatmap.reduce((s, n) => s + (n.count || 0), 0);
+    const avgZ = (zscores.reduce((s, n) => s + n.z, 0) / zscores.length).toFixed(2);
 
     summary.innerHTML = `
         <li>Numbers Tracked <strong>${totalNumbers}</strong></li>
@@ -130,7 +131,7 @@ function buildSummary(heatmap, zscores) {
 }
 
 // ========================
-// CHART
+// YEARLY CHART
 // ========================
 function buildYearlyChart(data) {
 
@@ -145,7 +146,8 @@ function buildYearlyChart(data) {
     const grouped = {};
 
     data.forEach(d => {
-        grouped[d.year] = (grouped[d.year] || 0) + d.count;
+        const year = d.year || "Unknown";
+        grouped[year] = (grouped[year] || 0) + (d.count || 0);
     });
 
     if (chartInstance) chartInstance.destroy();
@@ -173,56 +175,49 @@ function buildYearlyChart(data) {
 }
 
 // ========================
-// LATEST DRAW (SAFE)
+// LATEST DRAW (FIXED FOR YOUR JSON)
+// ========================
+async function loadLatestDraw() {
+
+    try {
+        const res = await fetch("stats/latest.json");
+
+        if (!res.ok) throw new Error("latest.json not found");
+
+        const latest = await res.json();
+
+        console.log("LATEST RAW:", latest);
+
+        const draw = latest?.[0];
+
+        if (!draw) throw new Error("No draw found in latest.json");
+
+        renderLatestDraw(draw);
+
+    } catch (err) {
+        console.error("❌ Latest draw failed:", err);
+    }
+}
+
+// ========================
+// RENDER LAST DRAW
 // ========================
 function renderLatestDraw(draw) {
 
     const meta = document.getElementById("drawMeta");
     const numbers = document.getElementById("drawNumbers");
 
-    if (!draw || !meta || !numbers) {
-        console.warn("Missing draw or DOM nodes");
-        return;
-    }
+    if (!meta || !numbers) return;
 
-    const [date, time] = draw.datetime.split(" ");
+    const datetime = draw.datetime || "";
+    const [date, time] = datetime.split(" ");
 
     meta.innerHTML = `
-        <strong>Draw #${draw.drawNumber}</strong><br>
-        ${date} • ${time} • x${draw.multiplier}
+        <strong>Draw #${draw.drawNumber ?? "?"}</strong><br>
+        ${date || "?"} • ${time || "?"} • x${draw.multiplier ?? "?"}
     `;
 
-    numbers.innerHTML = draw.numbers
+    numbers.innerHTML = (draw.numbers || [])
         .map(n => `<span>${String(n).padStart(2, "0")}</span>`)
         .join("");
-}
-
-// ========================
-// LATEST DRAW UI
-// ========================
-async function loadLatestDraw() {
-
-    try {
-
-        const res = await fetch("stats/latest.json");
-
-        if (!res.ok) {
-            throw new Error("Failed to fetch latest.json");
-        }
-
-        const latest = await res.json();
-
-        if (!Array.isArray(latest) || latest.length === 0) {
-            throw new Error("latest.json is empty or invalid");
-        }
-
-        const draw = latest[0];
-
-        console.log("LATEST DRAW:", draw); // debug
-
-        renderLatestDraw(draw);
-
-    } catch (err) {
-        console.error("Failed to load latest draw:", err);
-    }
 }
