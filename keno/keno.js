@@ -281,6 +281,9 @@ function buildYearlyChart(data) {
 
     container.innerHTML = "";
 
+    // ========================
+    // FILTER BY YEAR RANGE
+    // ========================
     const filtered = data.filter(d => {
 
         const year = d.year ?? null;
@@ -290,35 +293,56 @@ function buildYearlyChart(data) {
                year <= STATE.filters.yearMax;
     });
 
-    const canvas = document.createElement("canvas");
-    container.appendChild(canvas);
-
-    const grouped = {};
+    // ========================
+    // BUILD HISTOGRAM MAP
+    // ========================
+    const counts = {};
 
     filtered.forEach(d => {
-        const year = d.year ?? "Unknown";
-        grouped[year] = (grouped[year] || 0) + (d.count || 0);
+
+        const numbers = d.numbers || d.value || [];
+
+        // if your dataset is "one number per row"
+        const nums = Array.isArray(numbers) ? numbers : [d.number];
+
+        nums.forEach(n => {
+            if (!n) return;
+            counts[n] = (counts[n] || 0) + 1;
+        });
     });
+
+    const labels = Object.keys(counts).map(Number).sort((a, b) => a - b);
+    const values = labels.map(n => counts[n]);
+
+    const canvas = document.createElement("canvas");
+    container.appendChild(canvas);
 
     if (chartInstance) chartInstance.destroy();
 
     chartInstance = new Chart(canvas, {
-        type: "line",
+        type: "bar",
         data: {
-            labels: Object.keys(grouped),
+            labels,
             datasets: [{
-                label: "Frequency",
-                data: Object.values(grouped),
-                borderColor: PALETTE.accent,
-                backgroundColor: "rgba(41,88,99,0.12)",
-                tension: 0.3,
-                fill: true
+                label: "Number Frequency",
+                data: values,
+                backgroundColor: PALETTE.accent,
+                borderRadius: 4
             }]
         },
         options: {
             responsive: true,
             plugins: {
                 legend: { display: false }
+            },
+            onClick: (evt, elements) => {
+
+                if (!elements.length) return;
+
+                const index = elements[0].index;
+                const number = labels[index];
+
+                showNumberStats(number, filtered, counts);
             }
         }
     });
