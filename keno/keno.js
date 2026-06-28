@@ -15,16 +15,21 @@ async function loadData() {
             fetch("stats/yearly.json").then(r => r.json())
         ]);
 
-        buildHeatmap(heatmap);
-        buildHotCold(zscores);
-        buildSummary(heatmap, zscores);
-        buildYearlyChart(yearly);
-
-        loadLatestDraw(); // 👈 ADD THIS
+        renderDashboard(heatmap, zscores, yearly);
+        loadLatestDraw();
 
     } catch (err) {
         console.error("Failed to load data:", err);
     }
+}
+
+function renderDashboard(heatmap, zscores, yearly) {
+
+    buildHeatmap(heatmap);
+    buildHotCold(zscores);
+    buildSummary(heatmap, zscores);
+    buildYearlyChart(yearly);
+
 }
 
 loadData();
