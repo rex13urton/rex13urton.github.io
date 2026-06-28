@@ -383,3 +383,20 @@ function showNumberModal(item) {
         `Z Score: ${item.z ?? "N/A"}`
     );
 }
+
+function showNumberStats(number, filteredData, counts) {
+
+    const total = counts[number] || 0;
+
+    // how many draws in range?
+    const years = new Set(filteredData.map(d => d.year)).size;
+
+    const avgPerYear = years ? (total / years).toFixed(2) : 0;
+
+    alert(
+        `Number: ${number}\n` +
+        `Total appearances: ${total}\n` +
+        `Avg per year (selected range): ${avgPerYear}\n` +
+        `Years in filter: ${years}`
+    );
+}
