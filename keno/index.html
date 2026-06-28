@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,160 +13,107 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="keno.css">
-
 </head>
 
 <body>
 
-    <div class="wrapper">
+<div class="wrapper">
 
-        <!-- Header Image -->
-        <header class="hero">
+    <!-- HEADER -->
+    <header class="hero">
+        <img src="images/RexsKenoDashboard1.png" alt="Rex's Keno Dashboard">
+    </header>
 
-            <!-- Replace with your own image -->
-            <img src="images/RexsKenoDashboard1.png" alt="Rex's Keno Dashboard">
+    <!-- NAV -->
+    <nav class="navbar">
+        <a href="#">Dashboard</a>
+        <a href="#">History</a>
+        <a href="#">Statistics</a>
+        <a href="#">Charts</a>
+        <a href="#">Picks</a>
+        <a href="#">Settings</a>
+    </nav>
 
-        </header>
+    <main>
 
-        <!-- Navigation -->
-        <nav class="navbar">
+        <!-- LAST DRAW + SUMMARY -->
+        <section class="grid-two">
 
-            <a href="#">Dashboard</a>
-            <a href="#">History</a>
-            <a href="#">Statistics</a>
-            <a href="#">Charts</a>
-            <a href="#">Picks</a>
-            <a href="#">Settings</a>
+            <div class="card" id="currentDraw">
+                <h2>Last Draw</h2>
 
-        </nav>
+                <p id="drawMeta">Loading...</p>
 
-        <main>
+                <div class="numbers" id="drawNumbers"></div>
+            </div>
 
-            <!-- Top Row -->
-            <section class="grid-two">
+            <div class="card" id="summary">
+                <h2>Dashboard Summary</h2>
 
-                <div class="card" id="currentDraw">
+                <ul>
+                    <li>Games Tracked <strong>—</strong></li>
+                    <li>Latest Draw <strong>—</strong></li>
+                    <li>Database Status <strong>Live</strong></li>
+                    <li>Last Update <strong>Auto</strong></li>
+                </ul>
+            </div>
 
-                    <h2>Last Draw</h2>
-                
-                    <p id="drawMeta"></p>
-                
-                    <div class="numbers" id="drawNumbers"></div>
-                
-                </div>
+        </section>
 
-                <div class="card" id="summary">
+        <!-- HEATMAP -->
+        <section class="card">
+            <h2>Number Heatmap</h2>
+            <div class="heatmap" id="heatmap"></div>
+        </section>
 
-                    <h2>Dashboard Summary</h2>
+        <!-- HOT / COLD -->
+        <section class="grid-two">
 
-                    <ul>
+            <div class="card" id="hotNumbers">
+                <h2>Hot Numbers</h2>
+            </div>
 
-                        <li>Games Tracked <strong>4,236</strong></li>
-                        <li>Latest Draw <strong>#12083</strong></li>
-                        <li>Database Status <strong>Online</strong></li>
-                        <li>Last Update <strong>2 mins ago</strong></li>
+            <div class="card" id="coldNumbers">
+                <h2>Cold Numbers</h2>
+            </div>
 
-                    </ul>
+        </section>
 
-                </div>
+        <!-- CHART -->
+        <section class="card" id="frequencyChart">
+            <h2>Frequency Chart</h2>
+        </section>
 
-            </section>
+        <!-- RECENT DRAW TABLE -->
+        <section class="card">
+            <h2>Recent Draws</h2>
 
-            <!-- Heatmap -->
-            <section class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Draw</th>
+                        <th>Date</th>
+                        <th>Numbers</th>
+                    </tr>
+                </thead>
 
-                <h2>Number Heatmap</h2>
+                <tbody>
+                    <tr>
+                        <td>12083</td>
+                        <td>Jun 28</td>
+                        <td>04 11 16 23 29 31 38 44 57 63</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-                <div class="heatmap" id="heatmap"></div>
+    </main>
 
-            </section>
+</div>
 
-            <!-- Stats -->
-            <section class="grid-two">
-
-                <div class="card" id="hotNumbers">
-
-                    <h2>Hot Numbers</h2>
-
-                    <p>Chart or JavaScript widget goes here.</p>
-
-                </div>
-
-                <div class="card" id="coldNumbers">
-
-                    <h2>Cold Numbers</h2>
-
-                    <p>Chart or JavaScript widget goes here.</p>
-
-                </div>
-
-            </section>
-
-            <!-- Frequency Chart -->
-            <section class="card" id="frequencyChart">
-
-                <h2>Frequency Chart</h2>
-
-
-            </section>
-
-            <!-- Recent Draws -->
-            <section class="card">
-
-                <h2>Recent Draws</h2>
-
-                <table>
-
-                    <thead>
-
-                        <tr>
-
-                            <th>Draw</th>
-                            <th>Date</th>
-                            <th>Numbers</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-                            <td>12083</td>
-                            <td>Jun 28</td>
-                            <td>04 11 16 23 29 31 38 44 57 63</td>
-                        </tr>
-
-                        <tr>
-                            <td>12082</td>
-                            <td>Jun 28</td>
-                            <td>01 07 09 18 22 36 42 54 60 70</td>
-                        </tr>
-
-                        <tr>
-                            <td>12081</td>
-                            <td>Jun 27</td>
-                            <td>02 12 21 27 35 40 48 55 62 79</td>
-                        </tr>
-
-                        <tr>
-                            <td>12080</td>
-                            <td>Jun 27</td>
-                            <td>03 14 17 20 24 37 45 58 69 80</td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </section>
-
-        </main>
-
-    </div>
+<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script src="keno.js"></script>
-</body>
 
+</body>
 </html>
