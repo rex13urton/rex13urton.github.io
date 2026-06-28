@@ -1,0 +1,109 @@
+:root{
+
+    --bg:#F5EEE2;
+    --primary:#173D46;
+    --accent:#295863;
+    --orange:#C97548;
+    --card:#FFFDF8;
+    --border:#DCCFBE;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    background:var(--bg);
+    color:var(--primary);
+
+    font-family:Inter,sans-serif;
+
+}
+
+header{
+
+    padding:40px 60px 20px;
+
+}
+
+h1{
+
+    font-family:Pacifico,cursive;
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    font-weight:400;
+
+}
+
+nav{
+
+    margin-top:20px;
+
+    display:flex;
+
+    gap:24px;
+
+}
+
+nav a{
+
+    font-family:"Bebas Neue",sans-serif;
+
+    letter-spacing:2px;
+
+    font-size:1.3rem;
+
+    color:var(--accent);
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+nav a:hover{
+
+    color:var(--orange);
+
+}
+
+main{
+
+    padding:40px 60px;
+
+}
+
+.card{
+
+    background:var(--card);
+
+    border-radius:16px;
+
+    padding:30px;
+
+    border:1px solid var(--border);
+
+    box-shadow:0 8px 24px rgba(23,61,70,.08);
+
+}
+
+.card h2{
+
+    font-family:"Bebas Neue",sans-serif;
+
+    letter-spacing:2px;
+
+    color:var(--accent);
+
+    margin-bottom:12px;
+
+}
