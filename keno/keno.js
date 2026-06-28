@@ -47,7 +47,7 @@ async function loadData() {
 // ========================
 // MASTER RENDER
 // ========================
-console.log("HEATMAP SAMPLE:", data[0]);
+
 function renderDashboard() {
     buildHeatmap(STATE.heatmap);
     buildHotCold(STATE.zscores);
@@ -61,18 +61,23 @@ function renderDashboard() {
 // ========================
 function buildHeatmap(data) {
 
+    console.log("HEATMAP SAMPLE:", data?.[0]);
+
     const container = document.getElementById("heatmap");
     if (!container) return;
 
     container.innerHTML = "";
 
-    // normalize data safely (handles different JSON shapes)
+    // normalize safely
     const cleaned = data.map(d => ({
-        number: d.number ?? d.num ?? d.n,
+        number: Number(d.number ?? d.num ?? d.n),
         count: Number(d.count ?? d.frequency ?? d.freq ?? 0)
     }));
 
     const max = Math.max(...cleaned.map(d => d.count), 1);
+
+    console.log("CLEANED SAMPLE:", cleaned.slice(0, 10));
+    console.log("MAX:", max);
 
     cleaned.forEach(item => {
 
@@ -80,11 +85,10 @@ function buildHeatmap(data) {
 
         const el = document.createElement("div");
 
-        // stronger visible contrast
-        const hue = 185; // teal base
-        const lightness = 92 - intensity * 65; // big range = visible gradient
+        // stronger contrast gradient
+        const lightness = 92 - intensity * 70;
 
-        el.style.backgroundColor = `hsl(${hue}, 55%, ${lightness}%)`;
+        el.style.backgroundColor = `hsl(185, 60%, ${lightness}%)`;
 
         el.style.borderRadius = "6px";
         el.style.display = "flex";
@@ -92,6 +96,8 @@ function buildHeatmap(data) {
         el.style.justifyContent = "center";
 
         el.style.cursor = "pointer";
+
+        el.style.fontWeight = "600";
 
         el.style.color = lightness < 55 ? "#fff" : "#173D46";
 
