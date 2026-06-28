@@ -15,7 +15,12 @@ async function loadData() {
             fetch("stats/yearly.json").then(r => r.json())
         ]);
 
-        renderDashboard(heatmap, zscores, yearly);
+        buildHeatmap(heatmap);
+        buildHotCold(zscores);
+        buildSummary(heatmap, zscores);
+        buildYearlyChart(yearly);
+
+        loadLatestDraw(); // 👈 ADD THIS
 
     } catch (err) {
         console.error("Failed to load data:", err);
@@ -173,4 +178,37 @@ function buildYearlyChart(data) {
             }
         }
     });
+}
+
+
+async function loadLatestDraw() {
+
+    try {
+
+        const latest = await fetch("stats/latest.json").then(r => r.json());
+
+        const draw = latest[0]; // newest draw
+
+        renderLatestDraw(draw);
+
+    } catch (err) {
+        console.error("Failed to load latest draw:", err);
+    }
+}
+
+function renderLatestDraw(draw) {
+
+    const meta = document.getElementById("drawMeta");
+    const numbers = document.getElementById("drawNumbers");
+
+    if (!draw) return;
+
+    meta.innerHTML = `
+        <strong>Draw #${draw.draw}</strong><br>
+        ${draw.date} • ${draw.time}
+    `;
+
+    numbers.innerHTML = draw.numbers
+        .map(n => `<span>${String(n).padStart(2, "0")}</span>`)
+        .join("");
 }
