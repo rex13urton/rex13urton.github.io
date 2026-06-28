@@ -3,6 +3,16 @@ console.log("Keno JS loaded ✅");
 let chartInstance = null;
 
 // ========================
+// GLOBAL STATE (IMPORTANT FOR FUTURE FILTERS)
+// ========================
+const STATE = {
+    heatmap: [],
+    zscores: [],
+    yearly: [],
+    latestDraw: null
+};
+
+// ========================
 // INIT
 // ========================
 document.addEventListener("DOMContentLoaded", loadData);
@@ -10,21 +20,24 @@ document.addEventListener("DOMContentLoaded", loadData);
 async function loadData() {
 
     try {
-        const [heatmapRes, zscoresRes, yearlyRes] = await Promise.all([
+
+        const [heatmapRes, zscoresRes, yearlyRes, latestRes] = await Promise.all([
             fetch("stats/heatmap.json"),
             fetch("stats/zscores.json"),
-            fetch("stats/yearly.json")
+            fetch("stats/yearly.json"),
+            fetch("stats/latest.json").catch(() => null)
         ]);
 
-        const heatmap = await heatmapRes.json();
-        const zscores = await zscoresRes.json();
-        const yearly = await yearlyRes.json();
+        STATE.heatmap = await heatmapRes.json();
+        STATE.zscores = await zscoresRes.json();
+        STATE.yearly = await yearlyRes.json();
 
-        console.log("DATA LOADED", { heatmap, zscores, yearly });
+        if (latestRes && latestRes.ok) {
+            const latest = await latestRes.json();
+            STATE.latestDraw = latest?.[0] || null;
+        }
 
-        renderDashboard(heatmap, zscores, yearly);
-
-        await loadLatestDraw();
+        renderDashboard();
 
     } catch (err) {
         console.error("❌ Failed to load dashboard data:", err);
@@ -32,18 +45,18 @@ async function loadData() {
 }
 
 // ========================
-// DASHBOARD
+// MASTER RENDER
 // ========================
-function renderDashboard(heatmap, zscores, yearly) {
-
-    buildHeatmap(heatmap);
-    buildHotCold(zscores);
-    buildSummary(heatmap, zscores);
-    buildYearlyChart(yearly);
+function renderDashboard() {
+    buildHeatmap(STATE.heatmap);
+    buildHotCold(STATE.zscores);
+    buildSummary(STATE.heatmap, STATE.zscores);
+    buildYearlyChart(STATE.yearly);
+    renderLatestDraw(STATE.latestDraw);
 }
 
 // ========================
-// HEATMAP (ROBUST + FIXED GRADIENT)
+// HEATMAP (CLICKABLE + FUTURE READY)
 // ========================
 function buildHeatmap(data) {
 
@@ -61,27 +74,28 @@ function buildHeatmap(data) {
 
         const el = document.createElement("div");
 
-        // smooth teal heat scale
-        const lightness = 90 - intensity * 55;
+        const lightness = 92 - intensity * 55;
+
+        el.className = "heat-cell";
 
         el.style.background = `hsl(190, 45%, ${lightness}%)`;
-        el.style.borderRadius = "6px";
-        el.style.display = "flex";
-        el.style.alignItems = "center";
-        el.style.justifyContent = "center";
-
         el.style.color = lightness < 55 ? "#fff" : "#173D46";
 
         el.textContent = String(item.number).padStart(2, "0");
 
-        el.title = `Number ${item.number} → ${count.toLocaleString()}`;
+        // STORE FULL DATA FOR INTERACTIONS
+        el.dataset.number = item.number;
+        el.dataset.count = count;
+        el.dataset.z = item.z ?? 0;
+
+        el.addEventListener("click", () => showNumberModal(item));
 
         container.appendChild(el);
     });
 }
 
 // ========================
-// HOT / COLD
+// HOT / COLD (CLICKABLE READY)
 // ========================
 function buildHotCold(zscores) {
 
@@ -95,38 +109,51 @@ function buildHotCold(zscores) {
         hotContainer.innerHTML = `
             <h2>Hot Numbers</h2>
             <div class="numbers">
-                ${hot.map(n => `<span>${n.number}</span>`).join("")}
+                ${hot.map(n => `<span data-number="${n.number}">${n.number}</span>`).join("")}
             </div>
         `;
+
+        hotContainer.querySelectorAll("span").forEach(el => {
+            el.onclick = () => showNumberModal(
+                STATE.heatmap.find(x => x.number == el.dataset.number)
+            );
+        });
     }
 
     if (coldContainer) {
         coldContainer.innerHTML = `
             <h2>Cold Numbers</h2>
             <div class="numbers">
-                ${cold.map(n => `<span>${n.number}</span>`).join("")}
+                ${cold.map(n => `<span data-number="${n.number}">${n.number}</span>`).join("")}
             </div>
         `;
+
+        coldContainer.querySelectorAll("span").forEach(el => {
+            el.onclick = () => showNumberModal(
+                STATE.heatmap.find(x => x.number == el.dataset.number)
+            );
+        });
     }
 }
 
 // ========================
-// SUMMARY
+// SUMMARY (NOW USEFUL)
 // ========================
-function buildSummary(heatmap, zscores) {
+function buildSummary(heatmap) {
+
+    const sorted = [...heatmap].sort((a, b) => b.count - a.count);
+
+    const hot = sorted[0];
+    const cold = sorted[sorted.length - 1];
 
     const summary = document.querySelector("#summary ul");
     if (!summary) return;
 
-    const totalNumbers = heatmap.length;
-    const totalObserved = heatmap.reduce((s, n) => s + (n.count || 0), 0);
-    const avgZ = (zscores.reduce((s, n) => s + n.z, 0) / zscores.length).toFixed(2);
-
     summary.innerHTML = `
-        <li>Numbers Tracked <strong>${totalNumbers}</strong></li>
-        <li>Total Observations <strong>${totalObserved.toLocaleString()}</strong></li>
-        <li>Avg Z Score <strong>${avgZ}</strong></li>
-        <li>Status <strong>Live Dataset</strong></li>
+        <li>🔥 Hot #1 <strong>${hot?.number ?? "-"}</strong></li>
+        <li>🧊 Cold #1 <strong>${cold?.number ?? "-"}</strong></li>
+        <li>📊 Numbers <strong>${heatmap.length}</strong></li>
+        <li>⚡ Status <strong>Live</strong></li>
     `;
 }
 
@@ -146,7 +173,7 @@ function buildYearlyChart(data) {
     const grouped = {};
 
     data.forEach(d => {
-        const year = d.year || "Unknown";
+        const year = d.year ?? "Unknown";
         grouped[year] = (grouped[year] || 0) + (d.count || 0);
     });
 
@@ -157,7 +184,7 @@ function buildYearlyChart(data) {
         data: {
             labels: Object.keys(grouped),
             datasets: [{
-                label: "Keno Frequency by Year",
+                label: "Frequency",
                 data: Object.values(grouped),
                 borderColor: "#295863",
                 backgroundColor: "rgba(41,88,99,0.15)",
@@ -175,49 +202,37 @@ function buildYearlyChart(data) {
 }
 
 // ========================
-// LATEST DRAW (FIXED FOR YOUR JSON)
-// ========================
-async function loadLatestDraw() {
-
-    try {
-        const res = await fetch("stats/latest.json");
-
-        if (!res.ok) throw new Error("latest.json not found");
-
-        const latest = await res.json();
-
-        console.log("LATEST RAW:", latest);
-
-        const draw = latest?.[0];
-
-        if (!draw) throw new Error("No draw found in latest.json");
-
-        renderLatestDraw(draw);
-
-    } catch (err) {
-        console.error("❌ Latest draw failed:", err);
-    }
-}
-
-// ========================
-// RENDER LAST DRAW
+// LAST DRAW
 // ========================
 function renderLatestDraw(draw) {
 
     const meta = document.getElementById("drawMeta");
     const numbers = document.getElementById("drawNumbers");
 
-    if (!meta || !numbers) return;
+    if (!meta || !numbers || !draw) return;
 
-    const datetime = draw.datetime || "";
-    const [date, time] = datetime.split(" ");
+    const [date, time] = (draw.datetime || "").split(" ");
 
     meta.innerHTML = `
-        <strong>Draw #${draw.drawNumber ?? "?"}</strong><br>
-        ${date || "?"} • ${time || "?"} • x${draw.multiplier ?? "?"}
+        <strong>Draw #${draw.drawNumber ?? "-"}</strong><br>
+        ${date ?? "?"} • ${time ?? "?"} • x${draw.multiplier ?? "?"}
     `;
 
     numbers.innerHTML = (draw.numbers || [])
         .map(n => `<span>${String(n).padStart(2, "0")}</span>`)
         .join("");
+}
+
+// ========================
+// NUMBER MODAL (CORE INTERACTION)
+// ========================
+function showNumberModal(item) {
+
+    if (!item) return;
+
+    alert(
+        `Number ${item.number}\n` +
+        `Occurrences: ${item.count}\n` +
+        `Z Score: ${item.z ?? "N/A"}`
+    );
 }
