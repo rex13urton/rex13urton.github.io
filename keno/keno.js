@@ -173,12 +173,22 @@ function buildHeatmap(data) {
 
         const el = document.createElement("div");
 
-        const hue = 190 - intensity * 90;
-        const lightness = 92 - intensity * 55;
+        function lerpColor(a, b, t) {
+            const ah = parseInt(a.replace('#',''),16),
+                  ar = ah >> 16, ag = ah >> 8 & 0xff, ab = ah & 0xff,
+                  bh = parseInt(b.replace('#',''),16),
+                  br = bh >> 16, bg = bh >> 8 & 0xff, bb = bh & 0xff;
+        
+            const rr = Math.round(ar + (br - ar) * t);
+            const rg = Math.round(ag + (bg - ag) * t);
+            const rb = Math.round(ab + (bb - ab) * t);
+        
+            return `rgb(${rr},${rg},${rb})`;
+        }
 
         el.className = "heat-cell";
 
-        el.style.backgroundColor = `hsl(${hue}, 70%, ${lightness}%)`;
+
         el.style.borderRadius = "6px";
 
         el.style.display = "flex";
