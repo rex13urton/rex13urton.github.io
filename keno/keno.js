@@ -5,7 +5,7 @@ async function loadData() {
         const [heatmap, zscores, yearly] = await Promise.all([
             fetch("stats/heatmap.json").then(r => r.json()),
             fetch("stats/zscores.json").then(r => r.json()),
-            fetch("stats/yearl.json").then(r => r.json())
+            fetch("stats/yearly.json").then(r => r.json())
         ]);
 
         buildHeatmap(heatmap);
