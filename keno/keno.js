@@ -3,13 +3,19 @@ console.log("Keno JS loaded ✅");
 let chartInstance = null;
 
 // ========================
-// GLOBAL STATE (IMPORTANT FOR FUTURE FILTERS)
+// GLOBAL STATE
 // ========================
 const STATE = {
     heatmap: [],
     zscores: [],
     yearly: [],
-    latestDraw: null
+    latestDraw: null,
+
+    // future filter hook (year slider etc.)
+    filters: {
+        yearMin: null,
+        yearMax: null
+    }
 };
 
 // ========================
@@ -47,17 +53,38 @@ async function loadData() {
 // ========================
 // MASTER RENDER
 // ========================
-
 function renderDashboard() {
     buildHeatmap(STATE.heatmap);
     buildHotCold(STATE.zscores);
-    buildSummary(STATE.heatmap, STATE.zscores);
+    buildSummary(STATE.heatmap);
     buildYearlyChart(STATE.yearly);
     renderLatestDraw(STATE.latestDraw);
 }
 
 // ========================
-// HEATMAP (CLICKABLE + FUTURE READY)
+// TEXT COLOR (FIXED + GLOBAL)
+// ========================
+function getTextColorFromHSL(h, s, l) {
+
+    l /= 100;
+
+    const a = s * Math.min(l, 1 - l) / 100;
+
+    const f = n => {
+        const k = (n + h / 30) % 12;
+        const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+        return Math.round(255 * color);
+    };
+
+    const r = f(0), g = f(8), b = f(4);
+
+    const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b);
+
+    return luminance > 140 ? "#173D46" : "#ffffff";
+}
+
+// ========================
+// HEATMAP
 // ========================
 function buildHeatmap(data) {
 
@@ -66,29 +93,24 @@ function buildHeatmap(data) {
 
     container.innerHTML = "";
 
-    // normalize
     const cleaned = data.map(d => ({
         number: Number(d.number ?? d.num ?? d.n),
         count: Number(d.count ?? d.frequency ?? d.freq ?? 0)
     }));
 
-    // log scaling (THIS FIXES EVERYTHING)
     const logValues = cleaned.map(d => Math.log1p(d.count));
 
     const maxLog = Math.max(...logValues, 1);
     const minLog = Math.min(...logValues);
 
-    cleaned.forEach((item, i) => {
+    cleaned.forEach(item => {
 
         const logVal = Math.log1p(item.count);
-
-        // normalized 0–1 using log space
         const intensity = (logVal - minLog) / (maxLog - minLog || 1);
 
         const el = document.createElement("div");
 
-        // 🔥 true heatmap gradient (cold → hot)
-        const hue = 190 - intensity * 90; 
+        const hue = 190 - intensity * 90;
         const lightness = 92 - intensity * 55;
 
         el.className = "heat-cell";
@@ -103,16 +125,15 @@ function buildHeatmap(data) {
         el.style.cursor = "pointer";
         el.style.fontWeight = "600";
 
-        el.style.color = lightness < 55 ? "#fff" : "#173D46";
+        // ✅ FIX: apply proper contrast color
+        el.style.color = getTextColorFromHSL(hue, 70, lightness);
 
-        // IMPORTANT: store data for click
+        el.textContent = String(item.number).padStart(2, "0");
+
         el.dataset.number = item.number;
         el.dataset.count = item.count;
         el.dataset.intensity = intensity.toFixed(3);
 
-        el.textContent = String(item.number).padStart(2, "0");
-
-        // click interaction (NOW WORKS + REAL DATA)
         el.addEventListener("click", () => {
 
             const z = STATE.zscores.find(z => z.number == item.number)?.z;
@@ -130,7 +151,7 @@ function buildHeatmap(data) {
 }
 
 // ========================
-// HOT / COLD (CLICKABLE READY)
+// HOT / COLD
 // ========================
 function buildHotCold(zscores) {
 
@@ -149,9 +170,8 @@ function buildHotCold(zscores) {
         `;
 
         hotContainer.querySelectorAll("span").forEach(el => {
-            el.onclick = () => showNumberModal(
-                STATE.heatmap.find(x => x.number == el.dataset.number)
-            );
+            el.onclick = () =>
+                showNumberModal(STATE.heatmap.find(x => x.number == el.dataset.number));
         });
     }
 
@@ -164,15 +184,14 @@ function buildHotCold(zscores) {
         `;
 
         coldContainer.querySelectorAll("span").forEach(el => {
-            el.onclick = () => showNumberModal(
-                STATE.heatmap.find(x => x.number == el.dataset.number)
-            );
+            el.onclick = () =>
+                showNumberModal(STATE.heatmap.find(x => x.number == el.dataset.number));
         });
     }
 }
 
 // ========================
-// SUMMARY (NOW USEFUL)
+// SUMMARY
 // ========================
 function buildSummary(heatmap) {
 
@@ -259,7 +278,7 @@ function renderLatestDraw(draw) {
 }
 
 // ========================
-// NUMBER MODAL (CORE INTERACTION)
+// MODAL
 // ========================
 function showNumberModal(item) {
 
