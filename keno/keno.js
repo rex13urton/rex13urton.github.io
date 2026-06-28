@@ -208,21 +208,29 @@ async function loadLatestDraw() {
 // ========================
 // LATEST DRAW UI
 // ========================
-function renderLatestDraw(draw) {
+async function loadLatestDraw() {
 
-    const meta = document.getElementById("drawMeta");
-    const numbers = document.getElementById("drawNumbers");
+    try {
 
-    if (!draw || !meta || !numbers) return;
+        const res = await fetch("stats/latest.json");
 
-    const [date, time] = draw.datetime.split(" ");
+        if (!res.ok) {
+            throw new Error("Failed to fetch latest.json");
+        }
 
-    meta.innerHTML = `
-        <strong>Draw #${draw.drawNumber}</strong><br>
-        ${date} • ${time} • x${draw.multiplier}
-    `;
+        const latest = await res.json();
 
-    numbers.innerHTML = draw.numbers
-        .map(n => `<span>${String(n).padStart(2, "0")}</span>`)
-        .join("");
+        if (!Array.isArray(latest) || latest.length === 0) {
+            throw new Error("latest.json is empty or invalid");
+        }
+
+        const draw = latest[0];
+
+        console.log("LATEST DRAW:", draw); // debug
+
+        renderLatestDraw(draw);
+
+    } catch (err) {
+        console.error("Failed to load latest draw:", err);
+    }
 }
