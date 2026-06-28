@@ -65,22 +65,24 @@ function buildHeatmap(data) {
 
     container.innerHTML = "";
 
-    // force valid counts
     const cleaned = data.map(d => ({
         number: d.number,
         count: Number(d.count ?? 0)
     }));
 
-    const max = Math.max(...cleaned.map(d => d.count), 1);
+    const counts = cleaned.map(d => d.count);
+
+    const min = Math.min(...counts);
+    const max = Math.max(...counts);
+    const range = max - min || 1;
 
     cleaned.forEach(item => {
 
-        const intensity = item.count / max;
+        const normalized = (item.count - min) / range;
+
+        const lightness = 92 - normalized * 55;
 
         const el = document.createElement("div");
-
-        // better visible gradient (FIXED RANGE)
-        const lightness = 95 - intensity * 60; // 95 → 35
 
         el.style.backgroundColor = `hsl(190, 55%, ${lightness}%)`;
 
@@ -92,6 +94,8 @@ function buildHeatmap(data) {
         el.textContent = String(item.number).padStart(2, "0");
 
         el.title = `#${item.number} → ${item.count}`;
+
+        el.onclick = () => showNumberModal(item);
 
         container.appendChild(el);
     });
