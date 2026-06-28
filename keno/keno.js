@@ -65,28 +65,31 @@ function buildHeatmap(data) {
 
     container.innerHTML = "";
 
+    // normalize data safely (handles different JSON shapes)
     const cleaned = data.map(d => ({
-        number: d.number,
-        count: Number(d.count ?? 0)
+        number: d.number ?? d.num ?? d.n,
+        count: Number(d.count ?? d.frequency ?? d.freq ?? 0)
     }));
 
-    const counts = cleaned.map(d => d.count);
-
-    const min = Math.min(...counts);
-    const max = Math.max(...counts);
-    const range = max - min || 1;
+    const max = Math.max(...cleaned.map(d => d.count), 1);
 
     cleaned.forEach(item => {
 
-        const normalized = (item.count - min) / range;
-
-        const lightness = 92 - normalized * 55;
+        const intensity = item.count / max;
 
         const el = document.createElement("div");
 
-        el.style.backgroundColor = `hsl(190, 55%, ${lightness}%)`;
+        // stronger visible contrast
+        const hue = 185; // teal base
+        const lightness = 92 - intensity * 65; // big range = visible gradient
+
+        el.style.backgroundColor = `hsl(${hue}, 55%, ${lightness}%)`;
 
         el.style.borderRadius = "6px";
+        el.style.display = "flex";
+        el.style.alignItems = "center";
+        el.style.justifyContent = "center";
+
         el.style.cursor = "pointer";
 
         el.style.color = lightness < 55 ? "#fff" : "#173D46";
@@ -94,8 +97,6 @@ function buildHeatmap(data) {
         el.textContent = String(item.number).padStart(2, "0");
 
         el.title = `#${item.number} → ${item.count}`;
-
-        el.onclick = () => showNumberModal(item);
 
         container.appendChild(el);
     });
