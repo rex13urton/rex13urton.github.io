@@ -2,29 +2,27 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Rex's Keno Dashboard</title>
+<title>Rex's Keno Dashboard</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="keno.css">
+<link rel="stylesheet" href="keno.css">
 </head>
 
 <body>
 
 <div class="wrapper">
 
-    <!-- HEADER -->
     <header class="hero">
         <img src="images/RexsKenoDashboard1.png" alt="Rex's Keno Dashboard">
     </header>
 
-    <!-- NAV -->
     <nav class="navbar">
         <a href="#">Dashboard</a>
         <a href="#">History</a>
@@ -36,7 +34,7 @@
 
     <main>
 
-        <!-- LAST DRAW + SUMMARY -->
+        <!-- LAST DRAW -->
         <section class="grid-two">
 
             <div class="card" id="currentDraw">
@@ -84,7 +82,7 @@
             <h2>Frequency Chart</h2>
         </section>
 
-        <!-- RECENT DRAW TABLE -->
+        <!-- RECENT DRAW TABLE (REAL DATA OR PLACEHOLDER) -->
         <section class="card">
             <h2>Recent Draws</h2>
 
@@ -99,9 +97,9 @@
 
                 <tbody>
                     <tr>
-                        <td>12083</td>
-                        <td>Jun 28</td>
-                        <td>04 11 16 23 29 31 38 44 57 63</td>
+                        <td>Loading…</td>
+                        <td>—</td>
+                        <td>—</td>
                     </tr>
                 </tbody>
             </table>
@@ -111,7 +109,6 @@
 
 </div>
 
-<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="keno.js"></script>
 
