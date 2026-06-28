@@ -66,22 +66,34 @@ function buildHeatmap(data) {
 
     container.innerHTML = "";
 
+    // normalize
     const cleaned = data.map(d => ({
         number: Number(d.number ?? d.num ?? d.n),
         count: Number(d.count ?? d.frequency ?? d.freq ?? 0)
     }));
 
-    const max = Math.max(...cleaned.map(d => d.count), 1);
+    // log scaling (THIS FIXES EVERYTHING)
+    const logValues = cleaned.map(d => Math.log1p(d.count));
 
-    cleaned.forEach(item => {
+    const maxLog = Math.max(...logValues, 1);
+    const minLog = Math.min(...logValues);
 
-        const intensity = item.count / max;
+    cleaned.forEach((item, i) => {
+
+        const logVal = Math.log1p(item.count);
+
+        // normalized 0–1 using log space
+        const intensity = (logVal - minLog) / (maxLog - minLog || 1);
 
         const el = document.createElement("div");
 
-        const lightness = 92 - intensity * 70;
+        // 🔥 true heatmap gradient (cold → hot)
+        const hue = 190 - intensity * 90; 
+        const lightness = 92 - intensity * 55;
 
-        el.style.backgroundColor = `hsl(185, 60%, ${lightness}%)`;
+        el.className = "heat-cell";
+
+        el.style.backgroundColor = `hsl(${hue}, 70%, ${lightness}%)`;
         el.style.borderRadius = "6px";
 
         el.style.display = "flex";
@@ -91,15 +103,25 @@ function buildHeatmap(data) {
         el.style.cursor = "pointer";
         el.style.fontWeight = "600";
 
+        el.style.color = lightness < 55 ? "#fff" : "#173D46";
+
+        // IMPORTANT: store data for click
+        el.dataset.number = item.number;
+        el.dataset.count = item.count;
+        el.dataset.intensity = intensity.toFixed(3);
+
         el.textContent = String(item.number).padStart(2, "0");
 
-        el.title = `#${item.number} → ${item.count}`;
-
-        // 🔥 THIS IS THE MISSING PIECE
+        // click interaction (NOW WORKS + REAL DATA)
         el.addEventListener("click", () => {
-            console.log("CLICKED NUMBER:", item);
-            showNumberModal(
-                STATE.heatmap.find(x => Number(x.number) === Number(item.number)) || item
+
+            const z = STATE.zscores.find(z => z.number == item.number)?.z;
+
+            alert(
+                `Number: ${item.number}\n` +
+                `Count: ${item.count}\n` +
+                `Intensity: ${intensity.toFixed(3)}\n` +
+                `Z-score: ${z ?? "N/A"}`
             );
         });
 
