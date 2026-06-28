@@ -1,6 +1,11 @@
 console.log("Keno JS loaded ✅");
 
-let chartInstance = null; // prevents duplicate charts
+let chartInstance = null;
+
+// ========================
+// INIT
+// ========================
+loadData();
 
 // ========================
 // LOAD DATA
@@ -16,27 +21,19 @@ async function loadData() {
         ]);
 
         renderDashboard(heatmap, zscores, yearly);
-        loadLatestDraw();
+
+        // optional (won’t break dashboard if missing)
+        loadLatestDraw().catch(() => {
+            console.warn("Latest draw skipped");
+        });
 
     } catch (err) {
-        console.error("Failed to load data:", err);
+        console.error("Failed to load main data:", err);
     }
 }
 
-function renderDashboard(heatmap, zscores, yearly) {
-
-    buildHeatmap(heatmap);
-    buildHotCold(zscores);
-    buildSummary(heatmap, zscores);
-    buildYearlyChart(yearly);
-
-}
-
-loadData();
-
-
 // ========================
-// MASTER RENDER
+// DASHBOARD
 // ========================
 function renderDashboard(heatmap, zscores, yearly) {
 
@@ -44,47 +41,43 @@ function renderDashboard(heatmap, zscores, yearly) {
     buildHotCold(zscores);
     buildSummary(heatmap, zscores);
     buildYearlyChart(yearly);
-
 }
 
-
 // ========================
-// HEATMAP (FIXED + CLEAN)
+// HEATMAP (FIXED GRADIENT)
 // ========================
 function buildHeatmap(data) {
 
     const container = document.getElementById("heatmap");
-
-    if (!container) {
-        console.warn("Heatmap container missing (#heatmap)");
-        return;
-    }
+    if (!container) return;
 
     container.innerHTML = "";
 
-    const max = Math.max(...data.map(d => d.count));
+    const max = Math.max(...data.map(d => d.count || 0));
 
     data.forEach(item => {
 
         const el = document.createElement("div");
 
-        const intensity = item.count / max;
+        const intensity = max ? item.count / max : 0;
 
-        const r = 23;
-        const g = Math.floor(61 + intensity * 90);
-        const b = Math.floor(70 + intensity * 110);
+        // CLEAN TEAL GRADIENT (your theme)
+        const lightness = 92 - intensity * 55; // 92% → 37%
 
-        el.style.background = `rgb(${r},${g},${b})`;
-        el.style.color = intensity > 0.55 ? "#fff" : "#173D46";
+        el.style.background = `hsl(192, 40%, ${lightness}%)`;
+
+        el.style.border = "1px solid rgba(0,0,0,0.05)";
+        el.style.borderRadius = "6px";
+
+        el.style.color = lightness < 55 ? "#F5EEE2" : "#173D46";
 
         el.textContent = String(item.number).padStart(2, "0");
 
-        el.title = `#${item.number} → ${item.count.toLocaleString()}`;
+        el.title = `#${item.number}: ${item.count.toLocaleString()}`;
 
         container.appendChild(el);
     });
 }
-
 
 // ========================
 // HOT / COLD
@@ -116,7 +109,6 @@ function buildHotCold(zscores) {
     }
 }
 
-
 // ========================
 // SUMMARY
 // ========================
@@ -127,7 +119,6 @@ function buildSummary(heatmap, zscores) {
     const avgZ = (zscores.reduce((s, n) => s + n.z, 0) / zscores.length).toFixed(2);
 
     const summary = document.querySelector("#summary ul");
-
     if (!summary) return;
 
     summary.innerHTML = `
@@ -138,14 +129,12 @@ function buildSummary(heatmap, zscores) {
     `;
 }
 
-
 // ========================
-// CHART (FIXED CLEAN)
+// CHART
 // ========================
 function buildYearlyChart(data) {
 
     const container = document.getElementById("frequencyChart");
-
     if (!container) return;
 
     container.innerHTML = "";
@@ -159,9 +148,7 @@ function buildYearlyChart(data) {
         grouped[d.year] = (grouped[d.year] || 0) + d.count;
     });
 
-    if (chartInstance) {
-        chartInstance.destroy();
-    }
+    if (chartInstance) chartInstance.destroy();
 
     chartInstance = new Chart(canvas, {
         type: "line",
@@ -185,28 +172,28 @@ function buildYearlyChart(data) {
     });
 }
 
-
+// ========================
+// LATEST DRAW (SAFE)
+// ========================
 async function loadLatestDraw() {
 
-    try {
+    const res = await fetch("stats/latest.json");
+    const latest = await res.json();
 
-        const latest = await fetch("stats/latest.json").then(r => r.json());
+    const draw = Array.isArray(latest) ? latest[0] : latest;
 
-        const draw = latest[0]; // newest draw
-
-        renderLatestDraw(draw);
-
-    } catch (err) {
-        console.error("Failed to load latest draw:", err);
-    }
+    renderLatestDraw(draw);
 }
 
+// ========================
+// LATEST DRAW UI
+// ========================
 function renderLatestDraw(draw) {
 
     const meta = document.getElementById("drawMeta");
     const numbers = document.getElementById("drawNumbers");
 
-    if (!draw) return;
+    if (!draw || !meta || !numbers) return;
 
     const [date, time] = draw.datetime.split(" ");
 
