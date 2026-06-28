@@ -291,3 +291,12 @@ li {
     transform: scale(1.08);
     filter: brightness(1.1);
 }
+
+#heatmap div {
+    transition: transform 0.15s ease, filter 0.2s ease;
+}
+
+#heatmap div:hover {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
