@@ -26,9 +26,170 @@ body{
 
 }
 
-header{
+.wrapper{
 
-    padding:40px 60px 20px;
+    width:min(1400px,95%);
+    margin:auto;
+
+}
+
+.hero{
+
+    padding:30px 0 15px;
+    text-align:center;
+
+}
+
+.hero img{
+
+    width:100%;
+    max-height:220px;      /* Adjust this value */
+    object-fit:contain;    /* or "cover" */
+    display:block;
+    margin:auto;
+
+}
+
+.navbar{
+
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    padding:20px 0 35px;
+    border-bottom:1px solid var(--border);
+    margin-bottom:40px;
+
+}
+
+.grid-two{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    margin-bottom:25px;
+
+}
+
+.card{
+
+    background:var(--card);
+    border-radius:16px;
+    padding:30px;
+    border:1px solid var(--border);
+    box-shadow:0 8px 24px rgba(23,61,70,.08);
+    margin-bottom:25px;
+
+}
+
+.numbers{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:20px 0;
+
+}
+
+.numbers span{
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:var(--accent);
+    color:white;
+
+    border-radius:50%;
+
+    font-weight:600;
+
+}
+
+.heatmap{
+
+    display:grid;
+    grid-template-columns:repeat(10,1fr);
+    gap:8px;
+
+}
+
+.heatmap div{
+
+    background:#d9e8e5;
+
+    aspect-ratio:1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:8px;
+
+    font-size:.9rem;
+
+}
+
+.chart-placeholder{
+
+    height:300px;
+
+    border:3px dashed var(--border);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:var(--accent);
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:2rem;
+
+    letter-spacing:2px;
+
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+th{
+
+    text-align:left;
+    border-bottom:2px solid var(--border);
+    padding:15px 10px;
+
+    font-family:"Bebas Neue",sans-serif;
+    font-size:1.2rem;
+    letter-spacing:1px;
+
+}
+
+td{
+
+    padding:15px 10px;
+    border-bottom:1px solid var(--border);
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+li{
+
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid var(--border);
 
 }
 
