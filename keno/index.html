@@ -19,36 +19,59 @@
 
 <div class="wrapper">
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER (FIXED + CLEAN)
+    ========================== -->
     <header class="hero">
-        <img src="images/RexsKenoDashboard1.png" alt="Rex's Keno Dashboard">
+
+        <div class="hero-inner">
+
+            <!-- optional text fallback / branding -->
+            <div class="hero-text">
+                <h1>Rex’s Keno Dashboard</h1>
+                <p>Live probability tracking & number analytics</p>
+            </div>
+
+            <!-- your actual logo -->
+            <div class="hero-logo">
+                <img src="images/RexsKenoDashboard1.png" alt="Rex's Keno Dashboard">
+            </div>
+
+        </div>
+
     </header>
 
-    <!-- NAV -->
+    <!-- =========================
+         NAV (CLEAN + CONSISTENT)
+    ========================== -->
     <nav class="navbar">
-        <a href="#">Dashboard</a>
-        <a href="#">History</a>
-        <a href="#">Statistics</a>
-        <a href="#">Charts</a>
-        <a href="#">Picks</a>
-        <a href="#">Settings</a>
+
+        <div class="nav-inner">
+
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">History</a>
+            <a href="#">Statistics</a>
+            <a href="#">Charts</a>
+            <a href="#">Picks</a>
+            <a href="#">Settings</a>
+
+        </div>
+
     </nav>
 
     <main>
 
-        <!-- TOP SECTION (STACK FRIENDLY ON MOBILE) -->
+        <!-- TOP SECTION -->
         <section class="grid-two">
 
             <!-- LAST DRAW -->
             <div class="card" id="currentDraw">
                 <h2>Last Draw</h2>
-
                 <p id="drawMeta">Loading latest draw...</p>
-
                 <div class="numbers" id="drawNumbers"></div>
             </div>
 
-            <!-- SUMMARY (SIMPLIFIED NOW, NO USELESS STATS) -->
+            <!-- SUMMARY -->
             <div class="card" id="summary">
                 <h2>Quick Stats</h2>
 
@@ -62,24 +85,25 @@
 
         </section>
 
-        <!-- HEATMAP CONTROLS (FOR FUTURE FILTERS) -->
+        <!-- HEATMAP -->
         <section class="card">
 
             <h2>Number Heatmap</h2>
+
             <div class="year-filter" style="margin: 10px 0 15px 0;">
                 <small style="opacity:0.7;">Year Range</small><br>
-            
+
                 <input type="range" id="yearMin" min="2010" max="2026" value="2010">
                 <input type="range" id="yearMax" min="2010" max="2026" value="2026">
-            
+
                 <div id="yearLabel" style="margin-top:6px; font-size:12px; opacity:0.8;">
                     2010 – 2026
                 </div>
             </div>
-            <!-- future filter hook -->
+
             <div style="margin-bottom:12px;">
                 <small style="opacity:0.7;">
-                    Click a number to inspect • Year filters coming soon
+                    Click a number to inspect • Year filters active
                 </small>
             </div>
 
@@ -105,7 +129,7 @@
             <h2>Frequency Chart</h2>
         </section>
 
-        <!-- RECENT DRAW TABLE (NO FAKE DATA) -->
+        <!-- RECENT DRAW TABLE -->
         <section class="card">
             <h2>Recent Draws</h2>
 
