@@ -1,3 +1,5 @@
+console.log("Keno JS loaded ✅");
+
 async function loadData() {
 
     try {
