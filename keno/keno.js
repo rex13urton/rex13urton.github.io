@@ -65,30 +65,33 @@ function buildHeatmap(data) {
 
     container.innerHTML = "";
 
-    const max = Math.max(...data.map(d => Number(d.count) || 0), 1);
+    // force valid counts
+    const cleaned = data.map(d => ({
+        number: d.number,
+        count: Number(d.count ?? 0)
+    }));
 
-    data.forEach(item => {
+    const max = Math.max(...cleaned.map(d => d.count), 1);
 
-        const count = Number(item.count) || 0;
-        const intensity = count / max;
+    cleaned.forEach(item => {
+
+        const intensity = item.count / max;
 
         const el = document.createElement("div");
 
-        const lightness = 92 - intensity * 55;
+        // better visible gradient (FIXED RANGE)
+        const lightness = 95 - intensity * 60; // 95 → 35
 
-        el.className = "heat-cell";
+        el.style.backgroundColor = `hsl(190, 55%, ${lightness}%)`;
 
-        el.style.background = `hsl(190, 45%, ${lightness}%)`;
+        el.style.borderRadius = "6px";
+        el.style.cursor = "pointer";
+
         el.style.color = lightness < 55 ? "#fff" : "#173D46";
 
         el.textContent = String(item.number).padStart(2, "0");
 
-        // STORE FULL DATA FOR INTERACTIONS
-        el.dataset.number = item.number;
-        el.dataset.count = count;
-        el.dataset.z = item.z ?? 0;
-
-        el.addEventListener("click", () => showNumberModal(item));
+        el.title = `#${item.number} → ${item.count}`;
 
         container.appendChild(el);
     });
