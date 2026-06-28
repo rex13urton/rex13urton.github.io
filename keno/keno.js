@@ -175,34 +175,26 @@ function buildYearlyChart(data) {
 // ========================
 // LATEST DRAW (SAFE)
 // ========================
-async function loadLatestDraw() {
+function renderLatestDraw(draw) {
 
-    try {
+    const meta = document.getElementById("drawMeta");
+    const numbers = document.getElementById("drawNumbers");
 
-        const res = await fetch("stats/latest.json");
-
-        console.log("Latest status:", res.status);
-
-        if (!res.ok) {
-            throw new Error("Failed to load latest.json");
-        }
-
-        const latest = await res.json();
-
-        console.log("Latest raw:", latest);
-
-        const draw = Array.isArray(latest) ? latest[0] : latest;
-
-        if (!draw) {
-            console.warn("No draw data found");
-            return;
-        }
-
-        renderLatestDraw(draw);
-
-    } catch (err) {
-        console.error("Latest draw failed:", err);
+    if (!draw || !meta || !numbers) {
+        console.warn("Missing draw or DOM nodes");
+        return;
     }
+
+    const [date, time] = draw.datetime.split(" ");
+
+    meta.innerHTML = `
+        <strong>Draw #${draw.drawNumber}</strong><br>
+        ${date} • ${time} • x${draw.multiplier}
+    `;
+
+    numbers.innerHTML = draw.numbers
+        .map(n => `<span>${String(n).padStart(2, "0")}</span>`)
+        .join("");
 }
 
 // ========================
