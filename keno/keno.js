@@ -12,6 +12,42 @@ const PALETTE = {
     highlight: "#C97548"
 };
 
+function lerpColor3(c1, c2, c3, t) {
+
+    // 0 → 0.5 → 1 mapping
+    if (t < 0.5) {
+        return lerpColor(c1, c2, t / 0.5);
+    } else {
+        return lerpColor(c2, c3, (t - 0.5) / 0.5);
+    }
+}
+
+function lerpColor(a, b, t) {
+
+    const ah = parseInt(a.replace('#',''),16),
+          ar = ah >> 16, ag = ah >> 8 & 0xff, ab = ah & 0xff,
+          bh = parseInt(b.replace('#',''),16),
+          br = bh >> 16, bg = bh >> 8 & 0xff, bb = bh & 0xff;
+
+    const rr = Math.round(ar + (br - ar) * t);
+    const rg = Math.round(ag + (bg - ag) * t);
+    const rb = Math.round(ab + (bb - ab) * t);
+
+    return `rgb(${rr},${rg},${rb})`;
+}
+
+function getTextColorFromHex(hex) {
+
+    const c = hex.replace('#','');
+    const r = parseInt(c.substring(0,2),16);
+    const g = parseInt(c.substring(2,4),16);
+    const b = parseInt(c.substring(4,6),16);
+
+    const luminance = (0.2126*r + 0.7152*g + 0.0722*b);
+
+    return luminance > 150 ? PALETTE.text : "#ffffff";
+}
+
 // ========================
 // GLOBAL STATE
 // ========================
@@ -145,6 +181,7 @@ function buildHeatmap(data) {
 
     container.innerHTML = "";
 
+    // ---------- FILTER BY YEAR ----------
     const filtered = data.filter(d => {
 
         const year =
@@ -169,27 +206,27 @@ function buildHeatmap(data) {
     cleaned.forEach(item => {
 
         const logVal = Math.log1p(item.count);
-        const intensity = (logVal - minLog) / (maxLog - minLog || 1);
+        let intensity = (logVal - minLog) / (maxLog - minLog || 1);
+
+        // clamp
+        intensity = Math.max(0, Math.min(1, intensity));
 
         const el = document.createElement("div");
-
-        function lerpColor(a, b, t) {
-            const ah = parseInt(a.replace('#',''),16),
-                  ar = ah >> 16, ag = ah >> 8 & 0xff, ab = ah & 0xff,
-                  bh = parseInt(b.replace('#',''),16),
-                  br = bh >> 16, bg = bh >> 8 & 0xff, bb = bh & 0xff;
-        
-            const rr = Math.round(ar + (br - ar) * t);
-            const rg = Math.round(ag + (bg - ag) * t);
-            const rb = Math.round(ab + (bb - ab) * t);
-        
-            return `rgb(${rr},${rg},${rb})`;
-        }
-
         el.className = "heat-cell";
 
+        // ========================
+        // COLOR SCALE (IMPORTANT FIX)
+        // cold → bg → hot
+        // ========================
+        const color = lerpColor3(
+            PALETTE.text,       // cold (deep teal)
+            PALETTE.bg,         // neutral
+            PALETTE.highlight,  // hot (orange)
+            intensity
+        );
 
-        el.style.borderRadius = "6px";
+        el.style.backgroundColor = color;
+        el.style.borderRadius = "8px";
 
         el.style.display = "flex";
         el.style.alignItems = "center";
@@ -198,7 +235,7 @@ function buildHeatmap(data) {
         el.style.cursor = "pointer";
         el.style.fontWeight = "600";
 
-        el.style.color = getTextColorFromHSL(hue, 70, lightness);
+        el.style.color = getTextColorFromHex(color);
 
         el.textContent = String(item.number).padStart(2, "0");
 
