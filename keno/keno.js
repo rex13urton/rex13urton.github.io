@@ -47,6 +47,7 @@ async function loadData() {
 // ========================
 // MASTER RENDER
 // ========================
+console.log("HEATMAP SAMPLE:", data[0]);
 function renderDashboard() {
     buildHeatmap(STATE.heatmap);
     buildHotCold(STATE.zscores);
