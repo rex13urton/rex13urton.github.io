@@ -1,54 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rex's Keno Dashboard</title>
+    <title>Rex's Keno Dashboard</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="keno.css">
 
 </head>
 
 <body>
 
-<header>
+    <div class="wrapper">
 
-<h1>Rex's Keno Dashboard</h1>
+        <!-- Header Image -->
+        <header class="hero">
 
-<nav>
+            <!-- Replace with your own image -->
+            <img src="keno/images/RexsKenoDashboard1.png" alt="Rex's Keno Dashboard">
 
-<a href="#">Dashboard</a>
+        </header>
 
-<a href="#">History</a>
+        <!-- Navigation -->
+        <nav class="navbar">
 
-<a href="#">Statistics</a>
+            <a href="#">Dashboard</a>
+            <a href="#">History</a>
+            <a href="#">Statistics</a>
+            <a href="#">Charts</a>
+            <a href="#">Picks</a>
+            <a href="#">Settings</a>
 
-<a href="#">Predictions</a>
+        </nav>
 
-<a href="#">Settings</a>
+        <main>
 
-</nav>
+            <!-- Top Row -->
+            <section class="grid-two">
 
-</header>
+                <div class="card" id="currentDraw">
 
-<main>
+                    <h2>Current Draw</h2>
 
-<section class="card">
+                    <div class="numbers">
 
-<h2>Current Draw</h2>
+                        <span>04</span>
+                        <span>11</span>
+                        <span>16</span>
+                        <span>23</span>
+                        <span>29</span>
+                        <span>31</span>
+                        <span>38</span>
+                        <span>44</span>
+                        <span>57</span>
+                        <span>63</span>
 
-<p>Dashboard content goes here.</p>
+                    </div>
 
-</section>
+                    <p>Placeholder draw numbers.</p>
 
-</main>
+                </div>
+
+                <div class="card" id="summary">
+
+                    <h2>Dashboard Summary</h2>
+
+                    <ul>
+
+                        <li>Games Tracked <strong>4,236</strong></li>
+                        <li>Latest Draw <strong>#12083</strong></li>
+                        <li>Database Status <strong>Online</strong></li>
+                        <li>Last Update <strong>2 mins ago</strong></li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+            <!-- Heatmap -->
+            <section class="card">
+
+                <h2>Number Heatmap</h2>
+
+                <div class="heatmap">
+
+                    <!-- Just placeholders -->
+                    <div>01</div><div>02</div><div>03</div><div>04</div><div>05</div>
+                    <div>06</div><div>07</div><div>08</div><div>09</div><div>10</div>
+
+                    <div>11</div><div>12</div><div>13</div><div>14</div><div>15</div>
+                    <div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
+
+                    <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div>
+                    <div>26</div><div>27</div><div>28</div><div>29</div><div>30</div>
+
+                    <div>31</div><div>32</div><div>33</div><div>34</div><div>35</div>
+                    <div>36</div><div>37</div><div>38</div><div>39</div><div>40</div>
+
+                </div>
+
+            </section>
+
+            <!-- Stats -->
+            <section class="grid-two">
+
+                <div class="card" id="hotNumbers">
+
+                    <h2>Hot Numbers</h2>
+
+                    <p>Chart or JavaScript widget goes here.</p>
+
+                </div>
+
+                <div class="card" id="coldNumbers">
+
+                    <h2>Cold Numbers</h2>
+
+                    <p>Chart or JavaScript widget goes here.</p>
+
+                </div>
+
+            </section>
+
+            <!-- Frequency Chart -->
+            <section class="card" id="frequencyChart">
+
+                <h2>Frequency Chart</h2>
+
+                <div class="chart-placeholder">
+
+                    Chart.js Placeholder
+
+                </div>
+
+            </section>
+
+            <!-- Recent Draws -->
+            <section class="card">
+
+                <h2>Recent Draws</h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Draw</th>
+                            <th>Date</th>
+                            <th>Numbers</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>12083</td>
+                            <td>Jun 28</td>
+                            <td>04 11 16 23 29 31 38 44 57 63</td>
+                        </tr>
+
+                        <tr>
+                            <td>12082</td>
+                            <td>Jun 28</td>
+                            <td>01 07 09 18 22 36 42 54 60 70</td>
+                        </tr>
+
+                        <tr>
+                            <td>12081</td>
+                            <td>Jun 27</td>
+                            <td>02 12 21 27 35 40 48 55 62 79</td>
+                        </tr>
+
+                        <tr>
+                            <td>12080</td>
+                            <td>Jun 27</td>
+                            <td>03 14 17 20 24 37 45 58 69 80</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
 
 </body>
+
 </html>
