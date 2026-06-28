@@ -177,12 +177,32 @@ function buildYearlyChart(data) {
 // ========================
 async function loadLatestDraw() {
 
-    const res = await fetch("stats/latest.json");
-    const latest = await res.json();
+    try {
 
-    const draw = Array.isArray(latest) ? latest[0] : latest;
+        const res = await fetch("stats/latest.json");
 
-    renderLatestDraw(draw);
+        console.log("Latest status:", res.status);
+
+        if (!res.ok) {
+            throw new Error("Failed to load latest.json");
+        }
+
+        const latest = await res.json();
+
+        console.log("Latest raw:", latest);
+
+        const draw = Array.isArray(latest) ? latest[0] : latest;
+
+        if (!draw) {
+            console.warn("No draw data found");
+            return;
+        }
+
+        renderLatestDraw(draw);
+
+    } catch (err) {
+        console.error("Latest draw failed:", err);
+    }
 }
 
 // ========================
