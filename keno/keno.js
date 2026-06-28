@@ -108,52 +108,28 @@ function buildSummary(heatmap, zscores) {
 function buildYearlyChart(data) {
 
     const container = document.getElementById("frequencyChart");
+    container.innerHTML = "";
 
     const canvas = document.createElement("canvas");
     container.appendChild(canvas);
 
     const grouped = {};
 
-    data.forEach(item => {
-        if (!grouped[item.year]) grouped[item.year] = 0;
-        grouped[item.year] += item.count;
+    data.forEach(d => {
+        grouped[d.year] = (grouped[d.year] || 0) + d.count;
     });
-
-    const labels = Object.keys(grouped);
-    const values = Object.values(grouped);
 
     new Chart(canvas, {
         type: "line",
         data: {
-            labels,
+            labels: Object.keys(grouped),
             datasets: [{
-                label: "Keno Frequency by Year",
-                data: values,
+                label: "Yearly Frequency",
+                data: Object.values(grouped),
                 borderColor: "#295863",
-                backgroundColor: "rgba(41,88,99,0.15)",
                 tension: 0.3,
                 fill: true
             }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    display: false
-                }
-            },
-            scales: {
-                x: {
-                    ticks: {
-                        color: "#173D46"
-                    }
-                },
-                y: {
-                    ticks: {
-                        color: "#173D46"
-                    }
-                }
-            }
         }
     });
 }
