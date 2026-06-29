@@ -75,14 +75,12 @@
 
             <div class="section-header">
                 <h2>Year Range Filter</h2>
-                <button id="toggleHeatmap" class="btn-small">Expand Heatmap</button>
             </div>
 
             <p style="opacity:0.7; margin-top:4px;">
                 Focus analysis window (recommended: 2020 → current, max 10 years view)
             </p>
 
-            <!-- SINGLE DUAL SLIDER (JS handles sync) -->
             <div class="year-filter">
                 <input type="range" id="yearMin" min="2015" max="2026" value="2020">
                 <input type="range" id="yearMax" min="2015" max="2026" value="2026">
@@ -95,17 +93,29 @@
         </section>
 
         <!-- =========================
-             HEATMAP (COLLAPSIBLE)
+             HEATMAP (COLLAPSIBLE MODULE)
         ========================== -->
         <section class="card" id="heatmapSection">
 
-            <h2>Number Heatmap</h2>
+            <div class="section-header">
+
+                <h2>Number Heatmap</h2>
+
+                <!-- TOGGLE BUTTON -->
+                <button id="toggleHeatmap" class="collapse-btn" aria-expanded="true">
+                    <span class="icon">−</span>
+                </button>
+
+            </div>
 
             <small style="opacity:0.7;">
                 Click a number to inspect • intensity based on frequency
             </small>
 
-            <div class="heatmap" id="heatmap"></div>
+            <!-- COLLAPSIBLE WRAPPER -->
+            <div class="heatmap-wrapper" id="heatmapWrapper">
+                <div class="heatmap" id="heatmap"></div>
+            </div>
 
         </section>
 
