@@ -9,7 +9,7 @@
 
 /* =========================
    RESET
-   ========================= */
+========================= */
 
 * {
     margin: 0;
@@ -25,22 +25,21 @@ body {
 }
 
 /* =========================
-   WRAPPER / BASE LAYOUT
-   ========================= */
+   WRAPPER / BASE
+========================= */
 
 .wrapper {
     width: min(1400px, 100%);
     margin: auto;
 }
 
-/* make spacing responsive instead of fixed huge padding */
 main {
     padding: 32px 24px;
 }
 
 /* =========================
    HERO
-   ========================= */
+========================= */
 
 .hero {
     padding: 20px 0 10px;
@@ -50,14 +49,13 @@ main {
 .hero img {
     width: min(520px, 90%);
     height: auto;
-    object-fit: contain;
     display: block;
     margin: auto;
 }
 
 /* =========================
-   NAVBAR (desktop)
-   ========================= */
+   NAV
+========================= */
 
 .navbar {
     display: flex;
@@ -78,8 +76,8 @@ nav a {
 }
 
 /* =========================
-   GRID (DESKTOP)
-   ========================= */
+   GRID
+========================= */
 
 .grid-two {
     display: grid;
@@ -90,7 +88,7 @@ nav a {
 
 /* =========================
    CARD
-   ========================= */
+========================= */
 
 .card {
     background: var(--card);
@@ -109,8 +107,60 @@ nav a {
 }
 
 /* =========================
-   LAST DRAW NUMBERS
-   ========================= */
+   SECTION HEADER (NEW UX)
+========================= */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+/* =========================
+   COLLAPSE BUTTON (+ / -)
+========================= */
+
+.collapse-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+
+    transition: all 0.15s ease;
+}
+
+.collapse-btn:hover {
+    transform: scale(1.05);
+    background: #F0E7DA;
+}
+
+.collapse-btn:active {
+    transform: scale(0.95);
+}
+
+/* =========================
+   HEATMAP WRAPPER (ANIMATION)
+========================= */
+
+.heatmap-wrapper {
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+
+/* =========================
+   NUMBERS (LAST DRAW)
+========================= */
 
 .numbers {
     display: flex;
@@ -133,7 +183,7 @@ nav a {
 
 /* =========================
    HEATMAP
-   ========================= */
+========================= */
 
 .heatmap {
     display: grid;
@@ -149,16 +199,18 @@ nav a {
     border-radius: 8px;
     font-size: 0.85rem;
     cursor: pointer;
-    transition: transform 0.12s ease;
+
+    transition: transform 0.15s ease, filter 0.2s ease;
 }
 
 .heatmap div:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: brightness(1.1);
 }
 
 /* =========================
    TABLE
-   ========================= */
+========================= */
 
 table {
     width: 100%;
@@ -181,7 +233,7 @@ td {
 
 /* =========================
    LISTS
-   ========================= */
+========================= */
 
 ul {
     list-style: none;
@@ -196,7 +248,7 @@ li {
 
 /* =========================
    RESPONSIVE TABLET
-   ========================= */
+========================= */
 
 @media (max-width: 900px) {
 
@@ -208,18 +260,14 @@ li {
         grid-template-columns: 1fr;
     }
 
-    .hero img {
-        width: 85%;
-    }
-
     .heatmap {
         grid-template-columns: repeat(8, 1fr);
     }
 }
 
 /* =========================
-   RESPONSIVE MOBILE (IMPORTANT FIXES)
-   ========================= */
+   RESPONSIVE MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
@@ -227,48 +275,32 @@ li {
         padding: 14px 10px;
     }
 
-    /* NAV becomes compact chips */
     .navbar {
         gap: 10px;
         justify-content: flex-start;
         overflow-x: auto;
         white-space: nowrap;
-        padding-bottom: 10px;
     }
 
     nav a {
         font-size: 0.95rem;
-        flex: 0 0 auto;
     }
 
-    /* STACK EVERYTHING CLEANLY */
-    .grid-two {
-        grid-template-columns: 1fr;
-    }
-
-    /* BIG FIX: prevent squished cards */
     .card {
         padding: 16px;
     }
 
-    /* numbers smaller but still tappable */
     .numbers span {
         width: 36px;
         height: 36px;
         font-size: 0.8rem;
     }
 
-    /* heatmap usability first */
     .heatmap {
         grid-template-columns: repeat(5, 1fr);
         gap: 5px;
     }
 
-    .heatmap div {
-        font-size: 0.7rem;
-    }
-
-    /* table becomes readable */
     table {
         font-size: 0.8rem;
     }
@@ -277,26 +309,7 @@ li {
         padding: 8px 6px;
     }
 
-    /* headings scale down slightly */
     h2 {
         font-size: 1.1rem;
     }
-}
-
-.heatmap div {
-    transition: transform 0.15s ease, filter 0.15s ease;
-}
-
-.heatmap div:hover {
-    transform: scale(1.08);
-    filter: brightness(1.1);
-}
-
-#heatmap div {
-    transition: transform 0.15s ease, filter 0.2s ease;
-}
-
-#heatmap div:hover {
-    transform: scale(1.08);
-    filter: brightness(1.1);
 }
