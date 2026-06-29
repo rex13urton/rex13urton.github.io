@@ -1,562 +1,562 @@
 [
   {
     "number": 1,
-    "observed": 844405,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9995981033318359,
-    "z_score": -0.4265269336423084
+    "observed": 844450,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9995925043287167,
+    "z_score": -0.4324818066913599
   },
   {
     "number": 2,
-    "observed": 843615,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9986629093175511,
-    "z_score": -1.4190343786420836
+    "observed": 843668,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9986668351495054,
+    "z_score": -1.4149096144840787
   },
   {
     "number": 3,
-    "observed": 845596,
-    "expected": 844744.5,
-    "pressure_ratio": 1.001007997092612,
-    "z_score": 1.0697722650852006
+    "observed": 845646,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0010082336616282,
+    "z_score": 1.0700548405210335
   },
   {
     "number": 4,
-    "observed": 846143,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0016555301632624,
-    "z_score": 1.7569894453571968
+    "observed": 846197,
+    "expected": 844794.25,
+    "pressure_ratio": 1.001660463479717,
+    "z_score": 1.7622769915361076
   },
   {
     "number": 5,
-    "observed": 845541,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0009428886485796,
-    "z_score": 1.0006736454966088
+    "observed": 845595,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0009478639325493,
+    "z_score": 1.0059834617519432
   },
   {
     "number": 6,
-    "observed": 844479,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9996857037838068,
-    "z_score": -0.3335578818322029
+    "observed": 844522,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9996777321815341,
+    "z_score": -0.3420280954879382
   },
   {
     "number": 7,
-    "observed": 846168,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0016851249105498,
-    "z_score": 1.7883979088065567
+    "observed": 846221,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0016888727639897,
+    "z_score": 1.7924282286039148
   },
   {
     "number": 8,
-    "observed": 844334,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9995140542495393,
-    "z_score": -0.5157269698384908
+    "observed": 844381,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9995108276364334,
+    "z_score": -0.5191666132613056
   },
   {
     "number": 9,
-    "observed": 844476,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9996821524141323,
-    "z_score": -0.3373268974461261
+    "observed": 844524,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9996800996218902,
+    "z_score": -0.3395154923989543
   },
   {
     "number": 10,
-    "observed": 844270,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9994382916964833,
-    "z_score": -0.5961326362688523
+    "observed": 844313,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9994303346643281,
+    "z_score": -0.6045951182867595
   },
   {
     "number": 11,
-    "observed": 844246,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9994098807390874,
-    "z_score": -0.6262847611802378
+    "observed": 844284,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9993960067791655,
+    "z_score": -0.6410278630770265
   },
   {
     "number": 12,
-    "observed": 844889,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0001710576393217,
-    "z_score": 0.18154091873730063
+    "observed": 844944,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0001772620966585,
+    "z_score": 0.18813115628767216
   },
   {
     "number": 13,
-    "observed": 844901,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0001852631180197,
-    "z_score": 0.19661698119299342
+    "observed": 844944,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0001772620966585,
+    "z_score": 0.18813115628767216
   },
   {
     "number": 14,
-    "observed": 845507,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0009026397922685,
-    "z_score": 0.9579581352054791
+    "observed": 845558,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0009040662859625,
+    "z_score": 0.9595003046057403
   },
   {
     "number": 15,
-    "observed": 844102,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9992394149947115,
-    "z_score": -0.8071975106485513
+    "observed": 844159,
+    "expected": 844794.25,
+    "pressure_ratio": 0.999248041756913,
+    "z_score": -0.7980655561385225
   },
   {
     "number": 16,
-    "observed": 845892,
-    "expected": 844744.5,
-    "pressure_ratio": 1.001358398900496,
-    "z_score": 1.4416484723256227
+    "observed": 845936,
+    "expected": 844794.25,
+    "pressure_ratio": 1.001351512513254,
+    "z_score": 1.434382288423704
   },
   {
     "number": 17,
-    "observed": 844829,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0001000302458318,
-    "z_score": 0.10616060645883671
+    "observed": 844877,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0000979528447311,
+    "z_score": 0.10395895280671033
   },
   {
     "number": 18,
-    "observed": 845322,
-    "expected": 844744.5,
-    "pressure_ratio": 1.000683638662341,
-    "z_score": 0.7255355056802153
+    "observed": 845377,
+    "expected": 844794.25,
+    "pressure_ratio": 1.000689812933741,
+    "z_score": 0.7321097250526941
   },
   {
     "number": 19,
-    "observed": 844603,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9998324937303528,
-    "z_score": -0.17777190312337743
+    "observed": 844654,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9998339832450327,
+    "z_score": -0.17619629161499847
   },
   {
     "number": 20,
-    "observed": 844274,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9994430268560494,
-    "z_score": -0.5911072821169546
+    "observed": 844326,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9994457230266423,
+    "z_score": -0.5882631982083638
   },
   {
     "number": 21,
-    "observed": 844251,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9994157996885449,
-    "z_score": -0.6200030684903658
+    "observed": 844313,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9994303346643281,
+    "z_score": -0.6045951182867595
   },
   {
     "number": 22,
-    "observed": 844385,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9995744275340058,
-    "z_score": -0.4516537044017964
+    "observed": 844433,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9995723810856904,
+    "z_score": -0.4538389329477233
   },
   {
     "number": 23,
-    "observed": 843807,
-    "expected": 844744.5,
-    "pressure_ratio": 0.998890196976719,
-    "z_score": -1.177817379350999
+    "observed": 843865,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9989000280245752,
+    "z_score": -1.167418210219161
   },
   {
     "number": 24,
-    "observed": 845779,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0012246306427566,
-    "z_score": 1.2996822175345155
+    "observed": 845826,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0012213032936719,
+    "z_score": 1.2961891185295875
   },
   {
     "number": 25,
-    "observed": 844883,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0001639548999728,
-    "z_score": 0.17400288750945425
+    "observed": 844941,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0001737109361244,
+    "z_score": 0.18436225165419626
   },
   {
     "number": 26,
-    "observed": 843694,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9987564287189795,
-    "z_score": -1.319783634142106
+    "observed": 843743,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9987556141628569,
+    "z_score": -1.320686998647181
   },
   {
     "number": 27,
-    "observed": 845566,
-    "expected": 844744.5,
-    "pressure_ratio": 1.000972483395867,
-    "z_score": 1.0320821089459686
+    "observed": 845621,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0009786406571777,
+    "z_score": 1.0386473019087343
   },
   {
     "number": 28,
-    "observed": 845147,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0004764754313287,
-    "z_score": 0.5056762615346956
+    "observed": 845189,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0004672735402733,
+    "z_score": 0.49592503468820426
   },
   {
     "number": 29,
-    "observed": 843880,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9989766136387985,
-    "z_score": -1.0861046660788678
+    "observed": 843941,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9989899907581047,
+    "z_score": -1.0719392928377713
   },
   {
     "number": 30,
-    "observed": 845605,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0010186512016355,
-    "z_score": 1.0810793119269702
+    "observed": 845656,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0010200708634085,
+    "z_score": 1.0826178559659532
   },
   {
     "number": 31,
-    "observed": 844655,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9998940508047107,
-    "z_score": -0.1124422991487087
+    "observed": 844705,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9998943529741118,
+    "z_score": -0.11212491284590811
   },
   {
     "number": 32,
-    "observed": 844796,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0000609651794123,
-    "z_score": 0.06470143470568154
+    "observed": 844851,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0000671761201025,
+    "z_score": 0.07129511264991917
   },
   {
     "number": 33,
-    "observed": 843236,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9982142529486726,
-    "z_score": -1.8951866845343808
+    "observed": 843283,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9982111028809678,
+    "z_score": -1.8985857091134861
   },
   {
     "number": 34,
-    "observed": 844817,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0000858247671338,
-    "z_score": 0.09108454400314392
+    "observed": 844860,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0000778296017048,
+    "z_score": 0.08260182655034687
   },
   {
     "number": 35,
-    "observed": 843478,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9985007301024156,
-    "z_score": -1.5911527583445761
+    "observed": 843534,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9985082166456507,
+    "z_score": -1.5832540214460022
   },
   {
     "number": 36,
-    "observed": 844630,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9998644560574232,
-    "z_score": -0.14385076259806867
+    "observed": 844671,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9998541064880591,
+    "z_score": -0.154839165358635
   },
   {
     "number": 37,
-    "observed": 845381,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0007534822659396,
-    "z_score": 0.7996594794207049
+    "observed": 845428,
+    "expected": 844794.25,
+    "pressure_ratio": 1.00075018266282,
+    "z_score": 0.7961811038217845
   },
   {
     "number": 38,
-    "observed": 845169,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0005025188089416,
-    "z_score": 0.5333157093701323
+    "observed": 845223,
+    "expected": 844794.25,
+    "pressure_ratio": 1.000507520026326,
+    "z_score": 0.5386392872009311
   },
   {
     "number": 39,
-    "observed": 844564,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9997863259245843,
-    "z_score": -0.226769106104379
+    "observed": 844621,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9997949204791581,
+    "z_score": -0.2176542425832334
   },
   {
     "number": 40,
-    "observed": 845518,
-    "expected": 844744.5,
-    "pressure_ratio": 1.000915661481075,
-    "z_score": 0.9717778591231975
+    "observed": 845581,
+    "expected": 844794.25,
+    "pressure_ratio": 1.000931291850057,
+    "z_score": 0.9883952401290556
   },
   {
     "number": 41,
-    "observed": 845777,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0012222630629735,
-    "z_score": 1.2971695404585668
+    "observed": 845827,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0012224870138497,
+    "z_score": 1.2974454200740797
   },
   {
     "number": 42,
-    "observed": 844964,
-    "expected": 844744.5,
-    "pressure_ratio": 1.000259841881184,
-    "z_score": 0.2757663090853806
+    "observed": 845011,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0002565713485858,
+    "z_score": 0.272303359768634
   },
   {
     "number": 43,
-    "observed": 846013,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0015016374773673,
-    "z_score": 1.593665435420525
+    "observed": 846064,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0015030286960405,
+    "z_score": 1.5951888861186758
   },
   {
     "number": 44,
-    "observed": 844538,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9997555473874054,
-    "z_score": -0.25943390809171335
+    "observed": 844600,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9997700623554197,
+    "z_score": -0.2440365750175647
   },
   {
     "number": 45,
-    "observed": 844594,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9998218396213293,
-    "z_score": -0.18907894996514704
+    "observed": 844645,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9998233297634306,
+    "z_score": -0.18750300551542617
   },
   {
     "number": 46,
-    "observed": 844223,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9993826535715828,
-    "z_score": -0.655180547553649
+    "observed": 844271,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9993806184168512,
+    "z_score": -0.6573597831554221
   },
   {
     "number": 47,
-    "observed": 844973,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0002704959902078,
-    "z_score": 0.28707335592715016
+    "observed": 845033,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0002826131925022,
+    "z_score": 0.2999419937474573
   },
   {
     "number": 48,
-    "observed": 843369,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9983716970042421,
-    "z_score": -1.7280936589837856
+    "observed": 843417,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9983697213848224,
+    "z_score": -1.7302413021515626
   },
   {
     "number": 49,
-    "observed": 846482,
-    "expected": 844744.5,
-    "pressure_ratio": 1.002056834936481,
-    "z_score": 2.182888209730518
+    "observed": 846526,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0020499074182856,
+    "z_score": 2.175600199673965
   },
   {
     "number": 50,
-    "observed": 845146,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0004752916414372,
-    "z_score": 0.5044199229967211
+    "observed": 845198,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0004779270218755,
+    "z_score": 0.507231748588632
   },
   {
     "number": 51,
-    "observed": 845238,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0005842003114551,
-    "z_score": 0.6200030684903658
+    "observed": 845284,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0005797269571852,
+    "z_score": 0.6152736814149412
   },
   {
     "number": 52,
-    "observed": 844233,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9993944914704979,
-    "z_score": -0.6426171621739051
+    "observed": 844283,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9993948230589874,
+    "z_score": -0.6422841646215185
   },
   {
     "number": 53,
-    "observed": 844869,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0001473818414917,
-    "z_score": 0.15641414797781267
+    "observed": 844917,
+    "expected": 844794.25,
+    "pressure_ratio": 1.000145301651852,
+    "z_score": 0.15421101458638903
   },
   {
     "number": 54,
-    "observed": 844405,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9995981033318359,
-    "z_score": -0.4265269336423084
+    "observed": 844459,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9996031578103189,
+    "z_score": -0.4211750927909322
   },
   {
     "number": 55,
-    "observed": 844454,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9996561090365194,
-    "z_score": -0.36496634528156285
+    "observed": 844502,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9996540577779738,
+    "z_score": -0.36715412637777756
   },
   {
     "number": 56,
-    "observed": 845086,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0004042642479472,
-    "z_score": 0.4290396107182572
+    "observed": 845132,
+    "expected": 844794.25,
+    "pressure_ratio": 1.000399801490126,
+    "z_score": 0.4243158466521621
   },
   {
     "number": 57,
-    "observed": 846226,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0017537847242568,
-    "z_score": 1.861265544009072
+    "observed": 846268,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0017445076123566,
+    "z_score": 1.8514744011950373
   },
   {
     "number": 58,
-    "observed": 844403,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9995957357520528,
-    "z_score": -0.4290396107182572
+    "observed": 844451,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9995936880488947,
+    "z_score": -0.4312255051468679
   },
   {
     "number": 59,
-    "observed": 844588,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9998147368819803,
-    "z_score": -0.19661698119299342
+    "observed": 844645,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9998233297634306,
+    "z_score": -0.18750300551542617
   },
   {
     "number": 60,
-    "observed": 845884,
-    "expected": 844744.5,
-    "pressure_ratio": 1.001348928581364,
-    "z_score": 1.4315977640218276
+    "observed": 845923,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0013361241509398,
+    "z_score": 1.4180503683453085
   },
   {
     "number": 61,
-    "observed": 843830,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9989174241442235,
-    "z_score": -1.1489215929775878
+    "observed": 843870,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9989059466254653,
+    "z_score": -1.1611367024967012
   },
   {
     "number": 62,
-    "observed": 845041,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0003509937028296,
-    "z_score": 0.37250437650940926
+    "observed": 845084,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0003429829215813,
+    "z_score": 0.36401337251654764
   },
   {
     "number": 63,
-    "observed": 844283,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9994536809650729,
-    "z_score": -0.5798002352751851
+    "observed": 844335,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9994563765082445,
+    "z_score": -0.5769564843079361
   },
   {
     "number": 64,
-    "observed": 842922,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9978425429227418,
-    "z_score": -2.289676985458342
+    "observed": 842963,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9978323124240015,
+    "z_score": -2.3006022033509157
   },
   {
     "number": 65,
-    "observed": 845070,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0003853236096831,
-    "z_score": 0.40893819411066684
+    "observed": 845122,
+    "expected": 844794.25,
+    "pressure_ratio": 1.000387964288346,
+    "z_score": 0.4117528312072424
   },
   {
     "number": 66,
-    "observed": 843629,
-    "expected": 844744.5,
-    "pressure_ratio": 0.998679482376032,
-    "z_score": -1.401445639110442
+    "observed": 843670,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9986692025898614,
+    "z_score": -1.4123970113950945
   },
   {
     "number": 67,
-    "observed": 845420,
-    "expected": 844744.5,
-    "pressure_ratio": 1.000799650071708,
-    "z_score": 0.8486566824017064
+    "observed": 845468,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0007975314699407,
+    "z_score": 0.8464331656014632
   },
   {
     "number": 68,
-    "observed": 844215,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9993731832524508,
-    "z_score": -0.6652312558574442
+    "observed": 844262,
+    "expected": 844794.25,
+    "pressure_ratio": 0.999369964935249,
+    "z_score": -0.6686664970558498
   },
   {
     "number": 69,
-    "observed": 844150,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9992962369095034,
-    "z_score": -0.7468932608257801
+    "observed": 844197,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9992930231236777,
+    "z_score": -0.7503260974478276
   },
   {
     "number": 70,
-    "observed": 845678,
-    "expected": 844744.5,
-    "pressure_ratio": 1.001105067863715,
-    "z_score": 1.1727920251991013
+    "observed": 845734,
+    "expected": 844794.25,
+    "pressure_ratio": 1.001112401037294,
+    "z_score": 1.1806093764363266
   },
   {
     "number": 71,
-    "observed": 844416,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9996111250206423,
-    "z_score": -0.41270720972459
+    "observed": 844466,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9996114438515651,
+    "z_score": -0.41238098197948836
   },
   {
     "number": 72,
-    "observed": 843514,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9985433465385096,
-    "z_score": -1.5459245709774978
+    "observed": 843571,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9985520142922374,
+    "z_score": -1.5367708642997995
   },
   {
     "number": 73,
-    "observed": 844315,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9994915622416009,
-    "z_score": -0.5395974020600043
+    "observed": 844357,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9994824183521609,
+    "z_score": -0.5493178503291128
   },
   {
     "number": 74,
-    "observed": 844158,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9993057072286354,
-    "z_score": -0.7368425525219849
+    "observed": 844216,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9993155138070601,
+    "z_score": -0.7264563681024803
   },
   {
     "number": 75,
-    "observed": 844527,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9997425256985988,
-    "z_score": -0.27325363200943176
+    "observed": 844569,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9997333670299011,
+    "z_score": -0.28298192289681573
   },
   {
     "number": 76,
-    "observed": 844469,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9996738658848918,
-    "z_score": -0.3461212672119469
+    "observed": 844522,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9996777321815341,
+    "z_score": -0.3420280954879382
   },
   {
     "number": 77,
-    "observed": 844973,
-    "expected": 844744.5,
-    "pressure_ratio": 1.0002704959902078,
-    "z_score": 0.28707335592715016
+    "observed": 845026,
+    "expected": 844794.25,
+    "pressure_ratio": 1.000274327151256,
+    "z_score": 0.2911478829360135
   },
   {
     "number": 78,
-    "observed": 844719,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9999698133577668,
-    "z_score": -0.03203663271834717
+    "observed": 844766,
+    "expected": 844794.25,
+    "pressure_ratio": 0.999966559904971,
+    "z_score": -0.03549051863189809
   },
   {
     "number": 79,
-    "observed": 844455,
-    "expected": 844744.5,
-    "pressure_ratio": 0.9996572928264108,
-    "z_score": -0.3637100067435885
+    "observed": 844503,
+    "expected": 844794.25,
+    "pressure_ratio": 0.9996552414981518,
+    "z_score": -0.3658978248332856
   },
   {
     "number": 80,
-    "observed": 845478,
-    "expected": 844744.5,
-    "pressure_ratio": 1.000868309885415,
-    "z_score": 0.9215243176042216
+    "observed": 845522,
+    "expected": 844794.25,
+    "pressure_ratio": 1.0008614523595538,
+    "z_score": 0.9142734490040295
   }
 ]
