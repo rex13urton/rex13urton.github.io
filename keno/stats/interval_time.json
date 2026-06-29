@@ -1,0 +1,322 @@
+[
+  {
+    "number": 1,
+    "avg_gap_minutes": 19.05245705555983
+  },
+  {
+    "number": 2,
+    "avg_gap_minutes": 19.07031118497322
+  },
+  {
+    "number": 3,
+    "avg_gap_minutes": 19.025628108018616
+  },
+  {
+    "number": 4,
+    "avg_gap_minutes": 19.013273776741965
+  },
+  {
+    "number": 5,
+    "avg_gap_minutes": 19.02683015962561
+  },
+  {
+    "number": 6,
+    "avg_gap_minutes": 19.050800020841276
+  },
+  {
+    "number": 7,
+    "avg_gap_minutes": 19.012733302055032
+  },
+  {
+    "number": 8,
+    "avg_gap_minutes": 19.054018379004493
+  },
+  {
+    "number": 9,
+    "avg_gap_minutes": 19.050831581751975
+  },
+  {
+    "number": 10,
+    "avg_gap_minutes": 19.05550363687403
+  },
+  {
+    "number": 11,
+    "avg_gap_minutes": 19.05605955617149
+  },
+  {
+    "number": 12,
+    "avg_gap_minutes": 19.041531540275162
+  },
+  {
+    "number": 13,
+    "avg_gap_minutes": 19.0412906852882
+  },
+  {
+    "number": 14,
+    "avg_gap_minutes": 19.027587622086656
+  },
+  {
+    "number": 15,
+    "avg_gap_minutes": 19.059248763774995
+  },
+  {
+    "number": 16,
+    "avg_gap_minutes": 19.018952774113007
+  },
+  {
+    "number": 17,
+    "avg_gap_minutes": 19.04287973409972
+  },
+  {
+    "number": 18,
+    "avg_gap_minutes": 19.031751251891293
+  },
+  {
+    "number": 19,
+    "avg_gap_minutes": 19.047988283238734
+  },
+  {
+    "number": 20,
+    "avg_gap_minutes": 19.05541328999827
+  },
+  {
+    "number": 21,
+    "avg_gap_minutes": 19.055936630145098
+  },
+  {
+    "number": 22,
+    "avg_gap_minutes": 19.052908329731107
+  },
+  {
+    "number": 23,
+    "avg_gap_minutes": 19.06596599218304
+  },
+  {
+    "number": 24,
+    "avg_gap_minutes": 19.021481996457698
+  },
+  {
+    "number": 25,
+    "avg_gap_minutes": 19.041674458681804
+  },
+  {
+    "number": 26,
+    "avg_gap_minutes": 19.068513665515773
+  },
+  {
+    "number": 27,
+    "avg_gap_minutes": 19.02629126525901
+  },
+  {
+    "number": 28,
+    "avg_gap_minutes": 19.035748261247168
+  },
+  {
+    "number": 29,
+    "avg_gap_minutes": 19.06432853525209
+  },
+  {
+    "number": 30,
+    "avg_gap_minutes": 19.025382448522002
+  },
+  {
+    "number": 31,
+    "avg_gap_minutes": 19.046757607256936
+  },
+  {
+    "number": 32,
+    "avg_gap_minutes": 19.043627100507106
+  },
+  {
+    "number": 33,
+    "avg_gap_minutes": 19.07885811326841
+  },
+  {
+    "number": 34,
+    "avg_gap_minutes": 19.04314780597455
+  },
+  {
+    "number": 35,
+    "avg_gap_minutes": 19.0734086406624
+  },
+  {
+    "number": 36,
+    "avg_gap_minutes": 19.047350375135117
+  },
+  {
+    "number": 37,
+    "avg_gap_minutes": 19.030413541839174
+  },
+  {
+    "number": 38,
+    "avg_gap_minutes": 19.035198919031483
+  },
+  {
+    "number": 39,
+    "avg_gap_minutes": 19.048878532448143
+  },
+  {
+    "number": 40,
+    "avg_gap_minutes": 19.027371386534647
+  },
+  {
+    "number": 41,
+    "avg_gap_minutes": 19.021532862681298
+  },
+  {
+    "number": 42,
+    "avg_gap_minutes": 19.039852632600482
+  },
+  {
+    "number": 43,
+    "avg_gap_minutes": 19.016262771686453
+  },
+  {
+    "number": 44,
+    "avg_gap_minutes": 19.049430042733473
+  },
+  {
+    "number": 45,
+    "avg_gap_minutes": 19.048163969907435
+  },
+  {
+    "number": 46,
+    "avg_gap_minutes": 19.056578719815406
+  },
+  {
+    "number": 47,
+    "avg_gap_minutes": 19.039610780002178
+  },
+  {
+    "number": 48,
+    "avg_gap_minutes": 19.075832851139715
+  },
+  {
+    "number": 49,
+    "avg_gap_minutes": 19.00570243159622
+  },
+  {
+    "number": 50,
+    "avg_gap_minutes": 19.035762502292506
+  },
+  {
+    "number": 51,
+    "avg_gap_minutes": 19.03369469154805
+  },
+  {
+    "number": 52,
+    "avg_gap_minutes": 19.056337002151068
+  },
+  {
+    "number": 53,
+    "avg_gap_minutes": 19.041995317611747
+  },
+  {
+    "number": 54,
+    "avg_gap_minutes": 19.052458894083873
+  },
+  {
+    "number": 55,
+    "avg_gap_minutes": 19.051256788410026
+  },
+  {
+    "number": 56,
+    "avg_gap_minutes": 19.037077927072424
+  },
+  {
+    "number": 57,
+    "avg_gap_minutes": 19.011476262223404
+  },
+  {
+    "number": 58,
+    "avg_gap_minutes": 19.05248441798525
+  },
+  {
+    "number": 59,
+    "avg_gap_minutes": 19.048294018259813
+  },
+  {
+    "number": 60,
+    "avg_gap_minutes": 19.01913858063113
+  },
+  {
+    "number": 61,
+    "avg_gap_minutes": 19.06543379590676
+  },
+  {
+    "number": 62,
+    "avg_gap_minutes": 19.03805618668939
+  },
+  {
+    "number": 63,
+    "avg_gap_minutes": 19.05520667265203
+  },
+  {
+    "number": 64,
+    "avg_gap_minutes": 19.085991451156158
+  },
+  {
+    "number": 65,
+    "avg_gap_minutes": 19.037472679745676
+  },
+  {
+    "number": 66,
+    "avg_gap_minutes": 19.069984637778738
+  },
+  {
+    "number": 67,
+    "avg_gap_minutes": 19.0295533580942
+  },
+  {
+    "number": 68,
+    "avg_gap_minutes": 19.0567308762944
+  },
+  {
+    "number": 69,
+    "avg_gap_minutes": 19.058224910531198
+  },
+  {
+    "number": 70,
+    "avg_gap_minutes": 19.023759634281607
+  },
+  {
+    "number": 71,
+    "avg_gap_minutes": 19.05221543909097
+  },
+  {
+    "number": 72,
+    "avg_gap_minutes": 19.072558368918596
+  },
+  {
+    "number": 73,
+    "avg_gap_minutes": 19.054473809506888
+  },
+  {
+    "number": 74,
+    "avg_gap_minutes": 19.05802178978555
+  },
+  {
+    "number": 75,
+    "avg_gap_minutes": 19.04971131735435
+  },
+  {
+    "number": 76,
+    "avg_gap_minutes": 19.051023247772562
+  },
+  {
+    "number": 77,
+    "avg_gap_minutes": 19.039637999839048
+  },
+  {
+    "number": 78,
+    "avg_gap_minutes": 19.04538911210605
+  },
+  {
+    "number": 79,
+    "avg_gap_minutes": 19.051335537518916
+  },
+  {
+    "number": 80,
+    "avg_gap_minutes": 19.028242012210843
+  }
+]

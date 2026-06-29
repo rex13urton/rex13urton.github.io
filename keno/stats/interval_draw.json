@@ -1,0 +1,482 @@
+[
+  {
+    "number": 1,
+    "avg_gap_draws": 4.086671782701171,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71850.0
+  },
+  {
+    "number": 2,
+    "avg_gap_draws": 4.090501105956042,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71834.0
+  },
+  {
+    "number": 3,
+    "avg_gap_draws": 4.080915804847474,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71839.0
+  },
+  {
+    "number": 4,
+    "avg_gap_draws": 4.078267004828977,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71834.0
+  },
+  {
+    "number": 5,
+    "avg_gap_draws": 4.081175343567424,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71834.0
+  },
+  {
+    "number": 6,
+    "avg_gap_draws": 4.086316043757209,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71843.0
+  },
+  {
+    "number": 7,
+    "avg_gap_draws": 4.078150057849101,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71833.0
+  },
+  {
+    "number": 8,
+    "avg_gap_draws": 4.087007140547628,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71831.0
+  },
+  {
+    "number": 9,
+    "avg_gap_draws": 4.086322271233607,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71832.0
+  },
+  {
+    "number": 10,
+    "avg_gap_draws": 4.087324063775882,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71830.0
+  },
+  {
+    "number": 11,
+    "avg_gap_draws": 4.087443810742142,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71831.0
+  },
+  {
+    "number": 12,
+    "avg_gap_draws": 4.08432833701035,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71831.0
+  },
+  {
+    "number": 13,
+    "avg_gap_draws": 4.084276245709551,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71830.0
+  },
+  {
+    "number": 14,
+    "avg_gap_draws": 4.081333544646638,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71835.0
+  },
+  {
+    "number": 15,
+    "avg_gap_draws": 4.0881304488443915,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71838.0
+  },
+  {
+    "number": 16,
+    "avg_gap_draws": 4.079486600519452,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71833.0
+  },
+  {
+    "number": 17,
+    "avg_gap_draws": 4.084617223860952,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71831.0
+  },
+  {
+    "number": 18,
+    "avg_gap_draws": 4.082229117696118,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71830.0
+  },
+  {
+    "number": 19,
+    "avg_gap_draws": 4.085711376482651,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71829.0
+  },
+  {
+    "number": 20,
+    "avg_gap_draws": 4.087301145482563,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71834.0
+  },
+  {
+    "number": 21,
+    "avg_gap_draws": 4.087417234231567,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71841.0
+  },
+  {
+    "number": 22,
+    "avg_gap_draws": 4.086772132110509,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71837.0
+  },
+  {
+    "number": 23,
+    "avg_gap_draws": 4.089569166372365,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71836.0
+  },
+  {
+    "number": 24,
+    "avg_gap_draws": 4.080026910134811,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71834.0
+  },
+  {
+    "number": 25,
+    "avg_gap_draws": 4.08435852580597,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71841.0
+  },
+  {
+    "number": 26,
+    "avg_gap_draws": 4.090115717446986,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71832.0
+  },
+  {
+    "number": 27,
+    "avg_gap_draws": 4.081059409980309,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71839.0
+  },
+  {
+    "number": 28,
+    "avg_gap_draws": 4.083087419215142,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71831.0
+  },
+  {
+    "number": 29,
+    "avg_gap_draws": 4.0892177670021415,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71829.0
+  },
+  {
+    "number": 30,
+    "avg_gap_draws": 4.080860544652107,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71830.0
+  },
+  {
+    "number": 31,
+    "avg_gap_draws": 4.085446822012327,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71842.0
+  },
+  {
+    "number": 32,
+    "avg_gap_draws": 4.084781515042111,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71835.0
+  },
+  {
+    "number": 33,
+    "avg_gap_draws": 4.092337248809644,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71838.0
+  },
+  {
+    "number": 34,
+    "avg_gap_draws": 4.0846764265828295,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71836.0
+  },
+  {
+    "number": 35,
+    "avg_gap_draws": 4.091165497103063,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71832.0
+  },
+  {
+    "number": 36,
+    "avg_gap_draws": 4.08557603397468,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71833.0
+  },
+  {
+    "number": 37,
+    "avg_gap_draws": 4.081943031536114,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71837.0
+  },
+  {
+    "number": 38,
+    "avg_gap_draws": 4.082965753554323,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71849.0
+  },
+  {
+    "number": 39,
+    "avg_gap_draws": 4.085903597481774,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71840.0
+  },
+  {
+    "number": 40,
+    "avg_gap_draws": 4.081287543597586,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71832.0
+  },
+  {
+    "number": 41,
+    "avg_gap_draws": 4.080040105181514,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71833.0
+  },
+  {
+    "number": 42,
+    "avg_gap_draws": 4.0839669902705795,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71831.0
+  },
+  {
+    "number": 43,
+    "avg_gap_draws": 4.078907864191052,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71835.0
+  },
+  {
+    "number": 44,
+    "avg_gap_draws": 4.086019913869967,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71836.0
+  },
+  {
+    "number": 45,
+    "avg_gap_draws": 4.085752545900807,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71850.0
+  },
+  {
+    "number": 46,
+    "avg_gap_draws": 4.087555169137976,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71847.0
+  },
+  {
+    "number": 47,
+    "avg_gap_draws": 4.083916390128904,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71831.0
+  },
+  {
+    "number": 48,
+    "avg_gap_draws": 4.091683582967341,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71829.0
+  },
+  {
+    "number": 49,
+    "avg_gap_draws": 4.076642003777994,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71833.0
+  },
+  {
+    "number": 50,
+    "avg_gap_draws": 4.083089883984405,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71830.0
+  },
+  {
+    "number": 51,
+    "avg_gap_draws": 4.0826466423026915,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71829.0
+  },
+  {
+    "number": 52,
+    "avg_gap_draws": 4.087503198173014,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71833.0
+  },
+  {
+    "number": 53,
+    "avg_gap_draws": 4.084426206223931,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71837.0
+  },
+  {
+    "number": 54,
+    "avg_gap_draws": 4.086670598433925,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71836.0
+  },
+  {
+    "number": 55,
+    "avg_gap_draws": 4.086419256015432,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71829.0
+  },
+  {
+    "number": 56,
+    "avg_gap_draws": 4.083371495175042,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71834.0
+  },
+  {
+    "number": 57,
+    "avg_gap_draws": 4.077881178173653,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71835.0
+  },
+  {
+    "number": 58,
+    "avg_gap_draws": 4.086675540796919,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71834.0
+  },
+  {
+    "number": 59,
+    "avg_gap_draws": 4.085779203326596,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71835.0
+  },
+  {
+    "number": 60,
+    "avg_gap_draws": 4.079524000364117,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71841.0
+  },
+  {
+    "number": 61,
+    "avg_gap_draws": 4.089456513108699,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71833.0
+  },
+  {
+    "number": 62,
+    "avg_gap_draws": 4.08357829215185,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71834.0
+  },
+  {
+    "number": 63,
+    "avg_gap_draws": 4.087261128390751,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71833.0
+  },
+  {
+    "number": 64,
+    "avg_gap_draws": 4.093864075043806,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71836.0
+  },
+  {
+    "number": 65,
+    "avg_gap_draws": 4.083457090486102,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71830.0
+  },
+  {
+    "number": 66,
+    "avg_gap_draws": 4.090430853409322,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71833.0
+  },
+  {
+    "number": 67,
+    "avg_gap_draws": 4.081751179001182,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71835.0
+  },
+  {
+    "number": 68,
+    "avg_gap_draws": 4.0875867967126815,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71833.0
+  },
+  {
+    "number": 69,
+    "avg_gap_draws": 4.087908651197834,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71835.0
+  },
+  {
+    "number": 70,
+    "avg_gap_draws": 4.080517739042211,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71834.0
+  },
+  {
+    "number": 71,
+    "avg_gap_draws": 4.086619730819561,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71844.0
+  },
+  {
+    "number": 72,
+    "avg_gap_draws": 4.090983778554687,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71831.0
+  },
+  {
+    "number": 73,
+    "avg_gap_draws": 4.087102665595975,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71839.0
+  },
+  {
+    "number": 74,
+    "avg_gap_draws": 4.087863987386233,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71834.0
+  },
+  {
+    "number": 75,
+    "avg_gap_draws": 4.086082607285033,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71830.0
+  },
+  {
+    "number": 76,
+    "avg_gap_draws": 4.086363248814639,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71835.0
+  },
+  {
+    "number": 77,
+    "avg_gap_draws": 4.083921124013576,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71836.0
+  },
+  {
+    "number": 78,
+    "avg_gap_draws": 4.085155045825944,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71846.0
+  },
+  {
+    "number": 79,
+    "avg_gap_draws": 4.08643099564926,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71831.0
+  },
+  {
+    "number": 80,
+    "avg_gap_draws": 4.081480631643439,
+    "min_gap_draws": 1.0,
+    "max_gap_draws": 71853.0
+  }
+]
