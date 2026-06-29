@@ -20,54 +20,44 @@
 <div class="wrapper">
 
     <!-- =========================
-         HEADER (FIXED + CLEAN)
+         HEADER
     ========================== -->
     <header class="hero">
-
         <div class="hero-inner">
-
-            <!-- your actual logo -->
             <div class="hero-logo">
                 <img src="images/RexsKenoDashboard1.png" alt="Rex's Keno Dashboard">
             </div>
-
         </div>
-
     </header>
 
     <!-- =========================
-         NAV (CLEAN + CONSISTENT)
+         NAV
     ========================== -->
     <nav class="navbar">
-
         <div class="nav-inner">
-
             <a href="#" class="active">Dashboard</a>
             <a href="#">History</a>
             <a href="#">Statistics</a>
             <a href="#">Charts</a>
             <a href="#">Picks</a>
-
         </div>
-
     </nav>
 
     <main>
 
-        <!-- TOP SECTION -->
+        <!-- =========================
+             TOP CARDS
+        ========================== -->
         <section class="grid-two">
 
-            <!-- LAST DRAW -->
             <div class="card" id="currentDraw">
                 <h2>Last Draw</h2>
                 <p id="drawMeta">Loading latest draw...</p>
                 <div class="numbers" id="drawNumbers"></div>
             </div>
 
-            <!-- SUMMARY -->
             <div class="card" id="summary">
                 <h2>Quick Stats</h2>
-
                 <ul>
                     <li>Top Hot Number <strong id="topHot">—</strong></li>
                     <li>Top Cold Number <strong id="topCold">—</strong></li>
@@ -78,33 +68,50 @@
 
         </section>
 
-        <!-- HEATMAP -->
+        <!-- =========================
+             YEAR FILTER (SEPARATE MODULE)
+        ========================== -->
         <section class="card">
 
-            <h2>Number Heatmap</h2>
+            <div class="section-header">
+                <h2>Year Range Filter</h2>
+                <button id="toggleHeatmap" class="btn-small">Expand Heatmap</button>
+            </div>
 
-            <div class="year-filter" style="margin: 10px 0 15px 0;">
-                <small style="opacity:0.7;">Year Range</small><br>
+            <p style="opacity:0.7; margin-top:4px;">
+                Focus analysis window (recommended: 2020 → current, max 10 years view)
+            </p>
 
-                <input type="range" id="yearMin" min="2010" max="2026" value="2010">
-                <input type="range" id="yearMax" min="2010" max="2026" value="2026">
+            <!-- SINGLE DUAL SLIDER (JS handles sync) -->
+            <div class="year-filter">
+                <input type="range" id="yearMin" min="2015" max="2026" value="2020">
+                <input type="range" id="yearMax" min="2015" max="2026" value="2026">
 
-                <div id="yearLabel" style="margin-top:6px; font-size:12px; opacity:0.8;">
-                    2010 – 2026
+                <div id="yearLabel" style="margin-top:8px; font-size:13px; opacity:0.8;">
+                    2020 – 2026
                 </div>
             </div>
 
-            <div style="margin-bottom:12px;">
-                <small style="opacity:0.7;">
-                    Click a number to inspect • Year filters active
-                </small>
-            </div>
+        </section>
+
+        <!-- =========================
+             HEATMAP (COLLAPSIBLE)
+        ========================== -->
+        <section class="card" id="heatmapSection">
+
+            <h2>Number Heatmap</h2>
+
+            <small style="opacity:0.7;">
+                Click a number to inspect • intensity based on frequency
+            </small>
 
             <div class="heatmap" id="heatmap"></div>
 
         </section>
 
-        <!-- HOT / COLD -->
+        <!-- =========================
+             HOT / COLD
+        ========================== -->
         <section class="grid-two">
 
             <div class="card" id="hotNumbers">
@@ -117,12 +124,16 @@
 
         </section>
 
-        <!-- CHART -->
+        <!-- =========================
+             CHART
+        ========================== -->
         <section class="card" id="frequencyChart">
             <h2>Frequency Chart</h2>
         </section>
 
-        <!-- RECENT DRAW TABLE -->
+        <!-- =========================
+             RECENT DRAW TABLE
+        ========================== -->
         <section class="card">
             <h2>Recent Draws</h2>
 
