@@ -32,7 +32,7 @@ function weatherText(code) {
 }
 
 // ---------------- SHEET DATA ----------------
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbyroBwB9b7G6UDzxv4_WB3meRRmPuiL8VSJHTNIuDdk07UL5vsPKEnaeoiGY3ZXvTwdHA/exec";
+// const SHEET_URL = "https://script.google.com/macros/s/AKfycbyroBwB9b7G6UDzxv4_WB3meRRmPuiL8VSJHTNIuDdk07UL5vsPKEnaeoiGY3ZXvTwdHA/exec";
 
 async function loadEventData() {
     try {
@@ -105,7 +105,7 @@ function renderFoodChart(foodData) {
 
 // ---------------- COUNTDOWN ----------------
 function updateCountdown() {
-    const eventDate = new Date("2026-07-01T11:30:00");
+    const eventDate = new Date("2026-08-01T17:00:00");
     const now = new Date();
 
     const diff = eventDate - now;
