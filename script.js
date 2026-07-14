@@ -32,7 +32,7 @@ function weatherText(code) {
 }
 
 // ---------------- SHEET DATA ----------------
-// const SHEET_URL = "https://script.google.com/macros/s/AKfycbyroBwB9b7G6UDzxv4_WB3meRRmPuiL8VSJHTNIuDdk07UL5vsPKEnaeoiGY3ZXvTwdHA/exec";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbyroBwB9b7G6UDzxv4_WB3meRRmPuiL8VSJHTNIuDdk07UL5vsPKEnaeoiGY3ZXvTwdHA/exec";
 
 async function loadEventData() {
     try {
