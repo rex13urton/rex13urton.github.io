@@ -7,15 +7,13 @@ console.log("Rex's Keno Dashboard JS loaded ✅");
 
 const STATE = {
 
+    // Loaded JSON data
     heatmap: [],
     zscores: [],
     yearly: [],
     latestDraw: null,
 
-    // All draw-level records that may be available
-    // in the loaded JSON files.
-    draws: [],
-
+    // Global dashboard filter
     filters: {
         daysBack: 30
     }
@@ -32,7 +30,8 @@ const PALETTE = {
     bg: "#F5EEE2",
     text: "#173D46",
     accent: "#295863",
-    highlight: "#C97548"
+    highlight: "#C97548",
+    cold: "#DCCFBE"
 
 };
 
@@ -42,6 +41,8 @@ const PALETTE = {
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    console.log("Initializing dashboard...");
 
     initAnalysisWindow();
 
@@ -60,7 +61,12 @@ async function loadData() {
 
     try {
 
-        const responses = await Promise.all([
+        const [
+            heatmapRes,
+            zscoresRes,
+            yearlyRes,
+            latestRes
+        ] = await Promise.all([
 
             fetch("stats/heatmap.json"),
             fetch("stats/zscores.json"),
@@ -70,43 +76,98 @@ async function loadData() {
         ]);
 
 
-        const [
-            heatmapRes,
-            zscoresRes,
-            yearlyRes,
-            latestRes
-        ] = responses;
+        // ----------------------------------------------------
+        // CHECK RESPONSES
+        // ----------------------------------------------------
 
+        if (!heatmapRes.ok) {
+            throw new Error(
+                `heatmap.json failed: ${heatmapRes.status}`
+            );
+        }
 
-        STATE.heatmap = await heatmapRes.json();
+        if (!zscoresRes.ok) {
+            throw new Error(
+                `zscores.json failed: ${zscoresRes.status}`
+            );
+        }
 
-        STATE.zscores = await zscoresRes.json();
+        if (!yearlyRes.ok) {
+            throw new Error(
+                `yearly.json failed: ${yearlyRes.status}`
+            );
+        }
 
-        STATE.yearly = await yearlyRes.json();
-
-
-        if (latestRes.ok) {
-
-            const latest = await latestRes.json();
-
-            STATE.latestDraw =
-                Array.isArray(latest)
-                    ? latest[0]
-                    : latest;
-
+        if (!latestRes.ok) {
+            throw new Error(
+                `latest.json failed: ${latestRes.status}`
+            );
         }
 
 
-        console.log("✅ Dashboard data loaded");
+        // ----------------------------------------------------
+        // PARSE DATA
+        // ----------------------------------------------------
 
-        console.log("Heatmap:", STATE.heatmap);
+        STATE.heatmap =
+            await heatmapRes.json();
 
-        console.log("Z-Scores:", STATE.zscores);
+        STATE.zscores =
+            await zscoresRes.json();
 
-        console.log("Yearly:", STATE.yearly);
+        STATE.yearly =
+            await yearlyRes.json();
 
-        console.log("Latest Draw:", STATE.latestDraw);
+        const latest =
+            await latestRes.json();
 
+
+        // latest.json may be either:
+        //
+        // [
+        //     { ... }
+        // ]
+        //
+        // or
+        //
+        // {
+        //     ...
+        // }
+
+        STATE.latestDraw =
+            Array.isArray(latest)
+                ? latest[0] ?? null
+                : latest;
+
+
+        console.log(
+            "✅ Dashboard data loaded"
+        );
+
+        console.log(
+            "Heatmap:",
+            STATE.heatmap
+        );
+
+        console.log(
+            "Z-Scores:",
+            STATE.zscores
+        );
+
+        console.log(
+            "Yearly:",
+            STATE.yearly
+        );
+
+        console.log(
+            "Latest Draw:",
+            STATE.latestDraw
+        );
+
+
+        // ----------------------------------------------------
+        // RENDER
+        // ----------------------------------------------------
 
         renderDashboard();
 
@@ -119,18 +180,10 @@ async function loadData() {
         );
 
 
-        const label =
-            document.getElementById(
-                "analysisWindowLabel"
-            );
-
-
-        if (label) {
-
-            label.textContent =
-                "Unable to load dashboard data";
-
-        }
+        setText(
+            "analysisWindowLabel",
+            "Unable to load dashboard data"
+        );
 
     }
 
@@ -138,12 +191,19 @@ async function loadData() {
 
 
 // ============================================================
-// MASTER RENDER
+// MASTER DASHBOARD RENDER
 // ============================================================
 
 function renderDashboard() {
 
+    console.log(
+        `Rendering dashboard: ${STATE.filters.daysBack} day window`
+    );
+
+
     updateAnalysisWindowUI();
+
+    updatePresetButtons();
 
     buildHeatmap();
 
@@ -155,7 +215,7 @@ function renderDashboard() {
 
 
 // ============================================================
-// ANALYSIS WINDOW
+// ANALYSIS WINDOW INITIALIZATION
 // ============================================================
 
 function initAnalysisWindow() {
@@ -175,12 +235,22 @@ function initAnalysisWindow() {
     if (!slider) {
 
         console.warn(
-            "⚠️ daysBackSlider not found"
+            "⚠️ #daysBackSlider not found"
         );
 
         return;
 
     }
+
+
+    // --------------------------------------------------------
+    // INITIAL VALUE
+    // --------------------------------------------------------
+
+    STATE.filters.daysBack =
+        Number(
+            slider.value
+        ) || 30;
 
 
     // --------------------------------------------------------
@@ -192,10 +262,19 @@ function initAnalysisWindow() {
         () => {
 
             STATE.filters.daysBack =
-                Number(slider.value);
+                Number(
+                    slider.value
+                );
 
 
-            updateAnalysisWindow();
+            // Update UI immediately
+            updateAnalysisWindowUI();
+
+            updatePresetButtons();
+
+
+            // Rebuild data-dependent sections
+            buildHeatmap();
 
         }
     );
@@ -217,6 +296,15 @@ function initAnalysisWindow() {
                     );
 
 
+                if (
+                    !Number.isFinite(days)
+                ) {
+
+                    return;
+
+                }
+
+
                 STATE.filters.daysBack =
                     days;
 
@@ -225,7 +313,11 @@ function initAnalysisWindow() {
                     days;
 
 
-                updateAnalysisWindow();
+                updateAnalysisWindowUI();
+
+                updatePresetButtons();
+
+                buildHeatmap();
 
             }
         );
@@ -233,28 +325,13 @@ function initAnalysisWindow() {
     });
 
 
-    // Initial state
-
-    STATE.filters.daysBack =
-        Number(slider.value);
-
-
-    updateAnalysisWindow();
-
-}
-
-
-// ============================================================
-// UPDATE ANALYSIS WINDOW
-// ============================================================
-
-function updateAnalysisWindow() {
+    // --------------------------------------------------------
+    // INITIAL UI
+    // --------------------------------------------------------
 
     updateAnalysisWindowUI();
 
     updatePresetButtons();
-
-    renderDashboard();
 
 }
 
@@ -281,6 +358,10 @@ function updateAnalysisWindowUI() {
         );
 
 
+    // --------------------------------------------------------
+    // SLIDER VALUE
+    // --------------------------------------------------------
+
     if (value) {
 
         value.textContent =
@@ -289,12 +370,16 @@ function updateAnalysisWindowUI() {
     }
 
 
+    // --------------------------------------------------------
+    // DESCRIPTION
+    // --------------------------------------------------------
+
     if (label) {
 
         if (days === 1) {
 
             label.textContent =
-                "Analysis Window: Day 0 + today's results";
+                "Analysis Window: Day 0 + previous 1 day";
 
         } else {
 
@@ -309,7 +394,7 @@ function updateAnalysisWindowUI() {
 
 
 // ============================================================
-// PRESET BUTTON STATE
+// UPDATE PRESET BUTTONS
 // ============================================================
 
 function updatePresetButtons() {
@@ -340,319 +425,6 @@ function updatePresetButtons() {
 
 
 // ============================================================
-// DATE HELPERS
-// ============================================================
-
-function getRecordDate(record) {
-
-    if (!record) return null;
-
-
-    const possibleDates = [
-
-        record.datetime,
-
-        record.draw_datetime,
-
-        record.date,
-
-        record.drawDate,
-
-        record.draw_date,
-
-        record.timestamp
-
-    ];
-
-
-    for (const value of possibleDates) {
-
-        if (!value) continue;
-
-
-        const date =
-            new Date(value);
-
-
-        if (!isNaN(date.getTime())) {
-
-            return date;
-
-        }
-
-    }
-
-
-    return null;
-
-}
-
-
-// ============================================================
-// GET ANALYSIS DATE RANGE
-// ============================================================
-
-function getAnalysisDateRange() {
-
-    const end =
-        new Date();
-
-
-    end.setHours(
-        23,
-        59,
-        59,
-        999
-    );
-
-
-    const start =
-        new Date(end);
-
-
-    start.setDate(
-        start.getDate() -
-        STATE.filters.daysBack
-    );
-
-
-    start.setHours(
-        0,
-        0,
-        0,
-        0
-    );
-
-
-    return {
-
-        start,
-        end
-
-    };
-
-}
-
-
-// ============================================================
-// FILTER RECORDS BY ANALYSIS WINDOW
-// ============================================================
-
-function filterByAnalysisWindow(data) {
-
-    if (!Array.isArray(data)) {
-
-        return [];
-
-    }
-
-
-    const {
-        start,
-        end
-    } =
-        getAnalysisDateRange();
-
-
-    const datedRecords =
-        data.filter(
-            record =>
-                getRecordDate(record)
-        );
-
-
-    // If records do not contain dates,
-    // return the original data.
-    //
-    // This allows the dashboard to continue
-    // working with aggregate JSON files.
-
-    if (
-        datedRecords.length === 0
-    ) {
-
-        return data;
-
-    }
-
-
-    return data.filter(record => {
-
-        const date =
-            getRecordDate(record);
-
-
-        if (!date) {
-
-            return false;
-
-        }
-
-
-        return (
-            date >= start &&
-            date <= end
-        );
-
-    });
-
-}
-
-
-// ============================================================
-// COLOR HELPERS
-// ============================================================
-
-function lerpColor(
-    a,
-    b,
-    t
-) {
-
-    const ah =
-        parseInt(
-            a.replace("#", ""),
-            16
-        );
-
-
-    const ar =
-        ah >> 16;
-
-
-    const ag =
-        (ah >> 8) &
-        0xff;
-
-
-    const ab =
-        ah &
-        0xff;
-
-
-    const bh =
-        parseInt(
-            b.replace("#", ""),
-            16
-        );
-
-
-    const br =
-        bh >> 16;
-
-
-    const bg =
-        (bh >> 8) &
-        0xff;
-
-
-    const bb =
-        bh &
-        0xff;
-
-
-    const rr =
-        Math.round(
-            ar +
-            (br - ar) *
-            t
-        );
-
-
-    const rg =
-        Math.round(
-            ag +
-            (bg - ag) *
-            t
-        );
-
-
-    const rb =
-        Math.round(
-            ab +
-            (bb - ab) *
-            t
-        );
-
-
-    return `rgb(${rr}, ${rg}, ${rb})`;
-
-}
-
-
-// ============================================================
-// THREE COLOR GRADIENT
-// ============================================================
-
-function lerpColor3(
-    c1,
-    c2,
-    c3,
-    t
-) {
-
-    if (t < 0.5) {
-
-        return lerpColor(
-            c1,
-            c2,
-            t / 0.5
-        );
-
-    }
-
-
-    return lerpColor(
-        c2,
-        c3,
-        (t - 0.5) / 0.5
-    );
-
-}
-
-
-// ============================================================
-// TEXT COLOR
-// ============================================================
-
-function getTextColorFromRGB(
-    rgb
-) {
-
-    const values =
-        rgb
-            .replace(
-                /rgb\(|\)/g,
-                ""
-            )
-            .split(",")
-            .map(Number);
-
-
-    const [
-        r,
-        g,
-        b
-    ] =
-        values;
-
-
-    const luminance =
-        (
-            0.2126 * r +
-            0.7152 * g +
-            0.0722 * b
-        );
-
-
-    return luminance > 150
-        ? PALETTE.text
-        : "#ffffff";
-
-}
-
-
-// ============================================================
 // NUMBER FREQUENCY BOARD
 // ============================================================
 
@@ -675,28 +447,21 @@ function buildHeatmap() {
     }
 
 
+    // --------------------------------------------------------
+    // CLEAR EXISTING BOARD
+    // --------------------------------------------------------
+
     container.innerHTML = "";
 
 
     // --------------------------------------------------------
-    // TRY TO FILTER DATA
-    // --------------------------------------------------------
-
-    const filtered =
-        filterByAnalysisWindow(
-            STATE.heatmap
-        );
-
-
-    // --------------------------------------------------------
     // BUILD NUMBER MAP
+    //
+    // Always create all 80 numbers.
     // --------------------------------------------------------
 
-    const numberMap =
-        {};
+    const numberMap = {};
 
-
-    // First create all 80 numbers
 
     for (
         let number = 1;
@@ -708,7 +473,9 @@ function buildHeatmap() {
 
             number,
 
-            count: 0
+            count: 0,
+
+            zscore: null
 
         };
 
@@ -716,39 +483,97 @@ function buildHeatmap() {
 
 
     // --------------------------------------------------------
-    // READ DATA
+    // READ HEATMAP DATA
     // --------------------------------------------------------
 
-    filtered.forEach(record => {
+    if (
+        Array.isArray(
+            STATE.heatmap
+        )
+    ) {
 
-        const number =
-            Number(
-                record.number ??
-                record.num ??
-                record.n
-            );
+        STATE.heatmap.forEach(record => {
 
-
-        const count =
-            Number(
-                record.count ??
-                record.frequency ??
-                0
-            );
+            const number =
+                Number(
+                    record.number ??
+                    record.num ??
+                    record.n
+                );
 
 
-        if (
-            number >= 1 &&
-            number <= 80
-        ) {
+            const count =
+                Number(
+                    record.count ??
+                    record.frequency ??
+                    record.occurrences ??
+                    0
+                );
 
-            numberMap[number].count +=
-                count;
 
-        }
+            if (
+                number >= 1 &&
+                number <= 80 &&
+                Number.isFinite(count)
+            ) {
 
-    });
+                numberMap[number].count =
+                    count;
 
+            }
+
+        });
+
+    }
+
+
+    // --------------------------------------------------------
+    // ADD Z-SCORES IF AVAILABLE
+    // --------------------------------------------------------
+
+    if (
+        Array.isArray(
+            STATE.zscores
+        )
+    ) {
+
+        STATE.zscores.forEach(record => {
+
+            const number =
+                Number(
+                    record.number ??
+                    record.num ??
+                    record.n
+                );
+
+
+            const zscore =
+                Number(
+                    record.zscore ??
+                    record.z_score ??
+                    record.z
+                );
+
+
+            if (
+                number >= 1 &&
+                number <= 80 &&
+                Number.isFinite(zscore)
+            ) {
+
+                numberMap[number].zscore =
+                    zscore;
+
+            }
+
+        });
+
+    }
+
+
+    // --------------------------------------------------------
+    // CONVERT TO ARRAY
+    // --------------------------------------------------------
 
     const numbers =
         Object.values(
@@ -757,7 +582,7 @@ function buildHeatmap() {
 
 
     // --------------------------------------------------------
-    // FIND MIN / MAX
+    // FIND MIN / MAX FREQUENCY
     // --------------------------------------------------------
 
     const counts =
@@ -780,7 +605,7 @@ function buildHeatmap() {
 
 
     // --------------------------------------------------------
-    // LATEST DRAW NUMBERS
+    // LATEST DRAW
     // --------------------------------------------------------
 
     const latestNumbers =
@@ -788,22 +613,18 @@ function buildHeatmap() {
 
 
     // --------------------------------------------------------
-    // CREATE BOARD
+    // CREATE 80-NUMBER BOARD
     // --------------------------------------------------------
 
     numbers.forEach(item => {
 
-        let intensity;
+        let intensity = 0.5;
 
 
         if (
-            maxCount ===
+            maxCount !==
             minCount
         ) {
-
-            intensity = 0.5;
-
-        } else {
 
             intensity =
                 (
@@ -828,14 +649,25 @@ function buildHeatmap() {
             );
 
 
+        // ----------------------------------------------------
+        // HOT → NEUTRAL → COLD
+        //
+        // Low frequency = cold
+        // High frequency = hot
+        // ----------------------------------------------------
+
         const color =
             lerpColor3(
-                PALETTE.text,
+                PALETTE.cold,
                 PALETTE.bg,
                 PALETTE.highlight,
                 intensity
             );
 
+
+        // ----------------------------------------------------
+        // CREATE BUTTON
+        // ----------------------------------------------------
 
         const cell =
             document.createElement(
@@ -878,18 +710,28 @@ function buildHeatmap() {
         // LATEST DRAW HIGHLIGHT
         // ----------------------------------------------------
 
-        if (
+        const appearedLatest =
             latestNumbers.includes(
                 item.number
-            )
-        ) {
-
-            cell.classList.add(
-                "latest-draw-number"
             );
 
+
+        if (
+            appearedLatest
+        ) {
+
+            // CSS currently expects:
+            // .heatmap div.latest-draw
+            //
+            // So use "latest-draw" here.
+
+            cell.classList.add(
+                "latest-draw"
+            );
+
+
             cell.title =
-                `Number ${item.number} appeared in the latest draw`;
+                `Number ${item.number} • ${item.count} occurrences • Appeared in latest draw`;
 
         } else {
 
@@ -914,6 +756,10 @@ function buildHeatmap() {
             }
         );
 
+
+        // ----------------------------------------------------
+        // ADD TO BOARD
+        // ----------------------------------------------------
 
         container.appendChild(
             cell
@@ -943,6 +789,10 @@ function getLatestDrawNumbers() {
         STATE.latestDraw;
 
 
+    // --------------------------------------------------------
+    // ARRAY FORMAT
+    // --------------------------------------------------------
+
     if (
         Array.isArray(
             draw.numbers
@@ -950,12 +800,19 @@ function getLatestDrawNumbers() {
     ) {
 
         return draw.numbers
-            .map(Number);
+            .map(Number)
+            .filter(
+                number =>
+                    number >= 1 &&
+                    number <= 80
+            );
 
     }
 
 
-    // Fallback for n1-n20 format
+    // --------------------------------------------------------
+    // n1 - n20 FORMAT
+    // --------------------------------------------------------
 
     const numbers = [];
 
@@ -967,7 +824,9 @@ function getLatestDrawNumbers() {
     ) {
 
         const value =
-            draw[`n${i}`];
+            draw[
+                `n${i}`
+            ];
 
 
         if (
@@ -975,9 +834,22 @@ function getLatestDrawNumbers() {
             value !== null
         ) {
 
-            numbers.push(
-                Number(value)
-            );
+            const number =
+                Number(
+                    value
+                );
+
+
+            if (
+                number >= 1 &&
+                number <= 80
+            ) {
+
+                numbers.push(
+                    number
+                );
+
+            }
 
         }
 
@@ -1007,20 +879,22 @@ function initModal() {
         );
 
 
-    if (
-        !modal
-    ) {
+    if (!modal) {
+
+        console.warn(
+            "⚠️ #numberModal not found"
+        );
 
         return;
 
     }
 
 
-    // Close button
+    // --------------------------------------------------------
+    // CLOSE BUTTON
+    // --------------------------------------------------------
 
-    if (
-        closeButton
-    ) {
+    if (closeButton) {
 
         closeButton.addEventListener(
             "click",
@@ -1030,7 +904,9 @@ function initModal() {
     }
 
 
-    // Click outside modal
+    // --------------------------------------------------------
+    // CLICK OUTSIDE
+    // --------------------------------------------------------
 
     modal.addEventListener(
         "click",
@@ -1049,7 +925,9 @@ function initModal() {
     );
 
 
-    // Escape key
+    // --------------------------------------------------------
+    // ESCAPE KEY
+    // --------------------------------------------------------
 
     document.addEventListener(
         "keydown",
@@ -1123,7 +1001,7 @@ function openNumberModal(
 
 
     // --------------------------------------------------------
-    // WINDOW
+    // ANALYSIS WINDOW
     // --------------------------------------------------------
 
     setText(
@@ -1161,7 +1039,7 @@ function openNumberModal(
 
 
     // --------------------------------------------------------
-    // GAPS
+    // GAP STATISTICS
     // --------------------------------------------------------
 
     setText(
@@ -1189,7 +1067,7 @@ function openNumberModal(
 
 
     // --------------------------------------------------------
-    // SHOW
+    // SHOW MODAL
     // --------------------------------------------------------
 
     modal.classList.add(
@@ -1248,35 +1126,7 @@ function closeNumberModal() {
 
 
 // ============================================================
-// SET TEXT HELPER
-// ============================================================
-
-function setText(
-    id,
-    value
-) {
-
-    const element =
-        document.getElementById(
-            id
-        );
-
-
-    if (
-        element
-    ) {
-
-        element.textContent =
-            value ??
-            "—";
-
-    }
-
-}
-
-
-// ============================================================
-// CALCULATE NUMBER STATS
+// CALCULATE NUMBER STATISTICS
 // ============================================================
 
 function calculateNumberStats(
@@ -1284,88 +1134,115 @@ function calculateNumberStats(
 ) {
 
     // --------------------------------------------------------
-    // FIND HEATMAP RECORD
+    // FIND NUMBER IN HEATMAP
     // --------------------------------------------------------
 
     const heatmapRecord =
-        STATE.heatmap.find(
-            record =>
-                Number(
-                    record.number ??
-                    record.num ??
-                    record.n
-                ) ===
-                Number(number)
-        );
+        Array.isArray(
+            STATE.heatmap
+        )
+            ? STATE.heatmap.find(
+                record =>
+                    Number(
+                        record.number ??
+                        record.num ??
+                        record.n
+                    ) ===
+                    Number(number)
+            )
+            : null;
 
 
     const occurrences =
         Number(
             heatmapRecord?.count ??
             heatmapRecord?.frequency ??
+            heatmapRecord?.occurrences ??
             0
         );
 
 
     // --------------------------------------------------------
-    // ESTIMATE DRAW FREQUENCY
+    // DRAW COUNT
+    //
+    // The dashboard's analysis window is based on DAYS.
+    //
+    // Since heatmap.json appears to be aggregate data,
+    // this cannot accurately calculate a 30-day frequency
+    // unless the JSON itself contains daily records.
+    //
+    // We therefore display the aggregate occurrence count
+    // here and calculate the ratio using expected probability.
     // --------------------------------------------------------
 
-    // Keno draws 20 numbers out of 80.
-    // Expected probability per draw = 20 / 80 = 25%.
-
-    const frequency =
-        occurrences > 0
-            ? `${(
-                occurrences /
-                Math.max(
-                    1,
-                    STATE.filters.daysBack
-                )
-            ).toFixed(2)} / day`
-            : "0 / day";
+    const expectedProbability =
+        20 / 80;
 
 
     // --------------------------------------------------------
-    // EXPECTED FREQUENCY
+    // EXPECTED OCCURRENCES
+    //
+    // This requires the actual number of draws.
+    //
+    // For now, use the analysis window as a day-based
+    // estimate only if we have a daily draw estimate.
     // --------------------------------------------------------
 
-    // This is a basic estimate using
-    // 20 numbers selected from 80.
+    const expectedDrawsPerDay =
+        412;
 
-    const expectedFrequency =
-        (
-            STATE.filters.daysBack *
-            0.25
-        ).toFixed(2);
+
+    const estimatedDraws =
+        STATE.filters.daysBack *
+        expectedDrawsPerDay;
+
+
+    const expectedOccurrences =
+        estimatedDraws *
+        expectedProbability;
 
 
     // --------------------------------------------------------
     // FREQUENCY RATIO
     // --------------------------------------------------------
 
-    const ratio =
-        expectedFrequency > 0
-            ? (
+    let frequencyRatio =
+        "—";
+
+
+    if (
+        expectedOccurrences > 0 &&
+        occurrences > 0
+    ) {
+
+        frequencyRatio =
+            `${(
                 occurrences /
-                expectedFrequency
-            ).toFixed(2)
-            : "—";
+                expectedOccurrences
+            ).toFixed(2)}x`;
+
+    }
 
 
     return {
 
-        occurrences,
+        occurrences:
+            occurrences || 0,
 
-        frequency,
+        frequency:
+            occurrences > 0
+                ? `${occurrences} occurrences`
+                : "0 occurrences",
 
-        expectedFrequency,
+        expectedFrequency:
+            expectedOccurrences > 0
+                ? expectedOccurrences.toFixed(1)
+                : "—",
 
-        frequencyRatio:
-            ratio === "—"
-                ? "—"
-                : `${ratio}x`,
+        frequencyRatio,
 
+        // These require draw-level historical
+        // data to calculate correctly.
         meanGap:
             "—",
 
@@ -1384,7 +1261,7 @@ function calculateNumberStats(
 
 
 // ============================================================
-// DAY 0 — LATEST DRAW
+// RENDER LATEST DRAW
 // ============================================================
 
 function renderLatestDraw() {
@@ -1412,6 +1289,7 @@ function renderLatestDraw() {
 
         }
 
+
         return;
 
     }
@@ -1421,17 +1299,29 @@ function renderLatestDraw() {
         STATE.latestDraw;
 
 
+    // --------------------------------------------------------
+    // DRAW NUMBER
+    // --------------------------------------------------------
+
     const drawNumber =
         draw.drawNumber ??
         draw.draw_number ??
         "—";
 
 
+    // --------------------------------------------------------
+    // DATE / TIME
+    // --------------------------------------------------------
+
     const datetime =
         draw.datetime ??
         draw.draw_datetime ??
         "";
 
+
+    // --------------------------------------------------------
+    // MULTIPLIER
+    // --------------------------------------------------------
 
     const multiplier =
         draw.multiplier ??
@@ -1502,6 +1392,10 @@ function renderLatestDraw() {
     }
 
 
+    // --------------------------------------------------------
+    // DRAW META
+    // --------------------------------------------------------
+
     if (meta) {
 
         meta.innerHTML = `
@@ -1526,6 +1420,10 @@ function renderLatestDraw() {
 
     }
 
+
+    // --------------------------------------------------------
+    // DRAW NUMBERS
+    // --------------------------------------------------------
 
     if (
         numbersContainer
@@ -1579,30 +1477,35 @@ function updateDayZeroStatus() {
 
 
     // --------------------------------------------------------
-    // Try to determine draws today
+    // FIND TODAY'S DRAW COUNT
     // --------------------------------------------------------
-
-    let todayDraws = null;
-
 
     const latest =
         STATE.latestDraw;
 
 
-    if (
-        latest
-    ) {
-
-        todayDraws =
-            latest.drawsToday ??
-            latest.draws_today ??
-            null;
-
-    }
+    let todayDraws =
+        latest?.drawsToday ??
+        latest?.draws_today ??
+        latest?.todayDraws ??
+        latest?.today_draws ??
+        null;
 
 
     // --------------------------------------------------------
-    // Update draws
+    // EXPECTED DRAWS
+    // --------------------------------------------------------
+
+    const expected =
+        Number(
+            latest?.expectedDrawsToday ??
+            latest?.expected_draws_today ??
+            412
+        );
+
+
+    // --------------------------------------------------------
+    // DRAW COUNT
     // --------------------------------------------------------
 
     if (
@@ -1610,21 +1513,16 @@ function updateDayZeroStatus() {
     ) {
 
         drawsToday.textContent =
-            todayDraws ??
-            "—";
+            todayDraws !== null
+                ? todayDraws
+                : "—";
 
     }
 
 
     // --------------------------------------------------------
-    // Expected draws
+    // EXPECTED COUNT
     // --------------------------------------------------------
-
-    const expected =
-        latest?.expectedDrawsToday ??
-        latest?.expected_draws_today ??
-        412;
-
 
     if (
         expectedDraws
@@ -1637,7 +1535,7 @@ function updateDayZeroStatus() {
 
 
     // --------------------------------------------------------
-    // Progress
+    // PROGRESS
     // --------------------------------------------------------
 
     if (
@@ -1649,7 +1547,7 @@ function updateDayZeroStatus() {
             Math.min(
                 100,
                 (
-                    todayDraws /
+                    Number(todayDraws) /
                     expected
                 ) *
                 100
@@ -1685,6 +1583,221 @@ function updateDayZeroStatus() {
                 "—";
 
         }
+
+
+        if (
+            progressBar
+        ) {
+
+            progressBar.style.width =
+                "0%";
+
+        }
+
+    }
+
+}
+
+
+// ============================================================
+// COLOR INTERPOLATION
+// ============================================================
+
+function lerpColor(
+    a,
+    b,
+    t
+) {
+
+    const ah =
+        parseInt(
+            a.replace("#", ""),
+            16
+        );
+
+
+    const ar =
+        ah >> 16;
+
+
+    const ag =
+        (
+            ah >> 8
+        ) &
+        0xff;
+
+
+    const ab =
+        ah &
+        0xff;
+
+
+    const bh =
+        parseInt(
+            b.replace("#", ""),
+            16
+        );
+
+
+    const br =
+        bh >> 16;
+
+
+    const bg =
+        (
+            bh >> 8
+        ) &
+        0xff;
+
+
+    const bb =
+        bh &
+        0xff;
+
+
+    const rr =
+        Math.round(
+            ar +
+            (
+                br -
+                ar
+            ) *
+            t
+        );
+
+
+    const rg =
+        Math.round(
+            ag +
+            (
+                bg -
+                ag
+            ) *
+            t
+        );
+
+
+    const rb =
+        Math.round(
+            ab +
+            (
+                bb -
+                ab
+            ) *
+            t
+        );
+
+
+    return `rgb(${rr}, ${rg}, ${rb})`;
+
+}
+
+
+// ============================================================
+// THREE COLOR GRADIENT
+// ============================================================
+
+function lerpColor3(
+    c1,
+    c2,
+    c3,
+    t
+) {
+
+    if (
+        t <= 0.5
+    ) {
+
+        return lerpColor(
+            c1,
+            c2,
+            t * 2
+        );
+
+    }
+
+
+    return lerpColor(
+        c2,
+        c3,
+        (
+            t -
+            0.5
+        ) *
+        2
+    );
+
+}
+
+
+// ============================================================
+// GET TEXT COLOR
+// ============================================================
+
+function getTextColorFromRGB(
+    rgb
+) {
+
+    const values =
+        rgb
+            .replace(
+                /rgb\(|\)/g,
+                ""
+            )
+            .split(",")
+            .map(
+                value =>
+                    Number(
+                        value.trim()
+                    )
+            );
+
+
+    const [
+        r,
+        g,
+        b
+    ] =
+        values;
+
+
+    const luminance =
+        (
+            0.2126 * r +
+            0.7152 * g +
+            0.0722 * b
+        );
+
+
+    return luminance > 150
+        ? PALETTE.text
+        : "#FFFFFF";
+
+}
+
+
+// ============================================================
+// SET TEXT HELPER
+// ============================================================
+
+function setText(
+    id,
+    value
+) {
+
+    const element =
+        document.getElementById(
+            id
+        );
+
+
+    if (
+        element
+    ) {
+
+        element.textContent =
+            value ??
+            "—";
 
     }
 
