@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -19,161 +20,725 @@
 
 <div class="wrapper">
 
-    <!-- =========================
-         HEADER
-    ========================== -->
-    <header class="hero">
-        <div class="hero-inner">
-            <div class="hero-logo">
-                <img src="images/RexsKenoDashboard1.png" alt="Rex's Keno Dashboard">
-            </div>
+```
+<!-- =========================
+     HEADER
+========================== -->
+
+<header class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-logo">
+            <img
+                src="images/RexsKenoDashboard1.png"
+                alt="Rex's Keno Dashboard"
+            >
         </div>
-    </header>
 
-    <!-- =========================
-         NAV
-    ========================== -->
-    <nav class="navbar">
-        <div class="nav-inner">
-            <a href="#" class="active">Dashboard</a>
-            <a href="#">History</a>
-            <a href="#">Statistics</a>
-            <a href="#">Charts</a>
-            <a href="#">Picks</a>
+    </div>
+
+</header>
+
+
+<!-- =========================
+     NAVIGATION
+========================== -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="#" class="active">Dashboard</a>
+        <a href="#">History</a>
+        <a href="#">Statistics</a>
+        <a href="#">Charts</a>
+        <a href="#">Picks</a>
+
+    </div>
+
+</nav>
+
+
+<main>
+
+
+    <!-- =====================================================
+         GLOBAL ANALYSIS WINDOW
+         
+         This is the master filter for the entire dashboard.
+
+         Day 0 = today
+         Slider = number of previous days to include
+
+         Example:
+         30 Days = Day 0 + previous 30 days
+
+         This same filter will eventually control:
+         - Number frequency
+         - Number statistics
+         - Ticket analysis
+         - Backtesting
+         - Other dashboard sections
+    ====================================================== -->
+
+    <section class="card" id="analysisWindowSection">
+
+        <div class="section-header">
+
+            <h2>Analysis Window</h2>
+
         </div>
-    </nav>
 
-    <main>
 
-        <!-- =========================
-             TOP CARDS
-        ========================== -->
-        <section class="grid-two">
+        <p class="section-description">
 
-            <div class="card" id="currentDraw">
-                <h2>Last Draw</h2>
-                <p id="drawMeta">Loading latest draw...</p>
-                <div class="numbers" id="drawNumbers"></div>
+            Select how many days of Keno results you want to analyze.
+            Day 0 represents today's results and is always included.
+
+        </p>
+
+
+        <!-- SLIDER -->
+
+        <div class="analysis-slider-container">
+
+            <div class="analysis-slider-labels">
+
+                <span>1 Day</span>
+
+                <span id="daysBackValue">
+                    30 Days
+                </span>
+
+                <span>365 Days</span>
+
             </div>
 
-            <div class="card" id="summary">
-                <h2>Quick Stats</h2>
-                <ul>
-                    <li>Top Hot Number <strong id="topHot">—</strong></li>
-                    <li>Top Cold Number <strong id="topCold">—</strong></li>
-                    <li>Active Dataset <strong>Live</strong></li>
-                    <li>Last Sync <strong>Auto</strong></li>
-                </ul>
+
+            <input
+                type="range"
+                id="daysBackSlider"
+                class="analysis-slider"
+                min="1"
+                max="365"
+                value="30"
+                step="1"
+            >
+
+
+            <div
+                id="analysisWindowLabel"
+                class="analysis-window-label"
+            >
+                Loading analysis window...
+
             </div>
 
-        </section>
+        </div>
 
-        <!-- =========================
-             YEAR FILTER (SEPARATE MODULE)
-        ========================== -->
-        <section class="card">
 
-            <div class="section-header">
-                <h2>Year Range Filter</h2>
+        <!-- QUICK SELECT BUTTONS -->
+
+        <div class="analysis-presets">
+
+            <button
+                type="button"
+                class="analysis-preset"
+                data-days="1"
+            >
+                1 Day
+            </button>
+
+            <button
+                type="button"
+                class="analysis-preset"
+                data-days="7"
+            >
+                7 Days
+            </button>
+
+            <button
+                type="button"
+                class="analysis-preset active"
+                data-days="30"
+            >
+                30 Days
+            </button>
+
+            <button
+                type="button"
+                class="analysis-preset"
+                data-days="90"
+            >
+                90 Days
+            </button>
+
+            <button
+                type="button"
+                class="analysis-preset"
+                data-days="180"
+            >
+                180 Days
+            </button>
+
+            <button
+                type="button"
+                class="analysis-preset"
+                data-days="365"
+            >
+                365 Days
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         NUMBER FREQUENCY
+         
+         Displays all 80 Keno numbers in the physical
+         10 x 8 board layout.
+
+         Frequency intensity will represent:
+         HOT  ->  COLD
+
+         Latest Day 0 draw numbers can receive a special
+         highlight while retaining their frequency intensity.
+
+         Clicking a number opens the Number Detail Modal.
+    ====================================================== -->
+
+    <section
+        class="card"
+        id="numberFrequencySection"
+    >
+
+        <div class="section-header">
+
+            <h2>Number Frequency</h2>
+
+        </div>
+
+
+        <div class="frequency-heading">
+
+            <span class="frequency-hot">
+                HOT
+            </span>
+
+            <span class="frequency-gradient">
+            </span>
+
+            <span class="frequency-cold">
+                COLD
+            </span>
+
+        </div>
+
+
+        <p class="section-description">
+
+            Number frequency across the selected analysis window.
+            Click any number to inspect its detailed statistics.
+
+        </p>
+
+
+        <!--
+            The JavaScript will populate this container
+            with numbers 1 through 80.
+
+            The existing "heatmap" ID is retained so that
+            existing JavaScript can be adapted rather than
+            completely rewritten.
+        -->
+
+        <div
+            class="heatmap-wrapper"
+            id="heatmapWrapper"
+        >
+
+            <div
+                class="heatmap"
+                id="heatmap"
+            ></div>
+
+        </div>
+
+
+        <!-- LEGEND -->
+
+        <div class="frequency-legend">
+
+            <span>
+                Frequency based on selected window
+            </span>
+
+            <span>
+                •
+            </span>
+
+            <span>
+                Highlighted numbers appeared in latest draw
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         NUMBER DETAIL MODAL
+         
+         Opens when a user clicks one of the 80 numbers.
+
+         JavaScript will populate:
+         - Number
+         - Occurrences
+         - Draw frequency
+         - Expected frequency
+         - Frequency ratio
+         - Mean gap
+         - Median gap
+         - Mode gap
+         - Current gap
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="numberModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalNumberTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeNumberModal"
+                aria-label="Close number details"
+            >
+                ×
+            </button>
+
+
+            <div class="modal-number-circle">
+
+                <span id="modalNumber">
+                    —
+                </span>
+
             </div>
 
-            <p style="opacity:0.7; margin-top:4px;">
-                Focus analysis window (recommended: 2020 → current, max 10 years view)
+
+            <h2 id="modalNumberTitle">
+                Number Details
+            </h2>
+
+
+            <p
+                id="modalAnalysisWindow"
+                class="modal-subtitle"
+            >
+                Analysis Window: —
             </p>
 
-            <div class="year-filter">
-                <input type="range" id="yearMin" min="2015" max="2026" value="2020">
-                <input type="range" id="yearMax" min="2015" max="2026" value="2026">
 
-                <div id="yearLabel" style="margin-top:8px; font-size:13px; opacity:0.8;">
-                    2020 – 2026
+            <!-- FREQUENCY STATISTICS -->
+
+            <div class="modal-stat-grid">
+
+                <div class="modal-stat">
+
+                    <span class="modal-stat-label">
+                        Occurrences
+                    </span>
+
+                    <strong id="modalOccurrences">
+                        —
+                    </strong>
+
                 </div>
+
+
+                <div class="modal-stat">
+
+                    <span class="modal-stat-label">
+                        Draw Frequency
+                    </span>
+
+                    <strong id="modalFrequency">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="modal-stat">
+
+                    <span class="modal-stat-label">
+                        Expected Frequency
+                    </span>
+
+                    <strong id="modalExpectedFrequency">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="modal-stat">
+
+                    <span class="modal-stat-label">
+                        Frequency Ratio
+                    </span>
+
+                    <strong id="modalFrequencyRatio">
+                        —
+                    </strong>
+
+                </div>
+
             </div>
 
-        </section>
 
-        <!-- =========================
-             HEATMAP (COLLAPSIBLE MODULE)
-        ========================== -->
-        <section class="card" id="heatmapSection">
+            <!-- DRAW GAP STATISTICS -->
 
-            <div class="section-header">
+            <h3>
+                Draw Gap Statistics
+            </h3>
 
-                <h2>Number Heatmap</h2>
 
-                <!-- TOGGLE BUTTON -->
-                <button id="toggleHeatmap" class="collapse-btn" aria-expanded="true">
-                    <span class="icon">−</span>
-                </button>
+            <div class="modal-stat-grid">
+
+                <div class="modal-stat">
+
+                    <span class="modal-stat-label">
+                        Mean Gap
+                    </span>
+
+                    <strong id="modalMeanGap">
+                        —
+                    </strong>
+
+                    <small>
+                        draws
+                    </small>
+
+                </div>
+
+
+                <div class="modal-stat">
+
+                    <span class="modal-stat-label">
+                        Median Gap
+                    </span>
+
+                    <strong id="modalMedianGap">
+                        —
+                    </strong>
+
+                    <small>
+                        draws
+                    </small>
+
+                </div>
+
+
+                <div class="modal-stat">
+
+                    <span class="modal-stat-label">
+                        Mode Gap
+                    </span>
+
+                    <strong id="modalModeGap">
+                        —
+                    </strong>
+
+                    <small>
+                        draws
+                    </small>
+
+                </div>
+
+
+                <div class="modal-stat">
+
+                    <span class="modal-stat-label">
+                        Current Gap
+                    </span>
+
+                    <strong id="modalCurrentGap">
+                        —
+                    </strong>
+
+                    <small>
+                        draws
+                    </small>
+
+                </div>
 
             </div>
 
-            <small style="opacity:0.7;">
-                Click a number to inspect • intensity based on frequency
-            </small>
 
-            <!-- COLLAPSIBLE WRAPPER -->
-            <div class="heatmap-wrapper" id="heatmapWrapper">
-                <div class="heatmap" id="heatmap"></div>
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         DAY 0 — LIVE STATUS
+         
+         Day 0 is always today's Keno results.
+
+         This section is populated from latest.json.
+
+         Displays:
+         - Draws today
+         - Expected draws today
+         - Progress
+         - Latest draw number
+         - Latest draw time
+         - Latest 20 numbers
+    ====================================================== -->
+
+    <section
+        class="card"
+        id="dayZeroSection"
+    >
+
+        <div class="section-header">
+
+            <h2>Day 0 — Live Status</h2>
+
+        </div>
+
+
+        <p class="section-description">
+
+            Today's Keno activity and most recent draw.
+
+        </p>
+
+
+        <!-- DAY 0 SUMMARY -->
+
+        <div class="day-zero-summary">
+
+
+            <!-- DRAWS TODAY -->
+
+            <div class="day-zero-stat">
+
+                <div class="day-zero-circle">
+
+                    <strong id="drawsToday">
+                        —
+                    </strong>
+
+                </div>
+
+                <span>
+                    Draws Today
+                </span>
+
             </div>
 
-        </section>
 
-        <!-- =========================
-             HOT / COLD
-        ========================== -->
-        <section class="grid-two">
+            <!-- EXPECTED DRAWS -->
 
-            <div class="card" id="hotNumbers">
-                <h2>Hot Numbers</h2>
+            <div class="day-zero-stat">
+
+                <div class="day-zero-circle">
+
+                    <strong id="expectedDrawsToday">
+                        412
+                    </strong>
+
+                </div>
+
+                <span>
+                    Expected Draws
+                </span>
+
             </div>
 
-            <div class="card" id="coldNumbers">
-                <h2>Cold Numbers</h2>
+
+            <!-- PERCENT COMPLETE -->
+
+            <div class="day-zero-stat">
+
+                <div class="day-zero-circle">
+
+                    <strong id="dayZeroProgress">
+                        —
+                    </strong>
+
+                </div>
+
+                <span>
+                    Day Complete
+                </span>
+
             </div>
 
-        </section>
 
-        <!-- =========================
-             CHART
-        ========================== -->
-        <section class="card" id="frequencyChart">
-            <h2>Frequency Chart</h2>
-        </section>
+        </div>
 
-        <!-- =========================
-             RECENT DRAW TABLE
-        ========================== -->
-        <section class="card">
-            <h2>Recent Draws</h2>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Draw</th>
-                        <th>Date</th>
-                        <th>Numbers</th>
-                    </tr>
-                </thead>
+        <!-- PROGRESS BAR -->
 
-                <tbody id="recentDrawsTable">
-                    <tr>
-                        <td>Loading…</td>
-                        <td>—</td>
-                        <td>—</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="day-zero-progress-container">
 
-        </section>
+            <div
+                class="day-zero-progress-bar"
+                id="dayZeroProgressBar"
+            >
 
-    </main>
+            </div>
+
+        </div>
+
+
+        <!-- LATEST DRAW -->
+
+        <div class="latest-draw">
+
+            <h3>
+                Latest Draw
+            </h3>
+
+
+            <div
+                id="drawMeta"
+                class="latest-draw-meta"
+            >
+                Loading latest draw...
+            </div>
+
+
+            <div
+                class="numbers"
+                id="drawNumbers"
+            >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TICKET ANALYSIS
+         
+         This section will use the SAME global
+         analysis window selected above.
+
+         Example:
+
+         Analysis Window = 30 Days
+
+         Ticket statistics are calculated over:
+         Day 0 + previous 30 days
+
+         Future functionality:
+         - Saved tickets
+         - Ticket number sets
+         - Match counts
+         - Best match
+         - Average matches
+         - 7+ match frequency
+         - Total winnings
+         - ROI
+         - Backtesting
+         - Ticket comparison
+    ====================================================== -->
+
+    <section
+        class="card"
+        id="ticketAnalysisSection"
+    >
+
+        <div class="section-header">
+
+            <h2>Ticket Analysis</h2>
+
+        </div>
+
+
+        <p class="section-description">
+
+            Analyze selected Keno tickets against the same
+            analysis window shown above.
+
+        </p>
+
+
+        <!--
+            Placeholder for ticket cards.
+
+            This container will eventually be populated
+            by JavaScript from a ticket JSON file or
+            configuration object.
+        -->
+
+        <div
+            id="ticketAnalysis"
+            class="ticket-analysis"
+        >
+
+            <div class="ticket-placeholder">
+
+                <h3>
+                    Ticket Analysis Coming Next
+                </h3>
+
+                <p>
+                    Select an analysis window above to
+                    evaluate your saved tickets across
+                    the same period.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FUTURE DASHBOARD SECTIONS
+         
+         Additional analytical modules can be added below.
+    ====================================================== -->
+
+
+</main>
+```
 
 </div>
 
-<!-- SCRIPTS -->
+<!-- =========================================================
+     SCRIPTS
+========================================================== -->
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script src="keno.js"></script>
 
 </body>
+
 </html>
