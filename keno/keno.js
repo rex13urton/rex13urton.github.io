@@ -70,15 +70,12 @@ document.addEventListener(
             "Initializing dashboard..."
         );
 
-        initAnalysisWindow();
-
         initModal();
 
-        loadData();
+        loadLatestDraw();
 
     }
 );
-
 
 // ============================================================
 // LOAD DATA
@@ -232,6 +229,123 @@ async function loadData() {
 
 }
 
+async function loadLatestDraw(){
+
+    try {
+
+        console.log(
+            "Loading latest draw..."
+        );
+
+
+        const response =
+            await fetch(
+                `data/latest.json?v=${Date.now()}`,
+                {
+                    cache:"no-store"
+                }
+            );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                `latest.json failed: ${response.status}`
+            );
+
+        }
+
+
+        const raw =
+            await response.json();
+
+
+        STATE.latestDraw =
+            normalizeDraw(raw);
+
+
+        console.log(
+            "✅ Latest draw loaded:",
+            STATE.latestDraw
+        );
+
+
+        renderLatestDraw();
+
+
+        updateLatestHeatmap();
+
+
+    }
+    catch(error){
+
+        console.error(
+            "❌ Failed loading latest draw:",
+            error
+        );
+
+    }
+
+}
+
+async function loadLatestDraw(){
+
+    try {
+
+        console.log(
+            "Loading latest draw..."
+        );
+
+
+        const response =
+            await fetch(
+                `data/latest.json?v=${Date.now()}`,
+                {
+                    cache:"no-store"
+                }
+            );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                `latest.json failed: ${response.status}`
+            );
+
+        }
+
+
+        const raw =
+            await response.json();
+
+
+        STATE.latestDraw =
+            normalizeDraw(raw);
+
+
+        console.log(
+            "✅ Latest draw loaded:",
+            STATE.latestDraw
+        );
+
+
+        renderLatestDraw();
+
+
+        updateLatestHeatmap();
+
+
+    }
+    catch(error){
+
+        console.error(
+            "❌ Failed loading latest draw:",
+            error
+        );
+
+    }
+
+}
 
 // ============================================================
 // NORMALIZE DRAW
