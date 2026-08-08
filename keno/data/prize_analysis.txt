@@ -4,7 +4,7 @@
 ========================================================================
 
 Ticket size       : 40 numbers
-Historical draws  : 1,522,657
+Historical draws  : 1,522,658
 Historical payout : $2,290,074
 Average per draw  : $1.5040
 
@@ -58,6 +58,55 @@ Average per draw: $0.9720
  6/20 →    15 wins @ $5
  5/20 →     1 wins @ $15
 
+LAST 1,000 DRAWS
+------------------------------------------------------------------------
+Total winnings: $1,322
+Average per draw: $1.3220
+
+17/20 →     1 wins @ $400
+16/20 →     4 wins @ $50
+15/20 →     4 wins @ $15
+14/20 →    24 wins @ $5
+13/20 →    73 wins @ $3
+ 7/20 →    51 wins @ $3
+ 6/20 →    28 wins @ $5
+ 5/20 →     2 wins @ $15
+
+LAST 5,000 DRAWS
+------------------------------------------------------------------------
+Total winnings: $30,672
+Average per draw: $6.1344
+
+17/20 →     1 wins @ $400
+16/20 →    10 wins @ $50
+15/20 →    34 wins @ $15
+14/20 →   124 wins @ $5
+13/20 →   313 wins @ $3
+ 7/20 →   301 wins @ $3
+ 6/20 →   145 wins @ $5
+ 5/20 →    25 wins @ $15
+ 4/20 →     6 wins @ $50
+ 3/20 →     1 wins @ $400
+ 1/20 →     1 wins @ $25,000
+
+LAST 10,000 DRAWS
+------------------------------------------------------------------------
+Total winnings: $38,487
+Average per draw: $3.8487
+
+18/20 →     1 wins @ $2,000
+17/20 →     1 wins @ $400
+16/20 →    22 wins @ $50
+15/20 →    70 wins @ $15
+14/20 →   255 wins @ $5
+13/20 →   629 wins @ $3
+ 7/20 →   615 wins @ $3
+ 6/20 →   278 wins @ $5
+ 5/20 →    56 wins @ $15
+ 4/20 →    18 wins @ $50
+ 3/20 →     2 wins @ $400
+ 1/20 →     1 wins @ $25,000
+
 ========================================================================
                  HISTORICAL PRIZE GAP ANALYSIS
 ========================================================================
@@ -68,20 +117,20 @@ Current gap = draws since the most recent occurrence of that prize category.
  HITS     WINS    AVG GAP      MIN      MAX   CURRENT                 STATUS
 ------------------------------------------------------------------------
    20        0        N/A      N/A      N/A       N/A            NO BASELINE
-   19        5   301615.5   121540   649806    217480   BELOW AVG (-84135.5)
-   18       47    32543.2      533   180531      9568   BELOW AVG (-22975.2)
-   17      376     4054.6        2    34084       828    BELOW AVG (-3226.6)
-   16    2,460      618.9        1     5231       289     BELOW AVG (-329.9)
-   15   11,360      134.0        1     1458       469     ABOVE AVG (+335.0)
-   14   38,286       39.8        1      407         2      BELOW AVG (-37.8)
-   13   96,692       15.7        1      172        10       BELOW AVG (-5.7)
-    7   96,521       15.8        1      161         9       BELOW AVG (-6.8)
-    6   38,350       39.7        1      380        21      BELOW AVG (-18.7)
-    5   11,357      134.0        1     1016       294     ABOVE AVG (+160.0)
-    4    2,542      598.1        1     4630      1737    ABOVE AVG (+1138.9)
-    3      400     3797.7        1    15463      4822    ABOVE AVG (+1024.3)
-    2       41    35889.1      117   160534     17137   BELOW AVG (-18752.1)
-    1        5   312828.8    21819   596792      4770  BELOW AVG (-308058.8)
+   19        5   301615.5   121540   649806    217481   BELOW AVG (-84134.5)
+   18       47    32543.2      533   180531      9569   BELOW AVG (-22974.2)
+   17      376     4054.6        2    34084       829    BELOW AVG (-3225.6)
+   16    2,460      618.9        1     5231       290     BELOW AVG (-328.9)
+   15   11,360      134.0        1     1458       470     ABOVE AVG (+336.0)
+   14   38,286       39.8        1      407         3      BELOW AVG (-36.8)
+   13   96,692       15.7        1      172        11       BELOW AVG (-4.7)
+    7   96,521       15.8        1      161        10       BELOW AVG (-5.8)
+    6   38,350       39.7        1      380        22      BELOW AVG (-17.7)
+    5   11,357      134.0        1     1016       295     ABOVE AVG (+161.0)
+    4    2,542      598.1        1     4630      1738    ABOVE AVG (+1139.9)
+    3      400     3797.7        1    15463      4823    ABOVE AVG (+1025.3)
+    2       41    35889.1      117   160534     17138   BELOW AVG (-18751.1)
+    1        5   312828.8    21819   596792      4771  BELOW AVG (-308057.8)
     0        0        N/A      N/A      N/A       N/A            NO BASELINE
 
 ========================================================================
@@ -90,19 +139,19 @@ Current gap = draws since the most recent occurrence of that prize category.
 
 Most above historical average gap:
 
-15/20  current gap 469  |  average 134.0  |  +335.0 draws  |  +250.0%
- 4/20  current gap 1,737  |  average 598.1  |  +1138.9 draws  |  +190.4%
- 5/20  current gap 294  |  average 134.0  |  +160.0 draws  |  +119.3%
- 3/20  current gap 4,822  |  average 3797.7  |  +1024.3 draws  |  +27.0%
-19/20  current gap 217,480  |  average 301615.5  |  -84135.5 draws  |  -27.9%
+15/20  current gap 470  |  average 134.0  |  +336.0 draws  |  +250.8%
+ 4/20  current gap 1,738  |  average 598.1  |  +1139.9 draws  |  +190.6%
+ 5/20  current gap 295  |  average 134.0  |  +161.0 draws  |  +120.1%
+ 3/20  current gap 4,823  |  average 3797.7  |  +1025.3 draws  |  +27.0%
+19/20  current gap 217,481  |  average 301615.5  |  -84134.5 draws  |  -27.9%
 
 Most below historical average gap:
 
- 1/20  current gap 4,770  |  average 312828.8  |  -308058.8 draws  |  -98.5%
-14/20  current gap 2  |  average 39.8  |  -37.8 draws  |  -95.0%
-17/20  current gap 828  |  average 4054.6  |  -3226.6 draws  |  -79.6%
-18/20  current gap 9,568  |  average 32543.2  |  -22975.2 draws  |  -70.6%
-16/20  current gap 289  |  average 618.9  |  -329.9 draws  |  -53.3%
+ 1/20  current gap 4,771  |  average 312828.8  |  -308057.8 draws  |  -98.5%
+14/20  current gap 3  |  average 39.8  |  -36.8 draws  |  -92.5%
+17/20  current gap 829  |  average 4054.6  |  -3225.6 draws  |  -79.6%
+18/20  current gap 9,569  |  average 32543.2  |  -22974.2 draws  |  -70.6%
+16/20  current gap 290  |  average 618.9  |  -328.9 draws  |  -53.1%
 
 ========================================================================
                          COMPLETE
