@@ -4,7 +4,7 @@
 ========================================================================
 
 Ticket size       : 40 numbers
-Historical draws  : 1,523,001
+Historical draws  : 1,523,002
 Historical payout : $2,290,805
 Average per draw  : $1.5041
 
@@ -27,12 +27,12 @@ Average per draw: $0.6600
 
 LAST 100 DRAWS
 ------------------------------------------------------------------------
-Total winnings: $110
-Average per draw: $1.1000
+Total winnings: $107
+Average per draw: $1.0700
 
 15/20 →     1 wins @ $15
 14/20 →     4 wins @ $5
-13/20 →    10 wins @ $3
+13/20 →     9 wins @ $3
  7/20 →     5 wins @ $3
  6/20 →     3 wins @ $5
  5/20 →     1 wins @ $15
@@ -122,20 +122,20 @@ Current gap = draws since the most recent occurrence of that prize category.
  HITS     WINS    AVG GAP      MIN      MAX   CURRENT                 STATUS
 ------------------------------------------------------------------------
    20        0        N/A      N/A      N/A       N/A            NO BASELINE
-   19        5   301615.5   121540   649806    217824   BELOW AVG (-83791.5)
-   18       47    32543.2      533   180531      9912   BELOW AVG (-22631.2)
-   17      377     4046.3        2    34084       216    BELOW AVG (-3830.3)
-   16    2,461      618.9        1     5231       141     BELOW AVG (-477.9)
-   15   11,361      134.0        1     1458        61      BELOW AVG (-73.0)
-   14   38,298       39.8        1      407        19      BELOW AVG (-20.8)
-   13   96,724       15.7        1      172        10       BELOW AVG (-5.7)
-    7   96,541       15.8        1      161         0      BELOW AVG (-15.8)
-    6   38,357       39.7        1      380        39       BELOW AVG (-0.7)
-    5   11,358      134.1        1     1016        63      BELOW AVG (-71.1)
-    4    2,542      598.1        1     4630      2081    ABOVE AVG (+1482.9)
-    3      400     3797.7        1    15463      5166    ABOVE AVG (+1368.3)
-    2       41    35889.1      117   160534     17481   BELOW AVG (-18408.1)
-    1        5   312828.8    21819   596792      5114  BELOW AVG (-307714.8)
+   19        5   301615.5   121540   649806    217825   BELOW AVG (-83790.5)
+   18       47    32543.2      533   180531      9913   BELOW AVG (-22630.2)
+   17      377     4046.3        2    34084       217    BELOW AVG (-3829.3)
+   16    2,461      618.9        1     5231       142     BELOW AVG (-476.9)
+   15   11,361      134.0        1     1458        62      BELOW AVG (-72.0)
+   14   38,298       39.8        1      407        20      BELOW AVG (-19.8)
+   13   96,724       15.7        1      172        11       BELOW AVG (-4.7)
+    7   96,541       15.8        1      161         1      BELOW AVG (-14.8)
+    6   38,357       39.7        1      380        40       ABOVE AVG (+0.3)
+    5   11,358      134.1        1     1016        64      BELOW AVG (-70.1)
+    4    2,542      598.1        1     4630      2082    ABOVE AVG (+1483.9)
+    3      400     3797.7        1    15463      5167    ABOVE AVG (+1369.3)
+    2       41    35889.1      117   160534     17482   BELOW AVG (-18407.1)
+    1        5   312828.8    21819   596792      5115  BELOW AVG (-307713.8)
     0        0        N/A      N/A      N/A       N/A            NO BASELINE
 
 ========================================================================
@@ -144,19 +144,19 @@ Current gap = draws since the most recent occurrence of that prize category.
 
 Most above historical average gap:
 
- 4/20  current gap 2,081  |  average 598.1  |  +1482.9 draws  |  +247.9%
- 3/20  current gap 5,166  |  average 3797.7  |  +1368.3 draws  |  +36.0%
- 6/20  current gap 39  |  average 39.7  |  -0.7 draws  |  -1.8%
-19/20  current gap 217,824  |  average 301615.5  |  -83791.5 draws  |  -27.8%
-13/20  current gap 10  |  average 15.7  |  -5.7 draws  |  -36.5%
+ 4/20  current gap 2,082  |  average 598.1  |  +1483.9 draws  |  +248.1%
+ 3/20  current gap 5,167  |  average 3797.7  |  +1369.3 draws  |  +36.1%
+ 6/20  current gap 40  |  average 39.7  |  +0.3 draws  |  +0.8%
+19/20  current gap 217,825  |  average 301615.5  |  -83790.5 draws  |  -27.8%
+13/20  current gap 11  |  average 15.7  |  -4.7 draws  |  -30.1%
 
 Most below historical average gap:
 
- 7/20  current gap 0  |  average 15.8  |  -15.8 draws  |  -100.0%
- 1/20  current gap 5,114  |  average 312828.8  |  -307714.8 draws  |  -98.4%
-17/20  current gap 216  |  average 4046.3  |  -3830.3 draws  |  -94.7%
-16/20  current gap 141  |  average 618.9  |  -477.9 draws  |  -77.2%
-18/20  current gap 9,912  |  average 32543.2  |  -22631.2 draws  |  -69.5%
+ 1/20  current gap 5,115  |  average 312828.8  |  -307713.8 draws  |  -98.4%
+17/20  current gap 217  |  average 4046.3  |  -3829.3 draws  |  -94.6%
+ 7/20  current gap 1  |  average 15.8  |  -14.8 draws  |  -93.7%
+16/20  current gap 142  |  average 618.9  |  -476.9 draws  |  -77.1%
+18/20  current gap 9,913  |  average 32543.2  |  -22630.2 draws  |  -69.5%
 
 ========================================================================
                          COMPLETE
