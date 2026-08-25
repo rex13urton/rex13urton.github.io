@@ -15,35 +15,35 @@ Loading draws...
 Loaded 412 draws.
 
 FULL DRAW RANGE:
-  #3473425 → #3473836
+  #3473426 → #3473837
 
 FULL DATE RANGE:
-  2026-08-24 00:51:00 → 2026-08-25 01:22:30
+  2026-08-24 00:54:30 → 2026-08-25 01:26:00
 
 ============================================
 CURRENT 412-DRAW TEMPERATURE POPULATION
 ============================================
 
-Draw range: #3473737 → #3473836
-Date range: 2026-08-24 19:36:00 → 2026-08-25 01:22:30
+Draw range: #3473738 → #3473837
+Date range: 2026-08-24 19:39:30 → 2026-08-25 01:26:00
 
 VERY_HOT     (10 numbers)
-  9, 14, 22, 31, 45, 47, 48, 55, 61, 66
+  9, 14, 15, 22, 31, 45, 55, 59, 61, 66
 
 HOT          (10 numbers)
-  5, 15, 23, 25, 26, 59, 63, 70, 73, 76
+  16, 19, 23, 25, 26, 37, 47, 48, 63, 76
 
 WARM         (10 numbers)
-  3, 10, 16, 18, 19, 24, 27, 33, 37, 54
+  3, 5, 10, 18, 24, 33, 42, 54, 70, 73
 
 NEUTRAL      (20 numbers)
-  1, 2, 11, 13, 20, 35, 36, 38, 42, 43, 44, 50, 52, 53, 62, 65, 67, 68, 69, 77
+  1, 2, 7, 11, 13, 20, 27, 35, 36, 38, 43, 50, 52, 62, 65, 67, 68, 69, 74, 77
 
 COOL         (10 numbers)
-  6, 7, 17, 29, 49, 58, 64, 72, 74, 75
+  4, 6, 17, 29, 44, 49, 53, 56, 64, 75
 
 COLD         (10 numbers)
-  4, 8, 12, 28, 32, 34, 41, 56, 60, 79
+  8, 12, 28, 32, 34, 41, 58, 60, 72, 79
 
 VERY_COLD    (10 numbers)
   21, 30, 39, 40, 46, 51, 57, 71, 78, 80
@@ -64,83 +64,83 @@ BELOW = number has appeared less than mathematical expectation.
  NUM    FREQ  EXPECTED       DEV     DEV %         TEMP   RANK    STATUS
 -------------------------------------------------------------------------------------
   31      23     12.50    +10.50   +84.00%     VERY_HOT      1     ABOVE
-  22      18     12.50     +5.50   +44.00%     VERY_HOT      2     ABOVE
-  76      18     12.50     +5.50   +44.00%          HOT     13     ABOVE
+  59      18     12.50     +5.50   +44.00%     VERY_HOT      6     ABOVE
+  76      18     12.50     +5.50   +44.00%          HOT     15     ABOVE
+  16      17     12.50     +4.50   +36.00%          HOT     16     ABOVE
+  19      17     12.50     +4.50   +36.00%          HOT     17     ABOVE
+  22      17     12.50     +4.50   +36.00%     VERY_HOT      2     ABOVE
   24      17     12.50     +4.50   +36.00%         WARM     23     ABOVE
-  47      17     12.50     +4.50   +36.00%     VERY_HOT      9     ABOVE
+  47      17     12.50     +4.50   +36.00%          HOT     12     ABOVE
   55      17     12.50     +4.50   +36.00%     VERY_HOT      3     ABOVE
-  59      17     12.50     +4.50   +36.00%          HOT     11     ABOVE
-  10      16     12.50     +3.50   +28.00%         WARM     27     ABOVE
-  14      16     12.50     +3.50   +28.00%     VERY_HOT      4     ABOVE
-  16      16     12.50     +3.50   +28.00%         WARM     21     ABOVE
-  19      16     12.50     +3.50   +28.00%         WARM     22     ABOVE
-  63      16     12.50     +3.50   +28.00%          HOT     18     ABOVE
-  77      16     12.50     +3.50   +28.00%      NEUTRAL     43     ABOVE
-   3      15     12.50     +2.50   +20.00%         WARM     26     ABOVE
-  18      15     12.50     +2.50   +20.00%         WARM     28     ABOVE
-  25      15     12.50     +2.50   +20.00%          HOT     16     ABOVE
-  26      15     12.50     +2.50   +20.00%          HOT     17     ABOVE
-  37      15     12.50     +2.50   +20.00%         WARM     24     ABOVE
+   3      16     12.50     +3.50   +28.00%         WARM     26     ABOVE
+  26      16     12.50     +3.50   +28.00%          HOT     11     ABOVE
+  63      16     12.50     +3.50   +28.00%          HOT     14     ABOVE
+  77      16     12.50     +3.50   +28.00%      NEUTRAL     44     ABOVE
+  10      15     12.50     +2.50   +20.00%         WARM     27     ABOVE
+  14      15     12.50     +2.50   +20.00%     VERY_HOT      4     ABOVE
+  15      15     12.50     +2.50   +20.00%     VERY_HOT     10     ABOVE
+  25      15     12.50     +2.50   +20.00%          HOT     19     ABOVE
+  37      15     12.50     +2.50   +20.00%          HOT     20     ABOVE
   62      15     12.50     +2.50   +20.00%      NEUTRAL     32     ABOVE
-  66      15     12.50     +2.50   +20.00%     VERY_HOT      7     ABOVE
-  73      15     12.50     +2.50   +20.00%          HOT     19     ABOVE
-   1      14     12.50     +1.50   +12.00%      NEUTRAL     44     ABOVE
-  13      14     12.50     +1.50   +12.00%      NEUTRAL     41     ABOVE
-  15      14     12.50     +1.50   +12.00%          HOT     14     ABOVE
-  17      14     12.50     +1.50   +12.00%         COOL     54     ABOVE
-  44      14     12.50     +1.50   +12.00%      NEUTRAL     47     ABOVE
+  68      15     12.50     +2.50   +20.00%      NEUTRAL     33     ABOVE
+  71      15     12.50     +2.50   +20.00%    VERY_COLD     73     ABOVE
+   1      14     12.50     +1.50   +12.00%      NEUTRAL     49     ABOVE
+   4      14     12.50     +1.50   +12.00%         COOL     57     ABOVE
+  13      14     12.50     +1.50   +12.00%      NEUTRAL     39     ABOVE
+  18      14     12.50     +1.50   +12.00%         WARM     28     ABOVE
   45      14     12.50     +1.50   +12.00%     VERY_HOT      5     ABOVE
-  48      14     12.50     +1.50   +12.00%     VERY_HOT     10     ABOVE
-  54      14     12.50     +1.50   +12.00%         WARM     25     ABOVE
-  61      14     12.50     +1.50   +12.00%     VERY_HOT      6     ABOVE
-  68      14     12.50     +1.50   +12.00%      NEUTRAL     33     ABOVE
-  70      14     12.50     +1.50   +12.00%          HOT     12     ABOVE
-  71      14     12.50     +1.50   +12.00%    VERY_COLD     73     ABOVE
-  75      14     12.50     +1.50   +12.00%         COOL     52     ABOVE
-   4      13     12.50     +0.50    +4.00%         COLD     61     ABOVE
-   9      13     12.50     +0.50    +4.00%     VERY_HOT      8     ABOVE
-  27      13     12.50     +0.50    +4.00%         WARM     29     ABOVE
-  28      13     12.50     +0.50    +4.00%         COLD     63     ABOVE
-  38      13     12.50     +0.50    +4.00%      NEUTRAL     42     ABOVE
+  48      14     12.50     +1.50   +12.00%          HOT     13     ABOVE
+  54      14     12.50     +1.50   +12.00%         WARM     24     ABOVE
+  61      14     12.50     +1.50   +12.00%     VERY_HOT      7     ABOVE
+  66      14     12.50     +1.50   +12.00%     VERY_HOT      8     ABOVE
+  70      14     12.50     +1.50   +12.00%         WARM     21     ABOVE
+  73      14     12.50     +1.50   +12.00%         WARM     25     ABOVE
+   9      13     12.50     +0.50    +4.00%     VERY_HOT      9     ABOVE
+  17      13     12.50     +0.50    +4.00%         COOL     51     ABOVE
+  27      13     12.50     +0.50    +4.00%      NEUTRAL     36     ABOVE
+  28      13     12.50     +0.50    +4.00%         COLD     64     ABOVE
+  36      13     12.50     +0.50    +4.00%      NEUTRAL     40     ABOVE
   43      13     12.50     +0.50    +4.00%      NEUTRAL     31     ABOVE
-  53      13     12.50     +0.50    +4.00%      NEUTRAL     49     ABOVE
-   2      12     12.50     -0.50    -4.00%      NEUTRAL     39     BELOW
-  35      12     12.50     -0.50    -4.00%      NEUTRAL     45     BELOW
-  36      12     12.50     -0.50    -4.00%      NEUTRAL     46     BELOW
-  64      12     12.50     -0.50    -4.00%         COOL     57     BELOW
-  65      12     12.50     -0.50    -4.00%      NEUTRAL     37     BELOW
-  67      12     12.50     -0.50    -4.00%      NEUTRAL     50     BELOW
+  44      13     12.50     +0.50    +4.00%         COOL     53     ABOVE
+  75      13     12.50     +0.50    +4.00%         COOL     56     ABOVE
+  11      12     12.50     -0.50    -4.00%      NEUTRAL     34     BELOW
+  38      12     12.50     -0.50    -4.00%      NEUTRAL     41     BELOW
+  53      12     12.50     -0.50    -4.00%         COOL     54     BELOW
+  64      12     12.50     -0.50    -4.00%         COOL     55     BELOW
+  65      12     12.50     -0.50    -4.00%      NEUTRAL     42     BELOW
+  67      12     12.50     -0.50    -4.00%      NEUTRAL     47     BELOW
+   2      11     12.50     -1.50   -12.00%      NEUTRAL     38     BELOW
    6      11     12.50     -1.50   -12.00%         COOL     58     BELOW
-   7      11     12.50     -1.50   -12.00%         COOL     53     BELOW
-  11      11     12.50     -1.50   -12.00%      NEUTRAL     40     BELOW
-  29      11     12.50     -1.50   -12.00%         COOL     55     BELOW
+   7      11     12.50     -1.50   -12.00%      NEUTRAL     50     BELOW
+  29      11     12.50     -1.50   -12.00%         COOL     52     BELOW
   30      11     12.50     -1.50   -12.00%    VERY_COLD     74     BELOW
-  33      11     12.50     -1.50   -12.00%         WARM     30     BELOW
-  34      11     12.50     -1.50   -12.00%         COLD     64     BELOW
+  33      11     12.50     -1.50   -12.00%         WARM     29     BELOW
+  35      11     12.50     -1.50   -12.00%      NEUTRAL     45     BELOW
   40      11     12.50     -1.50   -12.00%    VERY_COLD     71     BELOW
-  69      11     12.50     -1.50   -12.00%      NEUTRAL     38     BELOW
-  72      11     12.50     -1.50   -12.00%         COOL     60     BELOW
-  12      10     12.50     -2.50   -20.00%         COLD     69     BELOW
-  20      10     12.50     -2.50   -20.00%      NEUTRAL     34     BELOW
-  41      10     12.50     -2.50   -20.00%         COLD     65     BELOW
-  42      10     12.50     -2.50   -20.00%      NEUTRAL     35     BELOW
+  41      11     12.50     -1.50   -12.00%         COLD     65     BELOW
+  52      11     12.50     -1.50   -12.00%      NEUTRAL     37     BELOW
+  56      11     12.50     -1.50   -12.00%         COOL     60     BELOW
+  69      11     12.50     -1.50   -12.00%      NEUTRAL     43     BELOW
+  72      11     12.50     -1.50   -12.00%         COLD     62     BELOW
+   5      10     12.50     -2.50   -20.00%         WARM     22     BELOW
+  12      10     12.50     -2.50   -20.00%         COLD     68     BELOW
+  20      10     12.50     -2.50   -20.00%      NEUTRAL     35     BELOW
+  34      10     12.50     -2.50   -20.00%         COLD     70     BELOW
+  42      10     12.50     -2.50   -20.00%         WARM     30     BELOW
   49      10     12.50     -2.50   -20.00%         COOL     59     BELOW
   51      10     12.50     -2.50   -20.00%    VERY_COLD     80     BELOW
-  52      10     12.50     -2.50   -20.00%      NEUTRAL     36     BELOW
-  56      10     12.50     -2.50   -20.00%         COLD     66     BELOW
-  60      10     12.50     -2.50   -20.00%         COLD     67     BELOW
-   5       9     12.50     -3.50   -28.00%          HOT     20     BELOW
-   8       9     12.50     -3.50   -28.00%         COLD     62     BELOW
+  60      10     12.50     -2.50   -20.00%         COLD     66     BELOW
+  74      10     12.50     -2.50   -20.00%      NEUTRAL     48     BELOW
   21       9     12.50     -3.50   -28.00%    VERY_COLD     79     BELOW
-  32       9     12.50     -3.50   -28.00%         COLD     70     BELOW
-  46       9     12.50     -3.50   -28.00%    VERY_COLD     75     BELOW
-  50       9     12.50     -3.50   -28.00%      NEUTRAL     48     BELOW
-  74       9     12.50     -3.50   -28.00%         COOL     51     BELOW
-  23       8     12.50     -4.50   -36.00%          HOT     15     BELOW
-  39       8     12.50     -4.50   -36.00%    VERY_COLD     76     BELOW
+  32       9     12.50     -3.50   -28.00%         COLD     69     BELOW
+  46       9     12.50     -3.50   -28.00%    VERY_COLD     76     BELOW
+  50       9     12.50     -3.50   -28.00%      NEUTRAL     46     BELOW
+   8       8     12.50     -4.50   -36.00%         COLD     63     BELOW
+  23       8     12.50     -4.50   -36.00%          HOT     18     BELOW
+  39       8     12.50     -4.50   -36.00%    VERY_COLD     75     BELOW
   57       8     12.50     -4.50   -36.00%    VERY_COLD     72     BELOW
-  58       8     12.50     -4.50   -36.00%         COOL     56     BELOW
-  79       8     12.50     -4.50   -36.00%         COLD     68     BELOW
+  79       8     12.50     -4.50   -36.00%         COLD     67     BELOW
+  58       7     12.50     -5.50   -44.00%         COLD     61     BELOW
   80       5     12.50     -7.50   -60.00%    VERY_COLD     78     BELOW
   78       4     12.50     -8.50   -68.00%    VERY_COLD     77     BELOW
 
@@ -148,46 +148,47 @@ BELOW = number has appeared less than mathematical expectation.
 NUMBERS BELOW EXPECTED — 50 DRAWS
 --------------------------------------------
 
-39 of 80 numbers are below expected.
+40 of 80 numbers are below expected.
 
  NUM    FREQ  EXPECTED   DEFICIT     DEF %         TEMP
 ----------------------------------------------------------------------
   78       4     12.50     -8.50   -68.00%    VERY_COLD
   80       5     12.50     -7.50   -60.00%    VERY_COLD
+  58       7     12.50     -5.50   -44.00%         COLD
+   8       8     12.50     -4.50   -36.00%         COLD
   23       8     12.50     -4.50   -36.00%          HOT
   39       8     12.50     -4.50   -36.00%    VERY_COLD
   57       8     12.50     -4.50   -36.00%    VERY_COLD
-  58       8     12.50     -4.50   -36.00%         COOL
   79       8     12.50     -4.50   -36.00%         COLD
-   5       9     12.50     -3.50   -28.00%          HOT
-   8       9     12.50     -3.50   -28.00%         COLD
   21       9     12.50     -3.50   -28.00%    VERY_COLD
   32       9     12.50     -3.50   -28.00%         COLD
   46       9     12.50     -3.50   -28.00%    VERY_COLD
   50       9     12.50     -3.50   -28.00%      NEUTRAL
-  74       9     12.50     -3.50   -28.00%         COOL
+   5      10     12.50     -2.50   -20.00%         WARM
   12      10     12.50     -2.50   -20.00%         COLD
   20      10     12.50     -2.50   -20.00%      NEUTRAL
-  41      10     12.50     -2.50   -20.00%         COLD
-  42      10     12.50     -2.50   -20.00%      NEUTRAL
+  34      10     12.50     -2.50   -20.00%         COLD
+  42      10     12.50     -2.50   -20.00%         WARM
   49      10     12.50     -2.50   -20.00%         COOL
   51      10     12.50     -2.50   -20.00%    VERY_COLD
-  52      10     12.50     -2.50   -20.00%      NEUTRAL
-  56      10     12.50     -2.50   -20.00%         COLD
   60      10     12.50     -2.50   -20.00%         COLD
+  74      10     12.50     -2.50   -20.00%      NEUTRAL
+   2      11     12.50     -1.50   -12.00%      NEUTRAL
    6      11     12.50     -1.50   -12.00%         COOL
-   7      11     12.50     -1.50   -12.00%         COOL
-  11      11     12.50     -1.50   -12.00%      NEUTRAL
+   7      11     12.50     -1.50   -12.00%      NEUTRAL
   29      11     12.50     -1.50   -12.00%         COOL
   30      11     12.50     -1.50   -12.00%    VERY_COLD
   33      11     12.50     -1.50   -12.00%         WARM
-  34      11     12.50     -1.50   -12.00%         COLD
+  35      11     12.50     -1.50   -12.00%      NEUTRAL
   40      11     12.50     -1.50   -12.00%    VERY_COLD
+  41      11     12.50     -1.50   -12.00%         COLD
+  52      11     12.50     -1.50   -12.00%      NEUTRAL
+  56      11     12.50     -1.50   -12.00%         COOL
   69      11     12.50     -1.50   -12.00%      NEUTRAL
-  72      11     12.50     -1.50   -12.00%         COOL
-   2      12     12.50     -0.50    -4.00%      NEUTRAL
-  35      12     12.50     -0.50    -4.00%      NEUTRAL
-  36      12     12.50     -0.50    -4.00%      NEUTRAL
+  72      11     12.50     -1.50   -12.00%         COLD
+  11      12     12.50     -0.50    -4.00%      NEUTRAL
+  38      12     12.50     -0.50    -4.00%      NEUTRAL
+  53      12     12.50     -0.50    -4.00%         COOL
   64      12     12.50     -0.50    -4.00%         COOL
   65      12     12.50     -0.50    -4.00%      NEUTRAL
   67      12     12.50     -0.50    -4.00%      NEUTRAL
@@ -208,77 +209,77 @@ BELOW = number has appeared less than mathematical expectation.
   55      32     25.00     +7.00   +28.00%     VERY_HOT      3     ABOVE
   14      31     25.00     +6.00   +24.00%     VERY_HOT      4     ABOVE
   45      31     25.00     +6.00   +24.00%     VERY_HOT      5     ABOVE
-  61      31     25.00     +6.00   +24.00%     VERY_HOT      6     ABOVE
-  66      31     25.00     +6.00   +24.00%     VERY_HOT      7     ABOVE
-   9      30     25.00     +5.00   +20.00%     VERY_HOT      8     ABOVE
-  47      30     25.00     +5.00   +20.00%     VERY_HOT      9     ABOVE
-  48      30     25.00     +5.00   +20.00%     VERY_HOT     10     ABOVE
-  59      30     25.00     +5.00   +20.00%          HOT     11     ABOVE
-  70      30     25.00     +5.00   +20.00%          HOT     12     ABOVE
-  76      30     25.00     +5.00   +20.00%          HOT     13     ABOVE
-  15      29     25.00     +4.00   +16.00%          HOT     14     ABOVE
-  23      29     25.00     +4.00   +16.00%          HOT     15     ABOVE
-  25      29     25.00     +4.00   +16.00%          HOT     16     ABOVE
-  26      29     25.00     +4.00   +16.00%          HOT     17     ABOVE
-  63      29     25.00     +4.00   +16.00%          HOT     18     ABOVE
-  73      29     25.00     +4.00   +16.00%          HOT     19     ABOVE
-   5      28     25.00     +3.00   +12.00%          HOT     20     ABOVE
-  16      28     25.00     +3.00   +12.00%         WARM     21     ABOVE
-  19      28     25.00     +3.00   +12.00%         WARM     22     ABOVE
+  59      31     25.00     +6.00   +24.00%     VERY_HOT      6     ABOVE
+  61      31     25.00     +6.00   +24.00%     VERY_HOT      7     ABOVE
+  66      31     25.00     +6.00   +24.00%     VERY_HOT      8     ABOVE
+   9      30     25.00     +5.00   +20.00%     VERY_HOT      9     ABOVE
+  15      30     25.00     +5.00   +20.00%     VERY_HOT     10     ABOVE
+  26      30     25.00     +5.00   +20.00%          HOT     11     ABOVE
+  47      30     25.00     +5.00   +20.00%          HOT     12     ABOVE
+  48      30     25.00     +5.00   +20.00%          HOT     13     ABOVE
+  63      30     25.00     +5.00   +20.00%          HOT     14     ABOVE
+  76      30     25.00     +5.00   +20.00%          HOT     15     ABOVE
+  16      29     25.00     +4.00   +16.00%          HOT     16     ABOVE
+  19      29     25.00     +4.00   +16.00%          HOT     17     ABOVE
+  23      29     25.00     +4.00   +16.00%          HOT     18     ABOVE
+  25      29     25.00     +4.00   +16.00%          HOT     19     ABOVE
+  37      29     25.00     +4.00   +16.00%          HOT     20     ABOVE
+  70      29     25.00     +4.00   +16.00%         WARM     21     ABOVE
+   5      28     25.00     +3.00   +12.00%         WARM     22     ABOVE
   24      28     25.00     +3.00   +12.00%         WARM     23     ABOVE
-  37      28     25.00     +3.00   +12.00%         WARM     24     ABOVE
-  54      28     25.00     +3.00   +12.00%         WARM     25     ABOVE
+  54      28     25.00     +3.00   +12.00%         WARM     24     ABOVE
+  73      28     25.00     +3.00   +12.00%         WARM     25     ABOVE
    3      27     25.00     +2.00    +8.00%         WARM     26     ABOVE
   10      27     25.00     +2.00    +8.00%         WARM     27     ABOVE
   18      27     25.00     +2.00    +8.00%         WARM     28     ABOVE
-  27      27     25.00     +2.00    +8.00%         WARM     29     ABOVE
-  33      27     25.00     +2.00    +8.00%         WARM     30     ABOVE
+  33      27     25.00     +2.00    +8.00%         WARM     29     ABOVE
+  42      27     25.00     +2.00    +8.00%         WARM     30     ABOVE
   43      27     25.00     +2.00    +8.00%      NEUTRAL     31     ABOVE
   62      27     25.00     +2.00    +8.00%      NEUTRAL     32     ABOVE
   68      27     25.00     +2.00    +8.00%      NEUTRAL     33     ABOVE
-  20      26     25.00     +1.00    +4.00%      NEUTRAL     34     ABOVE
-  42      26     25.00     +1.00    +4.00%      NEUTRAL     35     ABOVE
-  52      26     25.00     +1.00    +4.00%      NEUTRAL     36     ABOVE
-  65      26     25.00     +1.00    +4.00%      NEUTRAL     37     ABOVE
-  69      26     25.00     +1.00    +4.00%      NEUTRAL     38     ABOVE
-   2      25     25.00     +0.00    +0.00%      NEUTRAL     39  EXPECTED
-  11      25     25.00     +0.00    +0.00%      NEUTRAL     40  EXPECTED
-  13      25     25.00     +0.00    +0.00%      NEUTRAL     41  EXPECTED
-  38      25     25.00     +0.00    +0.00%      NEUTRAL     42  EXPECTED
-  77      25     25.00     +0.00    +0.00%      NEUTRAL     43  EXPECTED
-   1      24     25.00     -1.00    -4.00%      NEUTRAL     44     BELOW
+  11      26     25.00     +1.00    +4.00%      NEUTRAL     34     ABOVE
+  20      26     25.00     +1.00    +4.00%      NEUTRAL     35     ABOVE
+  27      26     25.00     +1.00    +4.00%      NEUTRAL     36     ABOVE
+  52      26     25.00     +1.00    +4.00%      NEUTRAL     37     ABOVE
+   2      25     25.00     +0.00    +0.00%      NEUTRAL     38  EXPECTED
+  13      25     25.00     +0.00    +0.00%      NEUTRAL     39  EXPECTED
+  36      25     25.00     +0.00    +0.00%      NEUTRAL     40  EXPECTED
+  38      25     25.00     +0.00    +0.00%      NEUTRAL     41  EXPECTED
+  65      25     25.00     +0.00    +0.00%      NEUTRAL     42  EXPECTED
+  69      25     25.00     +0.00    +0.00%      NEUTRAL     43  EXPECTED
+  77      25     25.00     +0.00    +0.00%      NEUTRAL     44  EXPECTED
   35      24     25.00     -1.00    -4.00%      NEUTRAL     45     BELOW
-  36      24     25.00     -1.00    -4.00%      NEUTRAL     46     BELOW
-  44      24     25.00     -1.00    -4.00%      NEUTRAL     47     BELOW
-  50      24     25.00     -1.00    -4.00%      NEUTRAL     48     BELOW
-  53      24     25.00     -1.00    -4.00%      NEUTRAL     49     BELOW
-  67      24     25.00     -1.00    -4.00%      NEUTRAL     50     BELOW
-  74      24     25.00     -1.00    -4.00%         COOL     51     BELOW
-  75      24     25.00     -1.00    -4.00%         COOL     52     BELOW
-   7      23     25.00     -2.00    -8.00%         COOL     53     BELOW
-  17      23     25.00     -2.00    -8.00%         COOL     54     BELOW
-  29      23     25.00     -2.00    -8.00%         COOL     55     BELOW
-  58      23     25.00     -2.00    -8.00%         COOL     56     BELOW
-  64      23     25.00     -2.00    -8.00%         COOL     57     BELOW
+  50      24     25.00     -1.00    -4.00%      NEUTRAL     46     BELOW
+  67      24     25.00     -1.00    -4.00%      NEUTRAL     47     BELOW
+  74      24     25.00     -1.00    -4.00%      NEUTRAL     48     BELOW
+   1      23     25.00     -2.00    -8.00%      NEUTRAL     49     BELOW
+   7      23     25.00     -2.00    -8.00%      NEUTRAL     50     BELOW
+  17      23     25.00     -2.00    -8.00%         COOL     51     BELOW
+  29      23     25.00     -2.00    -8.00%         COOL     52     BELOW
+  44      23     25.00     -2.00    -8.00%         COOL     53     BELOW
+  53      23     25.00     -2.00    -8.00%         COOL     54     BELOW
+  64      23     25.00     -2.00    -8.00%         COOL     55     BELOW
+  75      23     25.00     -2.00    -8.00%         COOL     56     BELOW
+   4      22     25.00     -3.00   -12.00%         COOL     57     BELOW
    6      22     25.00     -3.00   -12.00%         COOL     58     BELOW
   49      22     25.00     -3.00   -12.00%         COOL     59     BELOW
-  72      22     25.00     -3.00   -12.00%         COOL     60     BELOW
-   4      21     25.00     -4.00   -16.00%         COLD     61     BELOW
-   8      21     25.00     -4.00   -16.00%         COLD     62     BELOW
-  28      21     25.00     -4.00   -16.00%         COLD     63     BELOW
-  34      21     25.00     -4.00   -16.00%         COLD     64     BELOW
+  56      22     25.00     -3.00   -12.00%         COOL     60     BELOW
+  58      22     25.00     -3.00   -12.00%         COLD     61     BELOW
+  72      22     25.00     -3.00   -12.00%         COLD     62     BELOW
+   8      21     25.00     -4.00   -16.00%         COLD     63     BELOW
+  28      21     25.00     -4.00   -16.00%         COLD     64     BELOW
   41      21     25.00     -4.00   -16.00%         COLD     65     BELOW
-  56      21     25.00     -4.00   -16.00%         COLD     66     BELOW
-  60      21     25.00     -4.00   -16.00%         COLD     67     BELOW
-  79      21     25.00     -4.00   -16.00%         COLD     68     BELOW
-  12      20     25.00     -5.00   -20.00%         COLD     69     BELOW
-  32      20     25.00     -5.00   -20.00%         COLD     70     BELOW
+  60      21     25.00     -4.00   -16.00%         COLD     66     BELOW
+  79      21     25.00     -4.00   -16.00%         COLD     67     BELOW
+  12      20     25.00     -5.00   -20.00%         COLD     68     BELOW
+  32      20     25.00     -5.00   -20.00%         COLD     69     BELOW
+  34      20     25.00     -5.00   -20.00%         COLD     70     BELOW
   40      20     25.00     -5.00   -20.00%    VERY_COLD     71     BELOW
   57      20     25.00     -5.00   -20.00%    VERY_COLD     72     BELOW
   71      20     25.00     -5.00   -20.00%    VERY_COLD     73     BELOW
   30      19     25.00     -6.00   -24.00%    VERY_COLD     74     BELOW
-  46      19     25.00     -6.00   -24.00%    VERY_COLD     75     BELOW
-  39      18     25.00     -7.00   -28.00%    VERY_COLD     76     BELOW
+  39      18     25.00     -7.00   -28.00%    VERY_COLD     75     BELOW
+  46      18     25.00     -7.00   -28.00%    VERY_COLD     76     BELOW
   78      17     25.00     -8.00   -32.00%    VERY_COLD     77     BELOW
   80      16     25.00     -9.00   -36.00%    VERY_COLD     78     BELOW
   21      15     25.00    -10.00   -40.00%    VERY_COLD     79     BELOW
@@ -288,7 +289,7 @@ BELOW = number has appeared less than mathematical expectation.
 NUMBERS BELOW EXPECTED — 100 DRAWS
 --------------------------------------------
 
-37 of 80 numbers are below expected.
+36 of 80 numbers are below expected.
 
  NUM    FREQ  EXPECTED   DEFICIT     DEF %         TEMP
 ----------------------------------------------------------------------
@@ -297,38 +298,37 @@ NUMBERS BELOW EXPECTED — 100 DRAWS
   80      16     25.00     -9.00   -36.00%    VERY_COLD
   78      17     25.00     -8.00   -32.00%    VERY_COLD
   39      18     25.00     -7.00   -28.00%    VERY_COLD
+  46      18     25.00     -7.00   -28.00%    VERY_COLD
   30      19     25.00     -6.00   -24.00%    VERY_COLD
-  46      19     25.00     -6.00   -24.00%    VERY_COLD
   12      20     25.00     -5.00   -20.00%         COLD
   32      20     25.00     -5.00   -20.00%         COLD
+  34      20     25.00     -5.00   -20.00%         COLD
   40      20     25.00     -5.00   -20.00%    VERY_COLD
   57      20     25.00     -5.00   -20.00%    VERY_COLD
   71      20     25.00     -5.00   -20.00%    VERY_COLD
-   4      21     25.00     -4.00   -16.00%         COLD
    8      21     25.00     -4.00   -16.00%         COLD
   28      21     25.00     -4.00   -16.00%         COLD
-  34      21     25.00     -4.00   -16.00%         COLD
   41      21     25.00     -4.00   -16.00%         COLD
-  56      21     25.00     -4.00   -16.00%         COLD
   60      21     25.00     -4.00   -16.00%         COLD
   79      21     25.00     -4.00   -16.00%         COLD
+   4      22     25.00     -3.00   -12.00%         COOL
    6      22     25.00     -3.00   -12.00%         COOL
   49      22     25.00     -3.00   -12.00%         COOL
-  72      22     25.00     -3.00   -12.00%         COOL
-   7      23     25.00     -2.00    -8.00%         COOL
+  56      22     25.00     -3.00   -12.00%         COOL
+  58      22     25.00     -3.00   -12.00%         COLD
+  72      22     25.00     -3.00   -12.00%         COLD
+   1      23     25.00     -2.00    -8.00%      NEUTRAL
+   7      23     25.00     -2.00    -8.00%      NEUTRAL
   17      23     25.00     -2.00    -8.00%         COOL
   29      23     25.00     -2.00    -8.00%         COOL
-  58      23     25.00     -2.00    -8.00%         COOL
+  44      23     25.00     -2.00    -8.00%         COOL
+  53      23     25.00     -2.00    -8.00%         COOL
   64      23     25.00     -2.00    -8.00%         COOL
-   1      24     25.00     -1.00    -4.00%      NEUTRAL
+  75      23     25.00     -2.00    -8.00%         COOL
   35      24     25.00     -1.00    -4.00%      NEUTRAL
-  36      24     25.00     -1.00    -4.00%      NEUTRAL
-  44      24     25.00     -1.00    -4.00%      NEUTRAL
   50      24     25.00     -1.00    -4.00%      NEUTRAL
-  53      24     25.00     -1.00    -4.00%      NEUTRAL
   67      24     25.00     -1.00    -4.00%      NEUTRAL
-  74      24     25.00     -1.00    -4.00%         COOL
-  75      24     25.00     -1.00    -4.00%         COOL
+  74      24     25.00     -1.00    -4.00%      NEUTRAL
 
 ============================================
 INDIVIDUAL NUMBER FREQUENCY — LAST 200 DRAWS
@@ -341,127 +341,125 @@ BELOW = number has appeared less than mathematical expectation.
 
  NUM    FREQ  EXPECTED       DEV     DEV %         TEMP   RANK    STATUS
 -------------------------------------------------------------------------------------
-  47      67     50.00    +17.00   +34.00%     VERY_HOT      9     ABOVE
+  47      68     50.00    +18.00   +36.00%          HOT     12     ABOVE
   43      64     50.00    +14.00   +28.00%      NEUTRAL     31     ABOVE
-  66      62     50.00    +12.00   +24.00%     VERY_HOT      7     ABOVE
-  25      61     50.00    +11.00   +22.00%          HOT     16     ABOVE
+  66      62     50.00    +12.00   +24.00%     VERY_HOT      8     ABOVE
+  25      61     50.00    +11.00   +22.00%          HOT     19     ABOVE
   14      60     50.00    +10.00   +20.00%     VERY_HOT      4     ABOVE
-  31      60     50.00    +10.00   +20.00%     VERY_HOT      1     ABOVE
-  53      59     50.00     +9.00   +18.00%      NEUTRAL     49     ABOVE
-  54      59     50.00     +9.00   +18.00%         WARM     25     ABOVE
-  11      58     50.00     +8.00   +16.00%      NEUTRAL     40     ABOVE
-  70      58     50.00     +8.00   +16.00%          HOT     12     ABOVE
+  31      59     50.00     +9.00   +18.00%     VERY_HOT      1     ABOVE
+  54      59     50.00     +9.00   +18.00%         WARM     24     ABOVE
+  11      58     50.00     +8.00   +16.00%      NEUTRAL     34     ABOVE
+  53      58     50.00     +8.00   +16.00%         COOL     54     ABOVE
+  70      58     50.00     +8.00   +16.00%         WARM     21     ABOVE
   10      57     50.00     +7.00   +14.00%         WARM     27     ABOVE
-  18      56     50.00     +6.00   +12.00%         WARM     28     ABOVE
-  55      56     50.00     +6.00   +12.00%     VERY_HOT      3     ABOVE
-  63      56     50.00     +6.00   +12.00%          HOT     18     ABOVE
-  27      55     50.00     +5.00   +10.00%         WARM     29     ABOVE
-  33      55     50.00     +5.00   +10.00%         WARM     30     ABOVE
-  67      55     50.00     +5.00   +10.00%      NEUTRAL     50     ABOVE
-  26      54     50.00     +4.00    +8.00%          HOT     17     ABOVE
-  35      54     50.00     +4.00    +8.00%      NEUTRAL     45     ABOVE
+  63      57     50.00     +7.00   +14.00%          HOT     14     ABOVE
+  18      55     50.00     +5.00   +10.00%         WARM     28     ABOVE
+  26      55     50.00     +5.00   +10.00%          HOT     11     ABOVE
+  27      55     50.00     +5.00   +10.00%      NEUTRAL     36     ABOVE
+  55      55     50.00     +5.00   +10.00%     VERY_HOT      3     ABOVE
+  67      55     50.00     +5.00   +10.00%      NEUTRAL     47     ABOVE
+  19      54     50.00     +4.00    +8.00%          HOT     17     ABOVE
+  33      54     50.00     +4.00    +8.00%         WARM     29     ABOVE
+  37      54     50.00     +4.00    +8.00%          HOT     20     ABOVE
   45      54     50.00     +4.00    +8.00%     VERY_HOT      5     ABOVE
-  59      54     50.00     +4.00    +8.00%          HOT     11     ABOVE
-  76      54     50.00     +4.00    +8.00%          HOT     13     ABOVE
-   7      53     50.00     +3.00    +6.00%         COOL     53     ABOVE
-   9      53     50.00     +3.00    +6.00%     VERY_HOT      8     ABOVE
-  19      53     50.00     +3.00    +6.00%         WARM     22     ABOVE
-  37      53     50.00     +3.00    +6.00%         WARM     24     ABOVE
-  48      53     50.00     +3.00    +6.00%     VERY_HOT     10     ABOVE
-  56      53     50.00     +3.00    +6.00%         COLD     66     ABOVE
-  62      53     50.00     +3.00    +6.00%      NEUTRAL     32     ABOVE
-  38      52     50.00     +2.00    +4.00%      NEUTRAL     42     ABOVE
-  61      52     50.00     +2.00    +4.00%     VERY_HOT      6     ABOVE
-  73      52     50.00     +2.00    +4.00%          HOT     19     ABOVE
-   5      51     50.00     +1.00    +2.00%          HOT     20     ABOVE
-  20      51     50.00     +1.00    +2.00%      NEUTRAL     34     ABOVE
-  23      51     50.00     +1.00    +2.00%          HOT     15     ABOVE
-  29      51     50.00     +1.00    +2.00%         COOL     55     ABOVE
+  56      54     50.00     +4.00    +8.00%         COOL     60     ABOVE
+  59      54     50.00     +4.00    +8.00%     VERY_HOT      6     ABOVE
+  76      54     50.00     +4.00    +8.00%          HOT     15     ABOVE
+  35      53     50.00     +3.00    +6.00%      NEUTRAL     45     ABOVE
+   5      52     50.00     +2.00    +4.00%         WARM     22     ABOVE
+   7      52     50.00     +2.00    +4.00%      NEUTRAL     50     ABOVE
+   9      52     50.00     +2.00    +4.00%     VERY_HOT      9     ABOVE
+  38      52     50.00     +2.00    +4.00%      NEUTRAL     41     ABOVE
+  48      52     50.00     +2.00    +4.00%          HOT     13     ABOVE
+  61      52     50.00     +2.00    +4.00%     VERY_HOT      7     ABOVE
+  62      52     50.00     +2.00    +4.00%      NEUTRAL     32     ABOVE
+  71      52     50.00     +2.00    +4.00%    VERY_COLD     73     ABOVE
+  73      52     50.00     +2.00    +4.00%         WARM     25     ABOVE
+  20      51     50.00     +1.00    +2.00%      NEUTRAL     35     ABOVE
+  23      51     50.00     +1.00    +2.00%          HOT     18     ABOVE
   30      51     50.00     +1.00    +2.00%    VERY_COLD     74     ABOVE
-  71      51     50.00     +1.00    +2.00%    VERY_COLD     73     ABOVE
+  36      51     50.00     +1.00    +2.00%      NEUTRAL     40     ABOVE
+  42      51     50.00     +1.00    +2.00%         WARM     30     ABOVE
+  74      51     50.00     +1.00    +2.00%      NEUTRAL     48     ABOVE
+   3      50     50.00     +0.00    +0.00%         WARM     26  EXPECTED
    6      50     50.00     +0.00    +0.00%         COOL     58  EXPECTED
+  15      50     50.00     +0.00    +0.00%     VERY_HOT     10  EXPECTED
   22      50     50.00     +0.00    +0.00%     VERY_HOT      2  EXPECTED
   24      50     50.00     +0.00    +0.00%         WARM     23  EXPECTED
-  36      50     50.00     +0.00    +0.00%      NEUTRAL     46  EXPECTED
-  42      50     50.00     +0.00    +0.00%      NEUTRAL     35  EXPECTED
-  64      50     50.00     +0.00    +0.00%         COOL     57  EXPECTED
-  65      50     50.00     +0.00    +0.00%      NEUTRAL     37  EXPECTED
-  69      50     50.00     +0.00    +0.00%      NEUTRAL     38  EXPECTED
-  74      50     50.00     +0.00    +0.00%         COOL     51  EXPECTED
-   3      49     50.00     -1.00    -2.00%         WARM     26     BELOW
-  15      49     50.00     -1.00    -2.00%          HOT     14     BELOW
-  32      49     50.00     -1.00    -2.00%         COLD     70     BELOW
-  58      49     50.00     -1.00    -2.00%         COOL     56     BELOW
-  77      49     50.00     -1.00    -2.00%      NEUTRAL     43     BELOW
-  44      48     50.00     -2.00    -4.00%      NEUTRAL     47     BELOW
-  51      48     50.00     -2.00    -4.00%    VERY_COLD     80     BELOW
-  52      48     50.00     -2.00    -4.00%      NEUTRAL     36     BELOW
-  68      48     50.00     -2.00    -4.00%      NEUTRAL     33     BELOW
-  17      47     50.00     -3.00    -6.00%         COOL     54     BELOW
-  75      47     50.00     -3.00    -6.00%         COOL     52     BELOW
-  72      46     50.00     -4.00    -8.00%         COOL     60     BELOW
-   2      45     50.00     -5.00   -10.00%      NEUTRAL     39     BELOW
-   8      45     50.00     -5.00   -10.00%         COLD     62     BELOW
-  79      45     50.00     -5.00   -10.00%         COLD     68     BELOW
-   1      44     50.00     -6.00   -12.00%      NEUTRAL     44     BELOW
+  29      50     50.00     +0.00    +0.00%         COOL     52  EXPECTED
+  64      50     50.00     +0.00    +0.00%         COOL     55  EXPECTED
+  65      50     50.00     +0.00    +0.00%      NEUTRAL     42  EXPECTED
+  69      50     50.00     +0.00    +0.00%      NEUTRAL     43  EXPECTED
+  32      49     50.00     -1.00    -2.00%         COLD     69     BELOW
+  52      49     50.00     -1.00    -2.00%      NEUTRAL     37     BELOW
+  58      49     50.00     -1.00    -2.00%         COLD     61     BELOW
+  68      49     50.00     -1.00    -2.00%      NEUTRAL     33     BELOW
+  77      49     50.00     -1.00    -2.00%      NEUTRAL     44     BELOW
+  44      48     50.00     -2.00    -4.00%         COOL     53     BELOW
+  17      47     50.00     -3.00    -6.00%         COOL     51     BELOW
+  51      47     50.00     -3.00    -6.00%    VERY_COLD     80     BELOW
+  75      47     50.00     -3.00    -6.00%         COOL     56     BELOW
+  72      46     50.00     -4.00    -8.00%         COLD     62     BELOW
+   2      45     50.00     -5.00   -10.00%      NEUTRAL     38     BELOW
+   8      45     50.00     -5.00   -10.00%         COLD     63     BELOW
+   1      44     50.00     -6.00   -12.00%      NEUTRAL     49     BELOW
+  41      44     50.00     -6.00   -12.00%         COLD     65     BELOW
   49      44     50.00     -6.00   -12.00%         COOL     59     BELOW
-  12      43     50.00     -7.00   -14.00%         COLD     69     BELOW
-  16      43     50.00     -7.00   -14.00%         WARM     21     BELOW
-  40      43     50.00     -7.00   -14.00%    VERY_COLD     71     BELOW
-  41      43     50.00     -7.00   -14.00%         COLD     65     BELOW
-  60      42     50.00     -8.00   -16.00%         COLD     67     BELOW
-  13      41     50.00     -9.00   -18.00%      NEUTRAL     41     BELOW
-  34      41     50.00     -9.00   -18.00%         COLD     64     BELOW
-  46      41     50.00     -9.00   -18.00%    VERY_COLD     75     BELOW
-  50      41     50.00     -9.00   -18.00%      NEUTRAL     48     BELOW
+  79      44     50.00     -6.00   -12.00%         COLD     67     BELOW
+  12      43     50.00     -7.00   -14.00%         COLD     68     BELOW
+  16      43     50.00     -7.00   -14.00%          HOT     16     BELOW
+  40      42     50.00     -8.00   -16.00%    VERY_COLD     71     BELOW
+  60      42     50.00     -8.00   -16.00%         COLD     66     BELOW
+   4      41     50.00     -9.00   -18.00%         COOL     57     BELOW
+  13      41     50.00     -9.00   -18.00%      NEUTRAL     39     BELOW
+  50      41     50.00     -9.00   -18.00%      NEUTRAL     46     BELOW
   57      41     50.00     -9.00   -18.00%    VERY_COLD     72     BELOW
   80      41     50.00     -9.00   -18.00%    VERY_COLD     78     BELOW
-   4      40     50.00    -10.00   -20.00%         COLD     61     BELOW
-  39      40     50.00    -10.00   -20.00%    VERY_COLD     76     BELOW
+  34      40     50.00    -10.00   -20.00%         COLD     70     BELOW
+  39      40     50.00    -10.00   -20.00%    VERY_COLD     75     BELOW
+  46      40     50.00    -10.00   -20.00%    VERY_COLD     76     BELOW
   78      40     50.00    -10.00   -20.00%    VERY_COLD     77     BELOW
-  28      37     50.00    -13.00   -26.00%         COLD     63     BELOW
+  28      36     50.00    -14.00   -28.00%         COLD     64     BELOW
   21      32     50.00    -18.00   -36.00%    VERY_COLD     79     BELOW
 
 --------------------------------------------
 NUMBERS BELOW EXPECTED — 200 DRAWS
 --------------------------------------------
 
-33 of 80 numbers are below expected.
+31 of 80 numbers are below expected.
 
  NUM    FREQ  EXPECTED   DEFICIT     DEF %         TEMP
 ----------------------------------------------------------------------
   21      32     50.00    -18.00   -36.00%    VERY_COLD
-  28      37     50.00    -13.00   -26.00%         COLD
-   4      40     50.00    -10.00   -20.00%         COLD
+  28      36     50.00    -14.00   -28.00%         COLD
+  34      40     50.00    -10.00   -20.00%         COLD
   39      40     50.00    -10.00   -20.00%    VERY_COLD
+  46      40     50.00    -10.00   -20.00%    VERY_COLD
   78      40     50.00    -10.00   -20.00%    VERY_COLD
+   4      41     50.00     -9.00   -18.00%         COOL
   13      41     50.00     -9.00   -18.00%      NEUTRAL
-  34      41     50.00     -9.00   -18.00%         COLD
-  46      41     50.00     -9.00   -18.00%    VERY_COLD
   50      41     50.00     -9.00   -18.00%      NEUTRAL
   57      41     50.00     -9.00   -18.00%    VERY_COLD
   80      41     50.00     -9.00   -18.00%    VERY_COLD
+  40      42     50.00     -8.00   -16.00%    VERY_COLD
   60      42     50.00     -8.00   -16.00%         COLD
   12      43     50.00     -7.00   -14.00%         COLD
-  16      43     50.00     -7.00   -14.00%         WARM
-  40      43     50.00     -7.00   -14.00%    VERY_COLD
-  41      43     50.00     -7.00   -14.00%         COLD
+  16      43     50.00     -7.00   -14.00%          HOT
    1      44     50.00     -6.00   -12.00%      NEUTRAL
+  41      44     50.00     -6.00   -12.00%         COLD
   49      44     50.00     -6.00   -12.00%         COOL
+  79      44     50.00     -6.00   -12.00%         COLD
    2      45     50.00     -5.00   -10.00%      NEUTRAL
    8      45     50.00     -5.00   -10.00%         COLD
-  79      45     50.00     -5.00   -10.00%         COLD
-  72      46     50.00     -4.00    -8.00%         COOL
+  72      46     50.00     -4.00    -8.00%         COLD
   17      47     50.00     -3.00    -6.00%         COOL
+  51      47     50.00     -3.00    -6.00%    VERY_COLD
   75      47     50.00     -3.00    -6.00%         COOL
-  44      48     50.00     -2.00    -4.00%      NEUTRAL
-  51      48     50.00     -2.00    -4.00%    VERY_COLD
-  52      48     50.00     -2.00    -4.00%      NEUTRAL
-  68      48     50.00     -2.00    -4.00%      NEUTRAL
-   3      49     50.00     -1.00    -2.00%         WARM
-  15      49     50.00     -1.00    -2.00%          HOT
+  44      48     50.00     -2.00    -4.00%         COOL
   32      49     50.00     -1.00    -2.00%         COLD
-  58      49     50.00     -1.00    -2.00%         COOL
+  52      49     50.00     -1.00    -2.00%      NEUTRAL
+  58      49     50.00     -1.00    -2.00%         COLD
+  68      49     50.00     -1.00    -2.00%      NEUTRAL
   77      49     50.00     -1.00    -2.00%      NEUTRAL
 
 ============================================
@@ -480,13 +478,13 @@ Expected individual frequency: 12.50
 -------------------------------------------------------
    9      13    12.50     +0.50    +4.00%     ABOVE
   45      14    12.50     +1.50   +12.00%     ABOVE
-  48      14    12.50     +1.50   +12.00%     ABOVE
   61      14    12.50     +1.50   +12.00%     ABOVE
-  66      15    12.50     +2.50   +20.00%     ABOVE
-  14      16    12.50     +3.50   +28.00%     ABOVE
-  47      17    12.50     +4.50   +36.00%     ABOVE
+  66      14    12.50     +1.50   +12.00%     ABOVE
+  14      15    12.50     +2.50   +20.00%     ABOVE
+  15      15    12.50     +2.50   +20.00%     ABOVE
+  22      17    12.50     +4.50   +36.00%     ABOVE
   55      17    12.50     +4.50   +36.00%     ABOVE
-  22      18    12.50     +5.50   +44.00%     ABOVE
+  59      18    12.50     +5.50   +44.00%     ABOVE
   31      23    12.50    +10.50   +84.00%     ABOVE
 
 --------------------------------------------
@@ -497,14 +495,14 @@ Expected individual frequency: 12.50
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
   23       8    12.50     -4.50   -36.00%     BELOW
-   5       9    12.50     -3.50   -28.00%     BELOW
-  15      14    12.50     +1.50   +12.00%     ABOVE
-  70      14    12.50     +1.50   +12.00%     ABOVE
+  48      14    12.50     +1.50   +12.00%     ABOVE
   25      15    12.50     +2.50   +20.00%     ABOVE
-  26      15    12.50     +2.50   +20.00%     ABOVE
-  73      15    12.50     +2.50   +20.00%     ABOVE
+  37      15    12.50     +2.50   +20.00%     ABOVE
+  26      16    12.50     +3.50   +28.00%     ABOVE
   63      16    12.50     +3.50   +28.00%     ABOVE
-  59      17    12.50     +4.50   +36.00%     ABOVE
+  16      17    12.50     +4.50   +36.00%     ABOVE
+  19      17    12.50     +4.50   +36.00%     ABOVE
+  47      17    12.50     +4.50   +36.00%     ABOVE
   76      18    12.50     +5.50   +44.00%     ABOVE
 
 --------------------------------------------
@@ -514,15 +512,15 @@ Expected individual frequency: 12.50
 
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
+   5      10    12.50     -2.50   -20.00%     BELOW
+  42      10    12.50     -2.50   -20.00%     BELOW
   33      11    12.50     -1.50   -12.00%     BELOW
-  27      13    12.50     +0.50    +4.00%     ABOVE
+  18      14    12.50     +1.50   +12.00%     ABOVE
   54      14    12.50     +1.50   +12.00%     ABOVE
-   3      15    12.50     +2.50   +20.00%     ABOVE
-  18      15    12.50     +2.50   +20.00%     ABOVE
-  37      15    12.50     +2.50   +20.00%     ABOVE
-  10      16    12.50     +3.50   +28.00%     ABOVE
-  16      16    12.50     +3.50   +28.00%     ABOVE
-  19      16    12.50     +3.50   +28.00%     ABOVE
+  70      14    12.50     +1.50   +12.00%     ABOVE
+  73      14    12.50     +1.50   +12.00%     ABOVE
+  10      15    12.50     +2.50   +20.00%     ABOVE
+   3      16    12.50     +3.50   +28.00%     ABOVE
   24      17    12.50     +4.50   +36.00%     ABOVE
 
 --------------------------------------------
@@ -534,23 +532,23 @@ Expected individual frequency: 12.50
 -------------------------------------------------------
   50       9    12.50     -3.50   -28.00%     BELOW
   20      10    12.50     -2.50   -20.00%     BELOW
-  42      10    12.50     -2.50   -20.00%     BELOW
-  52      10    12.50     -2.50   -20.00%     BELOW
-  11      11    12.50     -1.50   -12.00%     BELOW
+  74      10    12.50     -2.50   -20.00%     BELOW
+   2      11    12.50     -1.50   -12.00%     BELOW
+   7      11    12.50     -1.50   -12.00%     BELOW
+  35      11    12.50     -1.50   -12.00%     BELOW
+  52      11    12.50     -1.50   -12.00%     BELOW
   69      11    12.50     -1.50   -12.00%     BELOW
-   2      12    12.50     -0.50    -4.00%     BELOW
-  35      12    12.50     -0.50    -4.00%     BELOW
-  36      12    12.50     -0.50    -4.00%     BELOW
+  11      12    12.50     -0.50    -4.00%     BELOW
+  38      12    12.50     -0.50    -4.00%     BELOW
   65      12    12.50     -0.50    -4.00%     BELOW
   67      12    12.50     -0.50    -4.00%     BELOW
-  38      13    12.50     +0.50    +4.00%     ABOVE
+  27      13    12.50     +0.50    +4.00%     ABOVE
+  36      13    12.50     +0.50    +4.00%     ABOVE
   43      13    12.50     +0.50    +4.00%     ABOVE
-  53      13    12.50     +0.50    +4.00%     ABOVE
    1      14    12.50     +1.50   +12.00%     ABOVE
   13      14    12.50     +1.50   +12.00%     ABOVE
-  44      14    12.50     +1.50   +12.00%     ABOVE
-  68      14    12.50     +1.50   +12.00%     ABOVE
   62      15    12.50     +2.50   +20.00%     ABOVE
+  68      15    12.50     +2.50   +20.00%     ABOVE
   77      16    12.50     +3.50   +28.00%     ABOVE
 
 --------------------------------------------
@@ -560,16 +558,16 @@ Expected individual frequency: 12.50
 
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
-  58       8    12.50     -4.50   -36.00%     BELOW
-  74       9    12.50     -3.50   -28.00%     BELOW
   49      10    12.50     -2.50   -20.00%     BELOW
    6      11    12.50     -1.50   -12.00%     BELOW
-   7      11    12.50     -1.50   -12.00%     BELOW
   29      11    12.50     -1.50   -12.00%     BELOW
-  72      11    12.50     -1.50   -12.00%     BELOW
+  56      11    12.50     -1.50   -12.00%     BELOW
+  53      12    12.50     -0.50    -4.00%     BELOW
   64      12    12.50     -0.50    -4.00%     BELOW
-  17      14    12.50     +1.50   +12.00%     ABOVE
-  75      14    12.50     +1.50   +12.00%     ABOVE
+  17      13    12.50     +0.50    +4.00%     ABOVE
+  44      13    12.50     +0.50    +4.00%     ABOVE
+  75      13    12.50     +0.50    +4.00%     ABOVE
+   4      14    12.50     +1.50   +12.00%     ABOVE
 
 --------------------------------------------
 COLD NUMBERS — LAST 50 DRAWS
@@ -578,15 +576,15 @@ Expected individual frequency: 12.50
 
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
+  58       7    12.50     -5.50   -44.00%     BELOW
+   8       8    12.50     -4.50   -36.00%     BELOW
   79       8    12.50     -4.50   -36.00%     BELOW
-   8       9    12.50     -3.50   -28.00%     BELOW
   32       9    12.50     -3.50   -28.00%     BELOW
   12      10    12.50     -2.50   -20.00%     BELOW
-  41      10    12.50     -2.50   -20.00%     BELOW
-  56      10    12.50     -2.50   -20.00%     BELOW
+  34      10    12.50     -2.50   -20.00%     BELOW
   60      10    12.50     -2.50   -20.00%     BELOW
-  34      11    12.50     -1.50   -12.00%     BELOW
-   4      13    12.50     +0.50    +4.00%     ABOVE
+  41      11    12.50     -1.50   -12.00%     BELOW
+  72      11    12.50     -1.50   -12.00%     BELOW
   28      13    12.50     +0.50    +4.00%     ABOVE
 
 --------------------------------------------
@@ -605,7 +603,7 @@ Expected individual frequency: 12.50
   51      10    12.50     -2.50   -20.00%     BELOW
   30      11    12.50     -1.50   -12.00%     BELOW
   40      11    12.50     -1.50   -12.00%     BELOW
-  71      14    12.50     +1.50   +12.00%     ABOVE
+  71      15    12.50     +2.50   +20.00%     ABOVE
 
 
 ######## 100 DRAW WINDOW ########
@@ -618,10 +616,10 @@ Expected individual frequency: 25.00
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
    9      30    25.00     +5.00   +20.00%     ABOVE
-  47      30    25.00     +5.00   +20.00%     ABOVE
-  48      30    25.00     +5.00   +20.00%     ABOVE
+  15      30    25.00     +5.00   +20.00%     ABOVE
   14      31    25.00     +6.00   +24.00%     ABOVE
   45      31    25.00     +6.00   +24.00%     ABOVE
+  59      31    25.00     +6.00   +24.00%     ABOVE
   61      31    25.00     +6.00   +24.00%     ABOVE
   66      31    25.00     +6.00   +24.00%     ABOVE
   55      32    25.00     +7.00   +28.00%     ABOVE
@@ -635,15 +633,15 @@ Expected individual frequency: 25.00
 
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
-   5      28    25.00     +3.00   +12.00%     ABOVE
-  15      29    25.00     +4.00   +16.00%     ABOVE
+  16      29    25.00     +4.00   +16.00%     ABOVE
+  19      29    25.00     +4.00   +16.00%     ABOVE
   23      29    25.00     +4.00   +16.00%     ABOVE
   25      29    25.00     +4.00   +16.00%     ABOVE
-  26      29    25.00     +4.00   +16.00%     ABOVE
-  63      29    25.00     +4.00   +16.00%     ABOVE
-  73      29    25.00     +4.00   +16.00%     ABOVE
-  59      30    25.00     +5.00   +20.00%     ABOVE
-  70      30    25.00     +5.00   +20.00%     ABOVE
+  37      29    25.00     +4.00   +16.00%     ABOVE
+  26      30    25.00     +5.00   +20.00%     ABOVE
+  47      30    25.00     +5.00   +20.00%     ABOVE
+  48      30    25.00     +5.00   +20.00%     ABOVE
+  63      30    25.00     +5.00   +20.00%     ABOVE
   76      30    25.00     +5.00   +20.00%     ABOVE
 
 --------------------------------------------
@@ -656,13 +654,13 @@ Expected individual frequency: 25.00
    3      27    25.00     +2.00    +8.00%     ABOVE
   10      27    25.00     +2.00    +8.00%     ABOVE
   18      27    25.00     +2.00    +8.00%     ABOVE
-  27      27    25.00     +2.00    +8.00%     ABOVE
   33      27    25.00     +2.00    +8.00%     ABOVE
-  16      28    25.00     +3.00   +12.00%     ABOVE
-  19      28    25.00     +3.00   +12.00%     ABOVE
+  42      27    25.00     +2.00    +8.00%     ABOVE
+   5      28    25.00     +3.00   +12.00%     ABOVE
   24      28    25.00     +3.00   +12.00%     ABOVE
-  37      28    25.00     +3.00   +12.00%     ABOVE
   54      28    25.00     +3.00   +12.00%     ABOVE
+  73      28    25.00     +3.00   +12.00%     ABOVE
+  70      29    25.00     +4.00   +16.00%     ABOVE
 
 --------------------------------------------
 NEUTRAL NUMBERS — LAST 100 DRAWS
@@ -671,23 +669,23 @@ Expected individual frequency: 25.00
 
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
-   1      24    25.00     -1.00    -4.00%     BELOW
+   1      23    25.00     -2.00    -8.00%     BELOW
+   7      23    25.00     -2.00    -8.00%     BELOW
   35      24    25.00     -1.00    -4.00%     BELOW
-  36      24    25.00     -1.00    -4.00%     BELOW
-  44      24    25.00     -1.00    -4.00%     BELOW
   50      24    25.00     -1.00    -4.00%     BELOW
-  53      24    25.00     -1.00    -4.00%     BELOW
   67      24    25.00     -1.00    -4.00%     BELOW
+  74      24    25.00     -1.00    -4.00%     BELOW
    2      25    25.00     +0.00    +0.00%  EXPECTED
-  11      25    25.00     +0.00    +0.00%  EXPECTED
   13      25    25.00     +0.00    +0.00%  EXPECTED
+  36      25    25.00     +0.00    +0.00%  EXPECTED
   38      25    25.00     +0.00    +0.00%  EXPECTED
+  65      25    25.00     +0.00    +0.00%  EXPECTED
+  69      25    25.00     +0.00    +0.00%  EXPECTED
   77      25    25.00     +0.00    +0.00%  EXPECTED
+  11      26    25.00     +1.00    +4.00%     ABOVE
   20      26    25.00     +1.00    +4.00%     ABOVE
-  42      26    25.00     +1.00    +4.00%     ABOVE
+  27      26    25.00     +1.00    +4.00%     ABOVE
   52      26    25.00     +1.00    +4.00%     ABOVE
-  65      26    25.00     +1.00    +4.00%     ABOVE
-  69      26    25.00     +1.00    +4.00%     ABOVE
   43      27    25.00     +2.00    +8.00%     ABOVE
   62      27    25.00     +2.00    +8.00%     ABOVE
   68      27    25.00     +2.00    +8.00%     ABOVE
@@ -699,16 +697,16 @@ Expected individual frequency: 25.00
 
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
+   4      22    25.00     -3.00   -12.00%     BELOW
    6      22    25.00     -3.00   -12.00%     BELOW
   49      22    25.00     -3.00   -12.00%     BELOW
-  72      22    25.00     -3.00   -12.00%     BELOW
-   7      23    25.00     -2.00    -8.00%     BELOW
+  56      22    25.00     -3.00   -12.00%     BELOW
   17      23    25.00     -2.00    -8.00%     BELOW
   29      23    25.00     -2.00    -8.00%     BELOW
-  58      23    25.00     -2.00    -8.00%     BELOW
+  44      23    25.00     -2.00    -8.00%     BELOW
+  53      23    25.00     -2.00    -8.00%     BELOW
   64      23    25.00     -2.00    -8.00%     BELOW
-  74      24    25.00     -1.00    -4.00%     BELOW
-  75      24    25.00     -1.00    -4.00%     BELOW
+  75      23    25.00     -2.00    -8.00%     BELOW
 
 --------------------------------------------
 COLD NUMBERS — LAST 100 DRAWS
@@ -719,14 +717,14 @@ Expected individual frequency: 25.00
 -------------------------------------------------------
   12      20    25.00     -5.00   -20.00%     BELOW
   32      20    25.00     -5.00   -20.00%     BELOW
-   4      21    25.00     -4.00   -16.00%     BELOW
+  34      20    25.00     -5.00   -20.00%     BELOW
    8      21    25.00     -4.00   -16.00%     BELOW
   28      21    25.00     -4.00   -16.00%     BELOW
-  34      21    25.00     -4.00   -16.00%     BELOW
   41      21    25.00     -4.00   -16.00%     BELOW
-  56      21    25.00     -4.00   -16.00%     BELOW
   60      21    25.00     -4.00   -16.00%     BELOW
   79      21    25.00     -4.00   -16.00%     BELOW
+  58      22    25.00     -3.00   -12.00%     BELOW
+  72      22    25.00     -3.00   -12.00%     BELOW
 
 --------------------------------------------
 VERY_COLD NUMBERS — LAST 100 DRAWS
@@ -740,8 +738,8 @@ Expected individual frequency: 25.00
   80      16    25.00     -9.00   -36.00%     BELOW
   78      17    25.00     -8.00   -32.00%     BELOW
   39      18    25.00     -7.00   -28.00%     BELOW
+  46      18    25.00     -7.00   -28.00%     BELOW
   30      19    25.00     -6.00   -24.00%     BELOW
-  46      19    25.00     -6.00   -24.00%     BELOW
   40      20    25.00     -5.00   -20.00%     BELOW
   57      20    25.00     -5.00   -20.00%     BELOW
   71      20    25.00     -5.00   -20.00%     BELOW
@@ -756,16 +754,16 @@ Expected individual frequency: 50.00
 
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
+  15      50    50.00     +0.00    +0.00%  EXPECTED
   22      50    50.00     +0.00    +0.00%  EXPECTED
+   9      52    50.00     +2.00    +4.00%     ABOVE
   61      52    50.00     +2.00    +4.00%     ABOVE
-   9      53    50.00     +3.00    +6.00%     ABOVE
-  48      53    50.00     +3.00    +6.00%     ABOVE
   45      54    50.00     +4.00    +8.00%     ABOVE
-  55      56    50.00     +6.00   +12.00%     ABOVE
+  59      54    50.00     +4.00    +8.00%     ABOVE
+  55      55    50.00     +5.00   +10.00%     ABOVE
+  31      59    50.00     +9.00   +18.00%     ABOVE
   14      60    50.00    +10.00   +20.00%     ABOVE
-  31      60    50.00    +10.00   +20.00%     ABOVE
   66      62    50.00    +12.00   +24.00%     ABOVE
-  47      67    50.00    +17.00   +34.00%     ABOVE
 
 --------------------------------------------
 HOT NUMBERS — LAST 200 DRAWS
@@ -774,16 +772,16 @@ Expected individual frequency: 50.00
 
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
-  15      49    50.00     -1.00    -2.00%     BELOW
-   5      51    50.00     +1.00    +2.00%     ABOVE
+  16      43    50.00     -7.00   -14.00%     BELOW
   23      51    50.00     +1.00    +2.00%     ABOVE
-  73      52    50.00     +2.00    +4.00%     ABOVE
-  26      54    50.00     +4.00    +8.00%     ABOVE
-  59      54    50.00     +4.00    +8.00%     ABOVE
+  48      52    50.00     +2.00    +4.00%     ABOVE
+  19      54    50.00     +4.00    +8.00%     ABOVE
+  37      54    50.00     +4.00    +8.00%     ABOVE
   76      54    50.00     +4.00    +8.00%     ABOVE
-  63      56    50.00     +6.00   +12.00%     ABOVE
-  70      58    50.00     +8.00   +16.00%     ABOVE
+  26      55    50.00     +5.00   +10.00%     ABOVE
+  63      57    50.00     +7.00   +14.00%     ABOVE
   25      61    50.00    +11.00   +22.00%     ABOVE
+  47      68    50.00    +18.00   +36.00%     ABOVE
 
 --------------------------------------------
 WARM NUMBERS — LAST 200 DRAWS
@@ -792,15 +790,15 @@ Expected individual frequency: 50.00
 
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
-  16      43    50.00     -7.00   -14.00%     BELOW
-   3      49    50.00     -1.00    -2.00%     BELOW
+   3      50    50.00     +0.00    +0.00%  EXPECTED
   24      50    50.00     +0.00    +0.00%  EXPECTED
-  19      53    50.00     +3.00    +6.00%     ABOVE
-  37      53    50.00     +3.00    +6.00%     ABOVE
-  27      55    50.00     +5.00   +10.00%     ABOVE
-  33      55    50.00     +5.00   +10.00%     ABOVE
-  18      56    50.00     +6.00   +12.00%     ABOVE
+  42      51    50.00     +1.00    +2.00%     ABOVE
+   5      52    50.00     +2.00    +4.00%     ABOVE
+  73      52    50.00     +2.00    +4.00%     ABOVE
+  33      54    50.00     +4.00    +8.00%     ABOVE
+  18      55    50.00     +5.00   +10.00%     ABOVE
   10      57    50.00     +7.00   +14.00%     ABOVE
+  70      58    50.00     +8.00   +16.00%     ABOVE
   54      59    50.00     +9.00   +18.00%     ABOVE
 
 --------------------------------------------
@@ -814,21 +812,21 @@ Expected individual frequency: 50.00
   50      41    50.00     -9.00   -18.00%     BELOW
    1      44    50.00     -6.00   -12.00%     BELOW
    2      45    50.00     -5.00   -10.00%     BELOW
-  44      48    50.00     -2.00    -4.00%     BELOW
-  52      48    50.00     -2.00    -4.00%     BELOW
-  68      48    50.00     -2.00    -4.00%     BELOW
+  52      49    50.00     -1.00    -2.00%     BELOW
+  68      49    50.00     -1.00    -2.00%     BELOW
   77      49    50.00     -1.00    -2.00%     BELOW
-  36      50    50.00     +0.00    +0.00%  EXPECTED
-  42      50    50.00     +0.00    +0.00%  EXPECTED
   65      50    50.00     +0.00    +0.00%  EXPECTED
   69      50    50.00     +0.00    +0.00%  EXPECTED
   20      51    50.00     +1.00    +2.00%     ABOVE
+  36      51    50.00     +1.00    +2.00%     ABOVE
+  74      51    50.00     +1.00    +2.00%     ABOVE
+   7      52    50.00     +2.00    +4.00%     ABOVE
   38      52    50.00     +2.00    +4.00%     ABOVE
-  62      53    50.00     +3.00    +6.00%     ABOVE
-  35      54    50.00     +4.00    +8.00%     ABOVE
+  62      52    50.00     +2.00    +4.00%     ABOVE
+  35      53    50.00     +3.00    +6.00%     ABOVE
+  27      55    50.00     +5.00   +10.00%     ABOVE
   67      55    50.00     +5.00   +10.00%     ABOVE
   11      58    50.00     +8.00   +16.00%     ABOVE
-  53      59    50.00     +9.00   +18.00%     ABOVE
   43      64    50.00    +14.00   +28.00%     ABOVE
 
 --------------------------------------------
@@ -838,16 +836,16 @@ Expected individual frequency: 50.00
 
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
+   4      41    50.00     -9.00   -18.00%     BELOW
   49      44    50.00     -6.00   -12.00%     BELOW
-  72      46    50.00     -4.00    -8.00%     BELOW
   17      47    50.00     -3.00    -6.00%     BELOW
   75      47    50.00     -3.00    -6.00%     BELOW
-  58      49    50.00     -1.00    -2.00%     BELOW
+  44      48    50.00     -2.00    -4.00%     BELOW
    6      50    50.00     +0.00    +0.00%  EXPECTED
+  29      50    50.00     +0.00    +0.00%  EXPECTED
   64      50    50.00     +0.00    +0.00%  EXPECTED
-  74      50    50.00     +0.00    +0.00%  EXPECTED
-  29      51    50.00     +1.00    +2.00%     ABOVE
-   7      53    50.00     +3.00    +6.00%     ABOVE
+  56      54    50.00     +4.00    +8.00%     ABOVE
+  53      58    50.00     +8.00   +16.00%     ABOVE
 
 --------------------------------------------
 COLD NUMBERS — LAST 200 DRAWS
@@ -856,16 +854,16 @@ Expected individual frequency: 50.00
 
  NUM    FREQ      EXP       DEV     DEV %    STATUS
 -------------------------------------------------------
-  28      37    50.00    -13.00   -26.00%     BELOW
-   4      40    50.00    -10.00   -20.00%     BELOW
-  34      41    50.00     -9.00   -18.00%     BELOW
+  28      36    50.00    -14.00   -28.00%     BELOW
+  34      40    50.00    -10.00   -20.00%     BELOW
   60      42    50.00     -8.00   -16.00%     BELOW
   12      43    50.00     -7.00   -14.00%     BELOW
-  41      43    50.00     -7.00   -14.00%     BELOW
+  41      44    50.00     -6.00   -12.00%     BELOW
+  79      44    50.00     -6.00   -12.00%     BELOW
    8      45    50.00     -5.00   -10.00%     BELOW
-  79      45    50.00     -5.00   -10.00%     BELOW
+  72      46    50.00     -4.00    -8.00%     BELOW
   32      49    50.00     -1.00    -2.00%     BELOW
-  56      53    50.00     +3.00    +6.00%     ABOVE
+  58      49    50.00     -1.00    -2.00%     BELOW
 
 --------------------------------------------
 VERY_COLD NUMBERS — LAST 200 DRAWS
@@ -876,14 +874,14 @@ Expected individual frequency: 50.00
 -------------------------------------------------------
   21      32    50.00    -18.00   -36.00%     BELOW
   39      40    50.00    -10.00   -20.00%     BELOW
+  46      40    50.00    -10.00   -20.00%     BELOW
   78      40    50.00    -10.00   -20.00%     BELOW
-  46      41    50.00     -9.00   -18.00%     BELOW
   57      41    50.00     -9.00   -18.00%     BELOW
   80      41    50.00     -9.00   -18.00%     BELOW
-  40      43    50.00     -7.00   -14.00%     BELOW
-  51      48    50.00     -2.00    -4.00%     BELOW
+  40      42    50.00     -8.00   -16.00%     BELOW
+  51      47    50.00     -3.00    -6.00%     BELOW
   30      51    50.00     +1.00    +2.00%     ABOVE
-  71      51    50.00     +1.00    +2.00%     ABOVE
+  71      52    50.00     +2.00    +4.00%     ABOVE
 
 ============================================
 HOT / COLD NUMBER FREQUENCY ANALYSIS
@@ -902,33 +900,33 @@ HOT SIDE
  NUM    FREQ      EXP       DEV     DEV %         TEMP
 ----------------------------------------------------------------------
   23       8    12.50     -4.50   -36.00%          HOT
-   5       9    12.50     -3.50   -28.00%          HOT
+   5      10    12.50     -2.50   -20.00%         WARM
+  42      10    12.50     -2.50   -20.00%         WARM
   33      11    12.50     -1.50   -12.00%         WARM
    9      13    12.50     +0.50    +4.00%     VERY_HOT
-  27      13    12.50     +0.50    +4.00%         WARM
-  15      14    12.50     +1.50   +12.00%          HOT
+  18      14    12.50     +1.50   +12.00%         WARM
   45      14    12.50     +1.50   +12.00%     VERY_HOT
-  48      14    12.50     +1.50   +12.00%     VERY_HOT
+  48      14    12.50     +1.50   +12.00%          HOT
   54      14    12.50     +1.50   +12.00%         WARM
   61      14    12.50     +1.50   +12.00%     VERY_HOT
-  70      14    12.50     +1.50   +12.00%          HOT
-   3      15    12.50     +2.50   +20.00%         WARM
-  18      15    12.50     +2.50   +20.00%         WARM
+  66      14    12.50     +1.50   +12.00%     VERY_HOT
+  70      14    12.50     +1.50   +12.00%         WARM
+  73      14    12.50     +1.50   +12.00%         WARM
+  10      15    12.50     +2.50   +20.00%         WARM
+  14      15    12.50     +2.50   +20.00%     VERY_HOT
+  15      15    12.50     +2.50   +20.00%     VERY_HOT
   25      15    12.50     +2.50   +20.00%          HOT
-  26      15    12.50     +2.50   +20.00%          HOT
-  37      15    12.50     +2.50   +20.00%         WARM
-  66      15    12.50     +2.50   +20.00%     VERY_HOT
-  73      15    12.50     +2.50   +20.00%          HOT
-  10      16    12.50     +3.50   +28.00%         WARM
-  14      16    12.50     +3.50   +28.00%     VERY_HOT
-  16      16    12.50     +3.50   +28.00%         WARM
-  19      16    12.50     +3.50   +28.00%         WARM
+  37      15    12.50     +2.50   +20.00%          HOT
+   3      16    12.50     +3.50   +28.00%         WARM
+  26      16    12.50     +3.50   +28.00%          HOT
   63      16    12.50     +3.50   +28.00%          HOT
+  16      17    12.50     +4.50   +36.00%          HOT
+  19      17    12.50     +4.50   +36.00%          HOT
+  22      17    12.50     +4.50   +36.00%     VERY_HOT
   24      17    12.50     +4.50   +36.00%         WARM
-  47      17    12.50     +4.50   +36.00%     VERY_HOT
+  47      17    12.50     +4.50   +36.00%          HOT
   55      17    12.50     +4.50   +36.00%     VERY_HOT
-  59      17    12.50     +4.50   +36.00%          HOT
-  22      18    12.50     +5.50   +44.00%     VERY_HOT
+  59      18    12.50     +5.50   +44.00%     VERY_HOT
   76      18    12.50     +5.50   +44.00%          HOT
   31      23    12.50    +10.50   +84.00%     VERY_HOT
 
@@ -938,28 +936,28 @@ HOT SIDE
    3      27    25.00     +2.00    +8.00%         WARM
   10      27    25.00     +2.00    +8.00%         WARM
   18      27    25.00     +2.00    +8.00%         WARM
-  27      27    25.00     +2.00    +8.00%         WARM
   33      27    25.00     +2.00    +8.00%         WARM
-   5      28    25.00     +3.00   +12.00%          HOT
-  16      28    25.00     +3.00   +12.00%         WARM
-  19      28    25.00     +3.00   +12.00%         WARM
+  42      27    25.00     +2.00    +8.00%         WARM
+   5      28    25.00     +3.00   +12.00%         WARM
   24      28    25.00     +3.00   +12.00%         WARM
-  37      28    25.00     +3.00   +12.00%         WARM
   54      28    25.00     +3.00   +12.00%         WARM
-  15      29    25.00     +4.00   +16.00%          HOT
+  73      28    25.00     +3.00   +12.00%         WARM
+  16      29    25.00     +4.00   +16.00%          HOT
+  19      29    25.00     +4.00   +16.00%          HOT
   23      29    25.00     +4.00   +16.00%          HOT
   25      29    25.00     +4.00   +16.00%          HOT
-  26      29    25.00     +4.00   +16.00%          HOT
-  63      29    25.00     +4.00   +16.00%          HOT
-  73      29    25.00     +4.00   +16.00%          HOT
+  37      29    25.00     +4.00   +16.00%          HOT
+  70      29    25.00     +4.00   +16.00%         WARM
    9      30    25.00     +5.00   +20.00%     VERY_HOT
-  47      30    25.00     +5.00   +20.00%     VERY_HOT
-  48      30    25.00     +5.00   +20.00%     VERY_HOT
-  59      30    25.00     +5.00   +20.00%          HOT
-  70      30    25.00     +5.00   +20.00%          HOT
+  15      30    25.00     +5.00   +20.00%     VERY_HOT
+  26      30    25.00     +5.00   +20.00%          HOT
+  47      30    25.00     +5.00   +20.00%          HOT
+  48      30    25.00     +5.00   +20.00%          HOT
+  63      30    25.00     +5.00   +20.00%          HOT
   76      30    25.00     +5.00   +20.00%          HOT
   14      31    25.00     +6.00   +24.00%     VERY_HOT
   45      31    25.00     +6.00   +24.00%     VERY_HOT
+  59      31    25.00     +6.00   +24.00%     VERY_HOT
   61      31    25.00     +6.00   +24.00%     VERY_HOT
   66      31    25.00     +6.00   +24.00%     VERY_HOT
   55      32    25.00     +7.00   +28.00%     VERY_HOT
@@ -969,36 +967,36 @@ HOT SIDE
 --- LAST 200 DRAWS ---
  NUM    FREQ      EXP       DEV     DEV %         TEMP
 ----------------------------------------------------------------------
-  16      43    50.00     -7.00   -14.00%         WARM
-   3      49    50.00     -1.00    -2.00%         WARM
-  15      49    50.00     -1.00    -2.00%          HOT
+  16      43    50.00     -7.00   -14.00%          HOT
+   3      50    50.00     +0.00    +0.00%         WARM
+  15      50    50.00     +0.00    +0.00%     VERY_HOT
   22      50    50.00     +0.00    +0.00%     VERY_HOT
   24      50    50.00     +0.00    +0.00%         WARM
-   5      51    50.00     +1.00    +2.00%          HOT
   23      51    50.00     +1.00    +2.00%          HOT
+  42      51    50.00     +1.00    +2.00%         WARM
+   5      52    50.00     +2.00    +4.00%         WARM
+   9      52    50.00     +2.00    +4.00%     VERY_HOT
+  48      52    50.00     +2.00    +4.00%          HOT
   61      52    50.00     +2.00    +4.00%     VERY_HOT
-  73      52    50.00     +2.00    +4.00%          HOT
-   9      53    50.00     +3.00    +6.00%     VERY_HOT
-  19      53    50.00     +3.00    +6.00%         WARM
-  37      53    50.00     +3.00    +6.00%         WARM
-  48      53    50.00     +3.00    +6.00%     VERY_HOT
-  26      54    50.00     +4.00    +8.00%          HOT
+  73      52    50.00     +2.00    +4.00%         WARM
+  19      54    50.00     +4.00    +8.00%          HOT
+  33      54    50.00     +4.00    +8.00%         WARM
+  37      54    50.00     +4.00    +8.00%          HOT
   45      54    50.00     +4.00    +8.00%     VERY_HOT
-  59      54    50.00     +4.00    +8.00%          HOT
+  59      54    50.00     +4.00    +8.00%     VERY_HOT
   76      54    50.00     +4.00    +8.00%          HOT
-  27      55    50.00     +5.00   +10.00%         WARM
-  33      55    50.00     +5.00   +10.00%         WARM
-  18      56    50.00     +6.00   +12.00%         WARM
-  55      56    50.00     +6.00   +12.00%     VERY_HOT
-  63      56    50.00     +6.00   +12.00%          HOT
+  18      55    50.00     +5.00   +10.00%         WARM
+  26      55    50.00     +5.00   +10.00%          HOT
+  55      55    50.00     +5.00   +10.00%     VERY_HOT
   10      57    50.00     +7.00   +14.00%         WARM
-  70      58    50.00     +8.00   +16.00%          HOT
+  63      57    50.00     +7.00   +14.00%          HOT
+  70      58    50.00     +8.00   +16.00%         WARM
+  31      59    50.00     +9.00   +18.00%     VERY_HOT
   54      59    50.00     +9.00   +18.00%         WARM
   14      60    50.00    +10.00   +20.00%     VERY_HOT
-  31      60    50.00    +10.00   +20.00%     VERY_HOT
   25      61    50.00    +11.00   +22.00%          HOT
   66      62    50.00    +12.00   +24.00%     VERY_HOT
-  47      67    50.00    +17.00   +34.00%     VERY_HOT
+  47      68    50.00    +18.00   +36.00%          HOT
 
 ============================================
 COLD SIDE
@@ -1009,34 +1007,34 @@ COLD SIDE
 ----------------------------------------------------------------------
   78       4    12.50     -8.50   -68.00%    VERY_COLD
   80       5    12.50     -7.50   -60.00%    VERY_COLD
+  58       7    12.50     -5.50   -44.00%         COLD
+   8       8    12.50     -4.50   -36.00%         COLD
   39       8    12.50     -4.50   -36.00%    VERY_COLD
   57       8    12.50     -4.50   -36.00%    VERY_COLD
-  58       8    12.50     -4.50   -36.00%         COOL
   79       8    12.50     -4.50   -36.00%         COLD
-   8       9    12.50     -3.50   -28.00%         COLD
   21       9    12.50     -3.50   -28.00%    VERY_COLD
   32       9    12.50     -3.50   -28.00%         COLD
   46       9    12.50     -3.50   -28.00%    VERY_COLD
-  74       9    12.50     -3.50   -28.00%         COOL
   12      10    12.50     -2.50   -20.00%         COLD
-  41      10    12.50     -2.50   -20.00%         COLD
+  34      10    12.50     -2.50   -20.00%         COLD
   49      10    12.50     -2.50   -20.00%         COOL
   51      10    12.50     -2.50   -20.00%    VERY_COLD
-  56      10    12.50     -2.50   -20.00%         COLD
   60      10    12.50     -2.50   -20.00%         COLD
    6      11    12.50     -1.50   -12.00%         COOL
-   7      11    12.50     -1.50   -12.00%         COOL
   29      11    12.50     -1.50   -12.00%         COOL
   30      11    12.50     -1.50   -12.00%    VERY_COLD
-  34      11    12.50     -1.50   -12.00%         COLD
   40      11    12.50     -1.50   -12.00%    VERY_COLD
-  72      11    12.50     -1.50   -12.00%         COOL
+  41      11    12.50     -1.50   -12.00%         COLD
+  56      11    12.50     -1.50   -12.00%         COOL
+  72      11    12.50     -1.50   -12.00%         COLD
+  53      12    12.50     -0.50    -4.00%         COOL
   64      12    12.50     -0.50    -4.00%         COOL
-   4      13    12.50     +0.50    +4.00%         COLD
+  17      13    12.50     +0.50    +4.00%         COOL
   28      13    12.50     +0.50    +4.00%         COLD
-  17      14    12.50     +1.50   +12.00%         COOL
-  71      14    12.50     +1.50   +12.00%    VERY_COLD
-  75      14    12.50     +1.50   +12.00%         COOL
+  44      13    12.50     +0.50    +4.00%         COOL
+  75      13    12.50     +0.50    +4.00%         COOL
+   4      14    12.50     +1.50   +12.00%         COOL
+  71      15    12.50     +2.50   +20.00%    VERY_COLD
 
 --- LAST 100 DRAWS ---
  NUM    FREQ      EXP       DEV     DEV %         TEMP
@@ -1046,65 +1044,65 @@ COLD SIDE
   80      16    25.00     -9.00   -36.00%    VERY_COLD
   78      17    25.00     -8.00   -32.00%    VERY_COLD
   39      18    25.00     -7.00   -28.00%    VERY_COLD
+  46      18    25.00     -7.00   -28.00%    VERY_COLD
   30      19    25.00     -6.00   -24.00%    VERY_COLD
-  46      19    25.00     -6.00   -24.00%    VERY_COLD
   12      20    25.00     -5.00   -20.00%         COLD
   32      20    25.00     -5.00   -20.00%         COLD
+  34      20    25.00     -5.00   -20.00%         COLD
   40      20    25.00     -5.00   -20.00%    VERY_COLD
   57      20    25.00     -5.00   -20.00%    VERY_COLD
   71      20    25.00     -5.00   -20.00%    VERY_COLD
-   4      21    25.00     -4.00   -16.00%         COLD
    8      21    25.00     -4.00   -16.00%         COLD
   28      21    25.00     -4.00   -16.00%         COLD
-  34      21    25.00     -4.00   -16.00%         COLD
   41      21    25.00     -4.00   -16.00%         COLD
-  56      21    25.00     -4.00   -16.00%         COLD
   60      21    25.00     -4.00   -16.00%         COLD
   79      21    25.00     -4.00   -16.00%         COLD
+   4      22    25.00     -3.00   -12.00%         COOL
    6      22    25.00     -3.00   -12.00%         COOL
   49      22    25.00     -3.00   -12.00%         COOL
-  72      22    25.00     -3.00   -12.00%         COOL
-   7      23    25.00     -2.00    -8.00%         COOL
+  56      22    25.00     -3.00   -12.00%         COOL
+  58      22    25.00     -3.00   -12.00%         COLD
+  72      22    25.00     -3.00   -12.00%         COLD
   17      23    25.00     -2.00    -8.00%         COOL
   29      23    25.00     -2.00    -8.00%         COOL
-  58      23    25.00     -2.00    -8.00%         COOL
+  44      23    25.00     -2.00    -8.00%         COOL
+  53      23    25.00     -2.00    -8.00%         COOL
   64      23    25.00     -2.00    -8.00%         COOL
-  74      24    25.00     -1.00    -4.00%         COOL
-  75      24    25.00     -1.00    -4.00%         COOL
+  75      23    25.00     -2.00    -8.00%         COOL
 
 --- LAST 200 DRAWS ---
  NUM    FREQ      EXP       DEV     DEV %         TEMP
 ----------------------------------------------------------------------
   21      32    50.00    -18.00   -36.00%    VERY_COLD
-  28      37    50.00    -13.00   -26.00%         COLD
-   4      40    50.00    -10.00   -20.00%         COLD
+  28      36    50.00    -14.00   -28.00%         COLD
+  34      40    50.00    -10.00   -20.00%         COLD
   39      40    50.00    -10.00   -20.00%    VERY_COLD
+  46      40    50.00    -10.00   -20.00%    VERY_COLD
   78      40    50.00    -10.00   -20.00%    VERY_COLD
-  34      41    50.00     -9.00   -18.00%         COLD
-  46      41    50.00     -9.00   -18.00%    VERY_COLD
+   4      41    50.00     -9.00   -18.00%         COOL
   57      41    50.00     -9.00   -18.00%    VERY_COLD
   80      41    50.00     -9.00   -18.00%    VERY_COLD
+  40      42    50.00     -8.00   -16.00%    VERY_COLD
   60      42    50.00     -8.00   -16.00%         COLD
   12      43    50.00     -7.00   -14.00%         COLD
-  40      43    50.00     -7.00   -14.00%    VERY_COLD
-  41      43    50.00     -7.00   -14.00%         COLD
+  41      44    50.00     -6.00   -12.00%         COLD
   49      44    50.00     -6.00   -12.00%         COOL
+  79      44    50.00     -6.00   -12.00%         COLD
    8      45    50.00     -5.00   -10.00%         COLD
-  79      45    50.00     -5.00   -10.00%         COLD
-  72      46    50.00     -4.00    -8.00%         COOL
+  72      46    50.00     -4.00    -8.00%         COLD
   17      47    50.00     -3.00    -6.00%         COOL
+  51      47    50.00     -3.00    -6.00%    VERY_COLD
   75      47    50.00     -3.00    -6.00%         COOL
-  51      48    50.00     -2.00    -4.00%    VERY_COLD
+  44      48    50.00     -2.00    -4.00%         COOL
   32      49    50.00     -1.00    -2.00%         COLD
-  58      49    50.00     -1.00    -2.00%         COOL
+  58      49    50.00     -1.00    -2.00%         COLD
    6      50    50.00     +0.00    +0.00%         COOL
+  29      50    50.00     +0.00    +0.00%         COOL
   64      50    50.00     +0.00    +0.00%         COOL
-  74      50    50.00     +0.00    +0.00%         COOL
-  29      51    50.00     +1.00    +2.00%         COOL
   30      51    50.00     +1.00    +2.00%    VERY_COLD
-  71      51    50.00     +1.00    +2.00%    VERY_COLD
-   7      53    50.00     +3.00    +6.00%         COOL
-  56      53    50.00     +3.00    +6.00%         COLD
+  71      52    50.00     +2.00    +4.00%    VERY_COLD
+  56      54    50.00     +4.00    +8.00%         COOL
+  53      58    50.00     +8.00   +16.00%         COOL
 
 ============================================
 CONSISTENTLY UNDER-FREQUENT NUMBERS
@@ -1120,133 +1118,133 @@ A negative score means the number is below expectation across the windows.
   80    VERY_COLD    -60.00%    -36.00%    -18.00%    -38.00%
   21    VERY_COLD    -28.00%    -40.00%    -36.00%    -34.67%
   39    VERY_COLD    -36.00%    -28.00%    -20.00%    -28.00%
+  46    VERY_COLD    -28.00%    -28.00%    -20.00%    -25.33%
   57    VERY_COLD    -36.00%    -20.00%    -18.00%    -24.67%
-  46    VERY_COLD    -28.00%    -24.00%    -18.00%    -23.33%
-  51    VERY_COLD    -20.00%    -44.00%     -4.00%    -22.67%
-  79         COLD    -36.00%    -16.00%    -10.00%    -20.67%
-   8         COLD    -28.00%    -16.00%    -10.00%    -18.00%
+  51    VERY_COLD    -20.00%    -44.00%     -6.00%    -23.33%
+  79         COLD    -36.00%    -16.00%    -12.00%    -21.33%
+   8         COLD    -36.00%    -16.00%    -10.00%    -20.67%
+  34         COLD    -20.00%    -20.00%    -20.00%    -20.00%
+  58         COLD    -44.00%    -12.00%     -2.00%    -19.33%
   12         COLD    -20.00%    -20.00%    -14.00%    -18.00%
   60         COLD    -20.00%    -16.00%    -16.00%    -17.33%
   32         COLD    -28.00%    -20.00%     -2.00%    -16.67%
-  41         COLD    -20.00%    -16.00%    -14.00%    -16.67%
   50      NEUTRAL    -28.00%     -4.00%    -18.00%    -16.67%
-  34         COLD    -12.00%    -16.00%    -18.00%    -15.33%
-  40    VERY_COLD    -12.00%    -20.00%    -14.00%    -15.33%
-  58         COOL    -36.00%     -8.00%     -2.00%    -15.33%
+  40    VERY_COLD    -12.00%    -20.00%    -16.00%    -16.00%
   49         COOL    -20.00%    -12.00%    -12.00%    -14.67%
-  28         COLD     +4.00%    -16.00%    -26.00%    -12.67%
+  28         COLD     +4.00%    -16.00%    -28.00%    -13.33%
+  41         COLD    -12.00%    -16.00%    -12.00%    -13.33%
   30    VERY_COLD    -12.00%    -24.00%     +2.00%    -11.33%
-  74         COOL    -28.00%     -4.00%     +0.00%    -10.67%
-   4         COLD     +4.00%    -16.00%    -20.00%    -10.67%
-  72         COOL    -12.00%    -12.00%     -8.00%    -10.67%
-  56         COLD    -20.00%    -16.00%     +6.00%    -10.00%
+  72         COLD    -12.00%    -12.00%     -8.00%    -10.67%
    6         COOL    -12.00%    -12.00%     +0.00%     -8.00%
-  52      NEUTRAL    -20.00%     +4.00%     -4.00%     -6.67%
+   2      NEUTRAL    -12.00%     +0.00%    -10.00%     -7.33%
+  74      NEUTRAL    -20.00%     -4.00%     +2.00%     -7.33%
+  29         COOL    -12.00%     -8.00%     +0.00%     -6.67%
+   4         COOL    +12.00%    -12.00%    -18.00%     -6.00%
   23          HOT    -36.00%    +16.00%     +2.00%     -6.00%
-  29         COOL    -12.00%     -8.00%     +2.00%     -6.00%
-  42      NEUTRAL    -20.00%     +4.00%     +0.00%     -5.33%
-   5          HOT    -28.00%    +12.00%     +2.00%     -4.67%
-   2      NEUTRAL     -4.00%     +0.00%    -10.00%     -4.67%
-   7         COOL    -12.00%     -8.00%     +6.00%     -4.67%
+   7      NEUTRAL    -12.00%     -8.00%     +4.00%     -5.33%
+  56         COOL    -12.00%    -12.00%     +8.00%     -5.33%
   20      NEUTRAL    -20.00%     +4.00%     +2.00%     -4.67%
   64         COOL     -4.00%     -8.00%     +0.00%     -4.00%
-  36      NEUTRAL     -4.00%     -4.00%     +0.00%     -2.67%
-  69      NEUTRAL    -12.00%     +4.00%     +0.00%     -2.67%
+  69      NEUTRAL    -12.00%     +0.00%     +0.00%     -4.00%
+  17         COOL     +4.00%     -8.00%     -6.00%     -3.33%
+  35      NEUTRAL    -12.00%     -4.00%     +6.00%     -3.33%
+  42         WARM    -20.00%     +8.00%     +2.00%     -3.33%
+  52      NEUTRAL    -12.00%     +4.00%     -2.00%     -3.33%
+  75         COOL     +4.00%     -8.00%     -6.00%     -3.33%
+   1      NEUTRAL    +12.00%     -8.00%    -12.00%     -2.67%
+  44         COOL     +4.00%     -8.00%     -4.00%     -2.67%
   13      NEUTRAL    +12.00%     +0.00%    -18.00%     -2.00%
-  71    VERY_COLD    +12.00%    -20.00%     +2.00%     -2.00%
-   1      NEUTRAL    +12.00%     -4.00%    -12.00%     -1.33%
-  17         COOL    +12.00%     -8.00%     -6.00%     -0.67%
-  35      NEUTRAL     -4.00%     -4.00%     +8.00%     +0.00%
-  65      NEUTRAL     -4.00%     +4.00%     +0.00%     +0.00%
+   5         WARM    -20.00%    +12.00%     +4.00%     -1.33%
+  65      NEUTRAL     -4.00%     +0.00%     +0.00%     -1.33%
+  38      NEUTRAL     -4.00%     +0.00%     +4.00%     +0.00%
   67      NEUTRAL     -4.00%     -4.00%    +10.00%     +0.67%
-  75         COOL    +12.00%     -4.00%     -6.00%     +0.67%
-  11      NEUTRAL    -12.00%     +0.00%    +16.00%     +1.33%
-  44      NEUTRAL    +12.00%     -4.00%     -4.00%     +1.33%
-  33         WARM    -12.00%     +8.00%    +10.00%     +2.00%
-  38      NEUTRAL     +4.00%     +0.00%     +4.00%     +2.67%
-  68      NEUTRAL    +12.00%     +8.00%     -4.00%     +5.33%
-  53      NEUTRAL     +4.00%     -4.00%    +18.00%     +6.00%
-  27         WARM     +4.00%     +8.00%    +10.00%     +7.33%
-   3         WARM    +20.00%     +8.00%     -2.00%     +8.67%
-  15          HOT    +12.00%    +16.00%     -2.00%     +8.67%
-  16         WARM    +28.00%    +12.00%    -14.00%     +8.67%
+  33         WARM    -12.00%     +8.00%     +8.00%     +1.33%
+  53         COOL     -4.00%     -8.00%    +16.00%     +1.33%
+  71    VERY_COLD    +20.00%    -20.00%     +4.00%     +1.33%
+  36      NEUTRAL     +4.00%     +0.00%     +2.00%     +2.00%
+  11      NEUTRAL     -4.00%     +4.00%    +16.00%     +5.33%
+  27      NEUTRAL     +4.00%     +4.00%    +10.00%     +6.00%
+  68      NEUTRAL    +20.00%     +8.00%     -2.00%     +8.67%
   77      NEUTRAL    +28.00%     +0.00%     -2.00%     +8.67%
-   9     VERY_HOT     +4.00%    +20.00%     +6.00%    +10.00%
-  62      NEUTRAL    +20.00%     +8.00%     +6.00%    +11.33%
-  37         WARM    +20.00%    +12.00%     +6.00%    +12.67%
-  48     VERY_HOT    +12.00%    +20.00%     +6.00%    +12.67%
-  18         WARM    +20.00%     +8.00%    +12.00%    +13.33%
+   9     VERY_HOT     +4.00%    +20.00%     +4.00%     +9.33%
+  73         WARM    +12.00%    +12.00%     +4.00%     +9.33%
+  18         WARM    +12.00%     +8.00%    +10.00%    +10.00%
+  62      NEUTRAL    +20.00%     +8.00%     +4.00%    +10.67%
+  48          HOT    +12.00%    +20.00%     +4.00%    +12.00%
+   3         WARM    +28.00%     +8.00%     +0.00%    +12.00%
+  16          HOT    +36.00%    +16.00%    -14.00%    +12.67%
+  15     VERY_HOT    +20.00%    +20.00%     +0.00%    +13.33%
   43      NEUTRAL     +4.00%     +8.00%    +28.00%    +13.33%
   61     VERY_HOT    +12.00%    +24.00%     +4.00%    +13.33%
-  73          HOT    +20.00%    +16.00%     +4.00%    +13.33%
+  10         WARM    +20.00%     +8.00%    +14.00%    +14.00%
   54         WARM    +12.00%    +12.00%    +18.00%    +14.00%
-  26          HOT    +20.00%    +16.00%     +8.00%    +14.67%
+  37          HOT    +20.00%    +16.00%     +8.00%    +14.67%
   45     VERY_HOT    +12.00%    +24.00%     +8.00%    +14.67%
-  19         WARM    +28.00%    +12.00%     +6.00%    +15.33%
+  70         WARM    +12.00%    +16.00%    +16.00%    +14.67%
   24         WARM    +36.00%    +12.00%     +0.00%    +16.00%
-  70          HOT    +12.00%    +20.00%    +16.00%    +16.00%
-  10         WARM    +28.00%     +8.00%    +14.00%    +16.67%
-  63          HOT    +28.00%    +16.00%    +12.00%    +18.67%
   25          HOT    +20.00%    +16.00%    +22.00%    +19.33%
-  59          HOT    +36.00%    +20.00%     +8.00%    +21.33%
-  66     VERY_HOT    +20.00%    +24.00%    +24.00%    +22.67%
-  14     VERY_HOT    +28.00%    +24.00%    +20.00%    +24.00%
+  26          HOT    +28.00%    +20.00%    +10.00%    +19.33%
+  19          HOT    +36.00%    +16.00%     +8.00%    +20.00%
+  66     VERY_HOT    +12.00%    +24.00%    +24.00%    +20.00%
+  63          HOT    +28.00%    +20.00%    +14.00%    +20.67%
+  14     VERY_HOT    +20.00%    +24.00%    +20.00%    +21.33%
+  22     VERY_HOT    +36.00%    +32.00%     +0.00%    +22.67%
   76          HOT    +44.00%    +20.00%     +8.00%    +24.00%
-  22     VERY_HOT    +44.00%    +32.00%     +0.00%    +25.33%
-  55     VERY_HOT    +36.00%    +28.00%    +12.00%    +25.33%
-  47     VERY_HOT    +36.00%    +20.00%    +34.00%    +30.00%
-  31     VERY_HOT    +84.00%    +40.00%    +20.00%    +48.00%
+  55     VERY_HOT    +36.00%    +28.00%    +10.00%    +24.67%
+  59     VERY_HOT    +44.00%    +24.00%     +8.00%    +25.33%
+  47          HOT    +36.00%    +20.00%    +36.00%    +30.67%
+  31     VERY_HOT    +84.00%    +40.00%    +18.00%    +47.33%
 
 ============================================
 SHORT-TERM TEMPERATURE PRESSURE
 ============================================
 
-Next draw after draw #3473836
+Next draw after draw #3473837
 
 --------------------------------------------
 LAST 50 DRAWS
 --------------------------------------------
-Draw range: #3473787 → #3473836
+Draw range: #3473788 → #3473837
 
 STATE          ACTUAL   EXPECTED      DEV    AVG DEV          STATUS
 ---------------------------------------------------------------------------
-VERY_HOT          161      125.0    +36.0     +0.720           ABOVE
-HOT               141      125.0    +16.0     +0.320           ABOVE
-WARM              148      125.0    +23.0     +0.460           ABOVE
-NEUTRAL           247      250.0     -3.0     -0.060           BELOW
-COOL              111      125.0    -14.0     -0.280           BELOW
-COLD              103      125.0    -22.0     -0.440           BELOW
-VERY_COLD          89      125.0    -36.0     -0.720           BELOW
+VERY_HOT          160      125.0    +35.0     +0.700           ABOVE
+HOT               153      125.0    +28.0     +0.560           ABOVE
+WARM              135      125.0    +10.0     +0.200           ABOVE
+NEUTRAL           245      250.0     -5.0     -0.100           BELOW
+COOL              120      125.0     -5.0     -0.100           BELOW
+COLD               97      125.0    -28.0     -0.560           BELOW
+VERY_COLD          90      125.0    -35.0     -0.700           BELOW
 
 --------------------------------------------
 LAST 100 DRAWS
 --------------------------------------------
-Draw range: #3473737 → #3473836
+Draw range: #3473738 → #3473837
 
 STATE          ACTUAL   EXPECTED      DEV    AVG DEV          STATUS
 ---------------------------------------------------------------------------
-VERY_HOT          314      250.0    +64.0     +0.640           ABOVE
-HOT               292      250.0    +42.0     +0.420           ABOVE
-WARM              275      250.0    +25.0     +0.250           ABOVE
-NEUTRAL           504      500.0     +4.0     +0.040           ABOVE
-COOL              229      250.0    -21.0     -0.210           BELOW
-COLD              208      250.0    -42.0     -0.420           BELOW
-VERY_COLD         178      250.0    -72.0     -0.720           BELOW
+VERY_HOT          315      250.0    +65.0     +0.650           ABOVE
+HOT               295      250.0    +45.0     +0.450           ABOVE
+WARM              276      250.0    +26.0     +0.260           ABOVE
+NEUTRAL           502      500.0     +2.0     +0.020           ABOVE
+COOL              226      250.0    -24.0     -0.240           BELOW
+COLD              209      250.0    -41.0     -0.410           BELOW
+VERY_COLD         177      250.0    -73.0     -0.730           BELOW
 
 --------------------------------------------
 LAST 200 DRAWS
 --------------------------------------------
-Draw range: #3473637 → #3473836
+Draw range: #3473638 → #3473837
 
 STATE          ACTUAL   EXPECTED      DEV    AVG DEV          STATUS
 ---------------------------------------------------------------------------
-VERY_HOT          567      500.0    +67.0     +0.335           ABOVE
-HOT               540      500.0    +40.0     +0.200           ABOVE
-WARM              530      500.0    +30.0     +0.150           ABOVE
-NEUTRAL          1010     1000.0    +10.0     +0.050           ABOVE
-COOL              487      500.0    -13.0     -0.065           BELOW
+VERY_HOT          548      500.0    +48.0     +0.240           ABOVE
+HOT               549      500.0    +49.0     +0.245           ABOVE
+WARM              538      500.0    +38.0     +0.190           ABOVE
+NEUTRAL          1012     1000.0    +12.0     +0.060           ABOVE
+COOL              489      500.0    -11.0     -0.055           BELOW
 COLD              438      500.0    -62.0     -0.310           BELOW
-VERY_COLD         428      500.0    -72.0     -0.360           BELOW
+VERY_COLD         426      500.0    -74.0     -0.370           BELOW
 
 ============================================
 CURRENT MICRO TEMPERATURE PRESSURE
@@ -1257,27 +1255,27 @@ Negative = recently underrepresented
 
 STATE            PRESSURE       INTERPRETATION
 ------------------------------------------------
-VERY_HOT           +0.619                 OVER
-HOT                +0.326                 OVER
-WARM               +0.335                 OVER
-NEUTRAL            -0.008              NEUTRAL
-COOL               -0.216              NEUTRAL
-COLD               -0.408                UNDER
-VERY_COLD          -0.648                UNDER
+VERY_HOT           +0.593                 OVER
+HOT                +0.464                 OVER
+WARM               +0.216              NEUTRAL
+NEUTRAL            -0.032              NEUTRAL
+COOL               -0.133              NEUTRAL
+COLD               -0.465                UNDER
+VERY_COLD          -0.643                UNDER
 
 Most underrepresented:
-  VERY_COLD    -0.648
-  COLD         -0.408
-  COOL         -0.216
+  VERY_COLD    -0.643
+  COLD         -0.465
+  COOL         -0.133
 
 Most overrepresented:
-  VERY_HOT     +0.619
-  WARM         +0.335
-  HOT          +0.326
+  VERY_HOT     +0.593
+  HOT          +0.464
+  WARM         +0.216
 
 Building historical micro-pressure backtest...
 Historical situations tested: 112
-Backtest target range: #3473725 → #3473836
+Backtest target range: #3473726 → #3473837
 
 ============================================
 MICRO PRESSURE → NEXT DRAW BACKTEST
@@ -1287,12 +1285,12 @@ Testing whether recent category under/overrepresentation has predictive value.
 
 VERY_HOT
 ---------------------------------------------
-After NEUTRAL (112 cases): avg next draw = 2.464
+After NEUTRAL (112 cases): avg next draw = 2.455
 Baseline expected = 2.500
 
 HOT
 ---------------------------------------------
-After NEUTRAL (112 cases): avg next draw = 2.527
+After NEUTRAL (112 cases): avg next draw = 2.536
 Baseline expected = 2.500
 
 WARM
@@ -1302,43 +1300,43 @@ Baseline expected = 2.500
 
 NEUTRAL
 ---------------------------------------------
-After NEUTRAL (112 cases): avg next draw = 5.027
+After NEUTRAL (112 cases): avg next draw = 5.000
 Baseline expected = 5.000
 
 COOL
 ---------------------------------------------
-After NEUTRAL (112 cases): avg next draw = 2.473
+After NEUTRAL (112 cases): avg next draw = 2.482
 Baseline expected = 2.500
 
 COLD
 ---------------------------------------------
-After NEUTRAL (112 cases): avg next draw = 2.509
+After NEUTRAL (112 cases): avg next draw = 2.500
 Baseline expected = 2.500
 
 VERY_COLD
 ---------------------------------------------
-After NEUTRAL (112 cases): avg next draw = 2.554
+After NEUTRAL (112 cases): avg next draw = 2.580
 Baseline expected = 2.500
 
 ============================================
 NEXT DRAW TEMPERATURE EXPECTATION
 ============================================
 
-Latest completed draw: #3473836
-Latest completed date: 2026-08-25 01:22:30
-Next draw: #3473837
+Latest completed draw: #3473837
+Latest completed date: 2026-08-25 01:26:00
+Next draw: #3473838
 
 STATE          PRESSURE         REGIME    BASE   PREDICTED      DEV   P(ABOVE)    CASES
 ----------------------------------------------------------------------------------------------------
-VERY_HOT         +0.619           over    2.50         N/A      N/A        N/A        0
-HOT              +0.326           over    2.50        2.00    -0.50      33.3%        3
-WARM             +0.335           over    2.50        1.20    -1.30      20.0%        5
-NEUTRAL          -0.008        neutral    5.00        5.02    +0.02      40.2%       97
-COOL             -0.216        neutral    2.50        2.43    -0.07      46.2%      106
-COLD             -0.408          under    2.50        2.00    -0.50       0.0%        2
-VERY_COLD        -0.648          under    2.50        3.00    +0.50     100.0%        3
+VERY_HOT         +0.593           over    2.50         N/A      N/A        N/A        0
+HOT              +0.464           over    2.50        2.00    -0.50      33.3%        3
+WARM             +0.216        neutral    2.50        2.56    +0.06      52.0%      100
+NEUTRAL          -0.032        neutral    5.00        5.01    +0.01      39.6%       96
+COOL             -0.133        neutral    2.50        2.44    -0.06      46.2%      106
+COLD             -0.465          under    2.50        2.00    -0.50       0.0%        2
+VERY_COLD        -0.643          under    2.50        3.00    +0.50     100.0%        3
 
-Predicted total: 15.65
+Predicted total: 17.01
 Actual draw size: 20
 
 ============================================
@@ -1360,36 +1358,38 @@ HOT
  NUM     206     412     824   AVG DEV%   BELOW
 -----------------------------------------------------------------
   23 -36.00% +16.00%  +2.00%     -6.00%       1/3
-   5 -28.00% +12.00%  +2.00%     -4.67%       1/3
+  48 +12.00% +20.00%  +4.00%    +12.00%       0/3
 
 WARM
 --------------------------------------------------------------------------------
-  Predicted category contribution: ~1.20
+  Predicted category contribution: ~2.56
 
  NUM     206     412     824   AVG DEV%   BELOW
 -----------------------------------------------------------------
-  33 -12.00%  +8.00% +10.00%     +2.00%       1/3
+  42 -20.00%  +8.00%  +2.00%     -3.33%       1/3
+   5 -20.00% +12.00%  +4.00%     -1.33%       1/3
+  33 -12.00%  +8.00%  +8.00%     +1.33%       1/3
 
 NEUTRAL
 --------------------------------------------------------------------------------
-  Predicted category contribution: ~5.02
+  Predicted category contribution: ~5.01
 
  NUM     206     412     824   AVG DEV%   BELOW
 -----------------------------------------------------------------
   50 -28.00%  -4.00% -18.00%    -16.67%       3/3
-  52 -20.00%  +4.00%  -4.00%     -6.67%       2/3
-  42 -20.00%  +4.00%  +0.00%     -5.33%       1/3
-   2  -4.00%  +0.00% -10.00%     -4.67%       2/3
+   2 -12.00%  +0.00% -10.00%     -7.33%       2/3
+  74 -20.00%  -4.00%  +2.00%     -7.33%       2/3
+   7 -12.00%  -8.00%  +4.00%     -5.33%       2/3
   20 -20.00%  +4.00%  +2.00%     -4.67%       1/3
 
 COOL
 --------------------------------------------------------------------------------
-  Predicted category contribution: ~2.43
+  Predicted category contribution: ~2.44
 
  NUM     206     412     824   AVG DEV%   BELOW
 -----------------------------------------------------------------
-  58 -36.00%  -8.00%  -2.00%    -15.33%       3/3
   49 -20.00% -12.00% -12.00%    -14.67%       3/3
+   6 -12.00% -12.00%  +0.00%     -8.00%       2/3
 
 COLD
 --------------------------------------------------------------------------------
@@ -1397,8 +1397,8 @@ COLD
 
  NUM     206     412     824   AVG DEV%   BELOW
 -----------------------------------------------------------------
-  79 -36.00% -16.00% -10.00%    -20.67%       3/3
-   8 -28.00% -16.00% -10.00%    -18.00%       3/3
+  79 -36.00% -16.00% -12.00%    -21.33%       3/3
+   8 -36.00% -16.00% -10.00%    -20.67%       3/3
 
 VERY_COLD
 --------------------------------------------------------------------------------
@@ -1411,7 +1411,7 @@ VERY_COLD
   21 -28.00% -40.00% -36.00%    -34.67%       3/3
 
 --------------------------------------------
-Total category-based candidates: 15
+Total category-based candidates: 17
 
 ============================================
 ANALYSIS COMPLETE
