@@ -4,7 +4,7 @@
 ========================================================================
 
 Ticket size       : 40 numbers
-Historical draws  : 94,726
+Historical draws  : 94,727
 Historical payout : $150,878
 Average per draw  : $1.5928
 
