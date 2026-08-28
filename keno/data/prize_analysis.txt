@@ -4,8 +4,8 @@
 ========================================================================
 
 Ticket size       : 40 numbers
-Historical draws  : 95,957
-Historical payout : $152,070
+Historical draws  : 95,958
+Historical payout : $152,075
 Average per draw  : $1.5848
 
 Ticket:
@@ -123,7 +123,7 @@ Current gap = draws since the most recent occurrence of that prize category.
    17       16     5608.5      557    19745      9278    ABOVE AVG (+3669.5)
    16      171      550.9        3     2860      1433     ABOVE AVG (+882.1)
    15      739      129.5        1     1169       237     ABOVE AVG (+107.5)
-   14    2,431       39.5        1      267        38       BELOW AVG (-1.5)
+   14    2,432       39.5        1      267        38       BELOW AVG (-1.5)
    13    6,165       15.6        1      176         1      BELOW AVG (-14.6)
     7    6,075       15.8        1      145        52      ABOVE AVG (+36.2)
     6    2,387       40.2        1      324        41       ABOVE AVG (+0.8)
